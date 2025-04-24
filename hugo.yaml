@@ -1,3 +1,18 @@
 baseURL: https://example.org/
 languageCode: en-us
-title: My New Hugo Site
+title: Akave Docs
+theme: hextra
+menu:
+  main:
+    - name: Docs
+      pageRef: /docs
+      weight: 1
+    - name: Search
+      weight: 2
+      params:
+        type: search
+    - name: GitHub
+      weight: 3
+      url: "https://github.com/akave-ai"
+      params:
+        icon: github
