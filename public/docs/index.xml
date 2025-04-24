@@ -5,7 +5,7 @@
     <description>Recent content in Docs on Akave Docs</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Tue, 22 Apr 2025 22:33:15 -0500</lastBuildDate>
+    <lastBuildDate>Wed, 23 Apr 2025 22:59:00 -0500</lastBuildDate>
     
 	  <atom:link href="http://localhost:1313/docs/index.xml" rel="self" type="application/rss+xml" />
     
@@ -16,11 +16,11 @@
     
     
     <item>
-      <title>Akave Oasis Protocol</title>
-      <link>http://localhost:1313/docs/akave-oasis-protocol/</link>
-      <pubDate>Tue, 22 Apr 2025 23:50:52 -0500</pubDate>
+      <title>Our Values</title>
+      <link>http://localhost:1313/docs/discover-akave/our-values/</link>
+      <pubDate>Wed, 23 Apr 2025 22:49:15 -0500</pubDate>
       
-      <guid>http://localhost:1313/docs/akave-oasis-protocol/</guid>
+      <guid>http://localhost:1313/docs/discover-akave/our-values/</guid>
       <description>
         
         
@@ -29,11 +29,76 @@
     </item>
     
     <item>
-      <title>Discover Akave</title>
-      <link>http://localhost:1313/docs/discover-akave/</link>
-      <pubDate>Tue, 22 Apr 2025 23:50:05 -0500</pubDate>
+      <title>Who Are We</title>
+      <link>http://localhost:1313/docs/discover-akave/who-are-we/</link>
+      <pubDate>Wed, 23 Apr 2025 22:49:06 -0500</pubDate>
       
-      <guid>http://localhost:1313/docs/discover-akave/</guid>
+      <guid>http://localhost:1313/docs/discover-akave/who-are-we/</guid>
+      <description>
+        
+        
+        
+      </description>
+    </item>
+    
+    <item>
+      <title>Vision Mission</title>
+      <link>http://localhost:1313/docs/discover-akave/vision-mission/</link>
+      <pubDate>Wed, 23 Apr 2025 22:48:57 -0500</pubDate>
+      
+      <guid>http://localhost:1313/docs/discover-akave/vision-mission/</guid>
+      <description>
+        
+        
+        
+      </description>
+    </item>
+    
+    <item>
+      <title>What Is Akave</title>
+      <link>http://localhost:1313/docs/discover-akave/what-is-akave/</link>
+      <pubDate>Wed, 23 Apr 2025 22:48:47 -0500</pubDate>
+      
+      <guid>http://localhost:1313/docs/discover-akave/what-is-akave/</guid>
+      <description>
+        
+        
+        
+      </description>
+    </item>
+    
+    <item>
+      <title>Js Docker Example Code</title>
+      <link>http://localhost:1313/docs/js-docker-example-code/</link>
+      <pubDate>Wed, 23 Apr 2025 22:48:28 -0500</pubDate>
+      
+      <guid>http://localhost:1313/docs/js-docker-example-code/</guid>
+      <description>
+        
+        
+        
+      </description>
+    </item>
+    
+    <item>
+      <title>Zoning</title>
+      <link>http://localhost:1313/docs/zoning/</link>
+      <pubDate>Wed, 23 Apr 2025 22:48:09 -0500</pubDate>
+      
+      <guid>http://localhost:1313/docs/zoning/</guid>
+      <description>
+        
+        
+        
+      </description>
+    </item>
+    
+    <item>
+      <title>Data Flow</title>
+      <link>http://localhost:1313/docs/data-flow/</link>
+      <pubDate>Wed, 23 Apr 2025 22:48:00 -0500</pubDate>
+      
+      <guid>http://localhost:1313/docs/data-flow/</guid>
       <description>
         
         

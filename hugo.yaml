@@ -16,3 +16,28 @@ menu:
       url: "https://github.com/akave-ai"
       params:
         icon: github
+
+  docs:
+    - name: Discover Akave
+      identifier: discover-akave
+      weight: 1
+
+    - name: What is Akave?
+      url: /docs/what-is-akave/
+      parent: discover-akave
+      weight: 1
+
+    - name: Vision & Mission
+      url: /docs/vision-mission/
+      parent: discover-akave
+      weight: 2
+
+    - name: Who Are We?
+      url: /docs/who-are-we/
+      parent: discover-akave
+      weight: 3
+
+    - name: Our Values
+      url: /docs/our-values/
+      parent: discover-akave
+      weight: 4
