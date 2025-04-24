@@ -1,0 +1,71 @@
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Akave Docs – Discover-Akaves</title>
+    <link>http://localhost:1313/discover-akave/</link>
+    <description>Recent content in Discover-Akaves on Akave Docs</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Wed, 23 Apr 2025 22:49:15 -0500</lastBuildDate>
+    
+	  <atom:link href="http://localhost:1313/discover-akave/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+      
+        
+      
+    
+    
+    <item>
+      <title>Our Values</title>
+      <link>http://localhost:1313/discover-akave/our-values/</link>
+      <pubDate>Wed, 23 Apr 2025 22:49:15 -0500</pubDate>
+      
+      <guid>http://localhost:1313/discover-akave/our-values/</guid>
+      <description>
+        
+        
+        
+      </description>
+    </item>
+    
+    <item>
+      <title>Who Are We</title>
+      <link>http://localhost:1313/discover-akave/who-are-we/</link>
+      <pubDate>Wed, 23 Apr 2025 22:49:06 -0500</pubDate>
+      
+      <guid>http://localhost:1313/discover-akave/who-are-we/</guid>
+      <description>
+        
+        
+        
+      </description>
+    </item>
+    
+    <item>
+      <title>Vision Mission</title>
+      <link>http://localhost:1313/discover-akave/vision-mission/</link>
+      <pubDate>Wed, 23 Apr 2025 22:48:57 -0500</pubDate>
+      
+      <guid>http://localhost:1313/discover-akave/vision-mission/</guid>
+      <description>
+        
+        
+        
+      </description>
+    </item>
+    
+    <item>
+      <title>What Is Akave</title>
+      <link>http://localhost:1313/discover-akave/what-is-akave/</link>
+      <pubDate>Wed, 23 Apr 2025 22:48:47 -0500</pubDate>
+      
+      <guid>http://localhost:1313/discover-akave/what-is-akave/</guid>
+      <description>
+        
+        
+        
+      </description>
+    </item>
+    
+  </channel>
+</rss>
