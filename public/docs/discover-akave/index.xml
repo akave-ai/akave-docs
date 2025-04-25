@@ -1,13 +1,13 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Akave Docs – Docs</title>
-    <link>http://localhost:1313/docs/</link>
-    <description>Recent content in Docs on Akave Docs</description>
+    <title>Akave Docs – Discover Akave</title>
+    <link>http://localhost:1313/docs/discover-akave/</link>
+    <description>Recent content in Discover Akave on Akave Docs</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Wed, 23 Apr 2025 22:59:00 -0500</lastBuildDate>
+    <lastBuildDate>Thu, 24 Apr 2025 20:51:37 -0500</lastBuildDate>
     
-	  <atom:link href="http://localhost:1313/docs/index.xml" rel="self" type="application/rss+xml" />
+	  <atom:link href="http://localhost:1313/docs/discover-akave/index.xml" rel="self" type="application/rss+xml" />
     
     
       
@@ -152,45 +152,6 @@ We prioritize user empathy, designing products and services around the needs, ch
 &lt;/ul&gt;
 &lt;p&gt;Together, these values inspire us to achieve excellence, embrace openness, and continuously innovate, ensuring we create meaningful impact for our users and the broader ecosystem.&lt;/p&gt;
 
-      </description>
-    </item>
-    
-    <item>
-      <title>Js Docker Example Code</title>
-      <link>http://localhost:1313/docs/js-docker-example-code/</link>
-      <pubDate>Wed, 23 Apr 2025 22:48:28 -0500</pubDate>
-      
-      <guid>http://localhost:1313/docs/js-docker-example-code/</guid>
-      <description>
-        
-        
-        
-      </description>
-    </item>
-    
-    <item>
-      <title>Zoning</title>
-      <link>http://localhost:1313/docs/zoning/</link>
-      <pubDate>Wed, 23 Apr 2025 22:48:09 -0500</pubDate>
-      
-      <guid>http://localhost:1313/docs/zoning/</guid>
-      <description>
-        
-        
-        
-      </description>
-    </item>
-    
-    <item>
-      <title>Data Flow</title>
-      <link>http://localhost:1313/docs/data-flow/</link>
-      <pubDate>Wed, 23 Apr 2025 22:48:00 -0500</pubDate>
-      
-      <guid>http://localhost:1313/docs/data-flow/</guid>
-      <description>
-        
-        
-        
       </description>
     </item>
     
