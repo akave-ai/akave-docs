@@ -4,40 +4,12 @@ title: Akave Docs
 theme: hextra
 menu:
   main:
-    - name: Docs
-      pageRef: /docs
-      weight: 1
     - name: Search
-      weight: 2
+      weight: 1
       params:
         type: search
     - name: GitHub
-      weight: 3
+      weight: 2
       url: "https://github.com/akave-ai"
       params:
         icon: github
-
-  docs:
-    - name: Discover Akave
-      identifier: discover-akave
-      weight: 1
-
-    - name: What is Akave?
-      url: /docs/what-is-akave/
-      parent: discover-akave
-      weight: 1
-
-    - name: Vision & Mission
-      url: /docs/vision-mission/
-      parent: discover-akave
-      weight: 2
-
-    - name: Who Are We?
-      url: /docs/who-are-we/
-      parent: discover-akave
-      weight: 3
-
-    - name: Our Values
-      url: /docs/our-values/
-      parent: discover-akave
-      weight: 4
