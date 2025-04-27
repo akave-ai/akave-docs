@@ -1,7 +1,7 @@
 ---
 date: '2025-04-26T23:58:37-05:00'
 draft: false
-title: 'Erasure Coding'
+title: '🧩 Erasure Coding'
 weight: 3
 cascade:
   type: docs
