@@ -14,9 +14,9 @@ menu:
       params:
         icon: github
   sidebar:
-    - name: "Blockchain Explorer ↗"
+    - name: "🔎 Blockchain Explorer ↗"
       url: "http://explorer.akave.ai/"
       weight: 20
-    - name: "Testnet Faucet ↗"
+    - name: "🚰 Testnet Faucet ↗"
       url: "https://faucet.akave.ai/"
       weight: 21
