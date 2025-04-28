@@ -1,0 +1,236 @@
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Akave Docs – 🛡️ Data Security Framework</title>
+    <link>http://localhost:1313/akave-oasis-protocol/data-security-framework/</link>
+    <description>Recent content in 🛡️ Data Security Framework on Akave Docs</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Sat, 26 Apr 2025 23:58:37 -0500</lastBuildDate>
+    
+	  <atom:link href="http://localhost:1313/akave-oasis-protocol/data-security-framework/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+      
+        
+      
+    
+    
+    <item>
+      <title>🔒 Encryption</title>
+      <link>http://localhost:1313/akave-oasis-protocol/data-security-framework/encryption/</link>
+      <pubDate>Sat, 26 Apr 2025 23:58:37 -0500</pubDate>
+      
+      <guid>http://localhost:1313/akave-oasis-protocol/data-security-framework/encryption/</guid>
+      <description>
+        
+        
+        &lt;h1&gt;Read First: Our Data Security Framework&lt;/h1&gt;&lt;h2&gt;Overview&lt;span class=&#34;hx:absolute hx:-mt-20&#34; id=&#34;overview&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#overview&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;Akave uses robust encryption mechanisms to secure data during storage and transmission. Encryption ensures that data is accessible only to authorized users, preventing unauthorized access and tampering.&lt;/p&gt;
+&lt;h2&gt;Key Components&lt;span class=&#34;hx:absolute hx:-mt-20&#34; id=&#34;key-components&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#key-components&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;Master Encryption Key&lt;/strong&gt;&lt;br&gt;
+A user-provided 32-byte AES-256 key serving as the foundation for generating file-specific encryption keys.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;Derived Encryption Keys&lt;/strong&gt;&lt;br&gt;
+Unique keys created from the Master Encryption Key, combined with identifiers such as bucket and file names.&lt;br&gt;
+Ensures that each file has a distinct encryption key.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;File Chunk Encryption&lt;/strong&gt;&lt;br&gt;
+Files are encrypted in chunks to optimize processing and ensure secure storage.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;Wallet Key&lt;/strong&gt;&lt;br&gt;
+A separate key used for blockchain transactions, ensuring secure access and operations within the Akave ecosystem.&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2&gt;Process Flow&lt;span class=&#34;hx:absolute hx:-mt-20&#34; id=&#34;process-flow&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#process-flow&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;Key Generation&lt;/strong&gt;&lt;br&gt;
+A secure random number generator creates the Master Encryption Key.&lt;br&gt;
+Derived Encryption Keys are generated using cryptographic functions, combining the Master Key with file identifiers.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;File Upload Encryption&lt;/strong&gt;&lt;br&gt;
+Files are divided into chunks, and each chunk is encrypted with a Derived Encryption Key.&lt;br&gt;
+Encrypted chunks are structured into a Directed Acyclic Graph (DAG) using IPFS/UnixFS-like protocols.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;File Download Decryption&lt;/strong&gt;&lt;br&gt;
+Encrypted chunks are retrieved and decrypted using the corresponding Derived Encryption Key.&lt;br&gt;
+Decrypted chunks are reassembled to reconstruct the original file.&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2&gt;Security Contributions&lt;span class=&#34;hx:absolute hx:-mt-20&#34; id=&#34;security-contributions&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#security-contributions&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;Confidentiality&lt;/strong&gt;&lt;br&gt;
+Ensures data is encrypted before leaving the client’s environment.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;Integrity&lt;/strong&gt;&lt;br&gt;
+Protects data from unauthorized modifications.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;Granularity&lt;/strong&gt;&lt;br&gt;
+Encrypts data at the chunk level, enhancing security and reducing processing overhead.&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+
+      </description>
+    </item>
+    
+    <item>
+      <title>🧩 Erasure Coding</title>
+      <link>http://localhost:1313/akave-oasis-protocol/data-security-framework/erasure-coding/</link>
+      <pubDate>Sat, 26 Apr 2025 23:58:37 -0500</pubDate>
+      
+      <guid>http://localhost:1313/akave-oasis-protocol/data-security-framework/erasure-coding/</guid>
+      <description>
+        
+        
+        &lt;h1&gt;Read First: Our Data Security Framework&lt;/h1&gt;&lt;h2&gt;Intro&lt;span class=&#34;hx:absolute hx:-mt-20&#34; id=&#34;intro&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#intro&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;Erasure Coding (EC) is a data protection technique that ensures our data remains safe even if some parts of it are lost. Instead of simply copying data for backup, EC intelligently breaks it into smaller pieces and adds extra recovery data, so that missing parts can be recreated.&lt;/p&gt;
+&lt;p&gt;Imagine you have a puzzle with 32 pieces. Normally, if you lose a few pieces, the puzzle remains incomplete. With EC, you can create 16 extra puzzle pieces based on the original 16, so even if some pieces are lost, you can still complete the puzzle. This redundancy helps in preventing data loss.&lt;/p&gt;
+&lt;h2&gt;Overview&lt;span class=&#34;hx:absolute hx:-mt-20&#34; id=&#34;overview&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#overview&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;Akave&amp;rsquo;s Erasure Coding is a data protection method that splits data into fragments and distributes them across multiple storage nodes. By adding parity fragments, Akave ensures that data can be reconstructed even if some fragments are lost or corrupted. This approach combines data resilience with efficient storage utilization.&lt;/p&gt;
+&lt;h2&gt;Key Components&lt;span class=&#34;hx:absolute hx:-mt-20&#34; id=&#34;key-components&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#key-components&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;Data Splitting (Chunking)&lt;/strong&gt;&lt;br&gt;
+Akave implements data chunking before encryption. Original files are disassembled into smaller pieces and distributed across the network and onto Filecoin for robust security and redundancy.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Chunking Process:&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Files are divided into chunks, typically 32 MB in size.&lt;/li&gt;
+&lt;li&gt;Each chunk is subdivided into smaller data blocks (up to 1 MB).&lt;/li&gt;
+&lt;li&gt;Dispersed pieces reside in distinct locations, making unauthorized reassembly virtually impossible.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;Reed-Solomon Algorithm&lt;/strong&gt;&lt;br&gt;
+Akave uses the Reed-Solomon error correction algorithm to generate parity blocks for each data block, enabling data recovery even when a subset is missing.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;Network Distribution&lt;/strong&gt;&lt;br&gt;
+Data and parity blocks are distributed across geographically dispersed nodes. Each node also replicates data onto Filecoin, ensuring high resiliency.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;Data Sampling and Mini-Proving&lt;/strong&gt;&lt;br&gt;
+Akave periodically verifies data blocks using sampling and mini-proving. If corruption is detected, missing blocks are rebuilt automatically using Reed-Solomon.&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2&gt;Process Flow&lt;span class=&#34;hx:absolute hx:-mt-20&#34; id=&#34;process-flow&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#process-flow&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;Data Chunking&lt;/strong&gt;&lt;br&gt;
+Files are split into fixed-size chunks, then further into smaller data blocks.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;Parity Generation&lt;/strong&gt;&lt;br&gt;
+Each set of data blocks is processed to produce parity blocks using Reed-Solomon.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;Distribution&lt;/strong&gt;&lt;br&gt;
+Data and parity blocks are distributed across nodes and replicated to Filecoin.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;Recovery&lt;/strong&gt;&lt;br&gt;
+During retrieval, available blocks are collected, and any missing ones are reconstructed using parity data.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;Integrity Checking&lt;/strong&gt;&lt;br&gt;
+Data sampling and mini-proving proactively detect and rebuild missing data blocks.&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2&gt;Security and Reliability Contributions&lt;span class=&#34;hx:absolute hx:-mt-20&#34; id=&#34;security-and-reliability-contributions&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#security-and-reliability-contributions&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;Resilience&lt;/strong&gt;&lt;br&gt;
+Data can be recovered even if several storage nodes are unavailable.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;Efficiency&lt;/strong&gt;&lt;br&gt;
+Minimizes storage overhead while maintaining strong fault tolerance.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;Scalability&lt;/strong&gt;&lt;br&gt;
+Easily adapts to increasing data volumes and storage node numbers.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;Enhanced Reliability&lt;/strong&gt;&lt;br&gt;
+Filecoin replication provides a secondary layer of protection.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;Proactive Integrity Verification&lt;/strong&gt;&lt;br&gt;
+Data sampling ensures issues are identified and resolved before impacting availability.&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2&gt;Example Policy&lt;span class=&#34;hx:absolute hx:-mt-20&#34; id=&#34;example-policy&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#example-policy&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;h3&gt;How Our EC Policy Works (Simplified)&lt;span class=&#34;hx:absolute hx:-mt-20&#34; id=&#34;how-our-ec-policy-works-simplified&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#how-our-ec-policy-works-simplified&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h3&gt;&lt;ul&gt;
+&lt;li&gt;Every file is split into &lt;strong&gt;32 MB chunks&lt;/strong&gt;.&lt;/li&gt;
+&lt;li&gt;Each chunk is divided into &lt;strong&gt;32 DataBlocks&lt;/strong&gt; of &lt;strong&gt;1 MB&lt;/strong&gt; each.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;16 DataBlocks&lt;/strong&gt; store actual data.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;16 DataBlocks&lt;/strong&gt; store recovery (parity) data.&lt;/li&gt;
+&lt;li&gt;If any DataBlocks are lost, the system rebuilds them using the 16 recovery blocks.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Storage overhead:&lt;/strong&gt; 100% — for every 32 MB of data, 32 MB of parity is added.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3&gt;Technical Breakdown (Deep Dive)&lt;span class=&#34;hx:absolute hx:-mt-20&#34; id=&#34;technical-breakdown-deep-dive&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#technical-breakdown-deep-dive&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h3&gt;&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;Chunk Size &amp;amp; Structure&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;32 DataBlocks per chunk (1 MB each).&lt;/li&gt;
+&lt;li&gt;16 data + 16 parity = 32 blocks total.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;EC Schema&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Formula: &lt;code&gt;n (total) - k (data) = m (parity)&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;In our case: &lt;code&gt;32 (total) - 16 (data) = 16 (parity)&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;Expansion Factor: 2x (100% storage overhead).&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;256 MB File Example&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Split into 8 chunks (32 MB each).&lt;/li&gt;
+&lt;li&gt;After applying EC, storage footprint doubles:&lt;br&gt;
+256 MB → 512 MB total stored.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;Storage Redundancy and Node Requirements&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Each chunk must be spread across &lt;strong&gt;32 nodes&lt;/strong&gt;.&lt;/li&gt;
+&lt;li&gt;Loss of up to &lt;strong&gt;16 blocks&lt;/strong&gt; per chunk is tolerated without data loss.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2&gt;Our EC Policy, Overhead, and Redundancy&lt;span class=&#34;hx:absolute hx:-mt-20&#34; id=&#34;our-ec-policy-overhead-and-redundancy&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#our-ec-policy-overhead-and-redundancy&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;EC Policy:&lt;/strong&gt;&lt;br&gt;
+Reed-Solomon Erasure Coding (n=32, k=16, m=16).&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;Overhead:&lt;/strong&gt;&lt;br&gt;
+100% (storage used is double the original data size).&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;Redundancy &amp;amp; Resilience:&lt;/strong&gt;&lt;br&gt;
+Data remains recoverable even if up to 50% of blocks are lost.&lt;br&gt;
+Requires at least 32 nodes for full distribution.&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;This setup ensures &lt;strong&gt;high durability, security, and performance&lt;/strong&gt; — even under network stress or storage node failures.&lt;/p&gt;
+
+      </description>
+    </item>
+    
+  </channel>
+</rss>

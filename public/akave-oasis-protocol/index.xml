@@ -1,0 +1,19 @@
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Akave Docs – ⚙️ Akave Oasis - Protocol</title>
+    <link>http://localhost:1313/akave-oasis-protocol/</link>
+    <description>Recent content in ⚙️ Akave Oasis - Protocol on Akave Docs</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Sat, 26 Apr 2025 23:58:37 -0500</lastBuildDate>
+    
+	  <atom:link href="http://localhost:1313/akave-oasis-protocol/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+      
+        
+      
+    
+    
+  </channel>
+</rss>
