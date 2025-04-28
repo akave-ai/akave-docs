@@ -10,8 +10,8 @@ params:
       path: images/akave_logo.png
       dark: images/akave_logo.png
       link: /
-      width: 68
-      height: 37
+      width: 78
+      height: 42
 menu:
   main:
     - name: Search
