@@ -13,6 +13,10 @@ menu:
       url: "https://github.com/akave-ai"
       params:
         icon: github
-params:
   sidebar:
-    alwaysExpand: true
+    - name: "Blockchain Explorer ↗"
+      url: "http://explorer.akave.ai/"
+      weight: 20
+    - name: "Testnet Faucet ↗"
+      url: "https://faucet.akave.ai/"
+      weight: 21
