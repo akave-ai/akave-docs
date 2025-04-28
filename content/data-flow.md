@@ -8,7 +8,7 @@ cascade:
 ---
 # 📦 Data Flow in Akave Storage
 
-![Akave DataFlow from File/Data to Filecoin](images/data-flow.avif)
+![Akave DataFlow from File/Data to Filecoin](/images/data-flow.avif)
 
 In the data flow diagram, we see how files or data are stored through the Akave decentralized storage network and use decentralized storage like Filecoin. Here’s a breakdown:
 
