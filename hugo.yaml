@@ -1,7 +1,17 @@
-baseURL: https://example.org/
+baseURL: https://docs.akave.xyz/
 languageCode: en-us
 title: Akave Docs
 theme: hextra
+params:
+  navbar:
+    displayTitle: true
+    displayLogo: true
+    logo:
+      path: images/akave_logo.png
+      dark: images/akave_logo.png
+      link: /
+      width: 32
+      height: 25
 menu:
   main:
     - name: Search
