@@ -6,3 +6,4 @@ weight: 7
 cascade:
   type: docs
 ---
+test
