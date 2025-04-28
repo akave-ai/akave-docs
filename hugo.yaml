@@ -13,3 +13,6 @@ menu:
       url: "https://github.com/akave-ai"
       params:
         icon: github
+params:
+  sidebar:
+    alwaysExpand: true
