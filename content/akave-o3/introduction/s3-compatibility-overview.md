@@ -9,9 +9,8 @@ cascade:
 
 Akave O3 delivers seamless AWS S3 API compatibility to help developers and enterprises migrate cloud-native apps to decentralized infrastructure without code changes. Below is the full list of tested and supported operations as of release **v0.2.1**, with links to official AWS documentation for reference.
 
----
 
-## ✅ Compatibility
+## ▶️ Compatibility
 
 Akave O3 is fully compatible with:
 
@@ -20,9 +19,8 @@ Akave O3 is fully compatible with:
 - [AWS SDK for Go](https://docs.aws.amazon.com/sdk-for-go/api/service/s3/)
 - [AWS SDK for Java](https://sdk.amazonaws.com/java/api/latest/software/amazon/awssdk/services/s3/S3Client.html)
 
----
 
-## ✅ Supported Features and Operations
+## ▶️ Supported Features and Operations
 
 ### 🚀 Transfer Operations
 - [aws s3 cp](https://docs.aws.amazon.com/cli/latest/reference/s3/cp.html) – Copy files between local filesystem and bucket.
@@ -62,11 +60,8 @@ Akave O3 is fully compatible with:
 - [PutBucketAcl](https://docs.aws.amazon.com/AmazonS3/latest/API/API_PutBucketAcl.html) – Set access permissions for a bucket.
 - [GetBucketAcl](https://docs.aws.amazon.com/AmazonS3/latest/API/API_GetBucketAcl.html) – Retrieve access control settings of a bucket.
 
----
 
 ## 🔗 External Resources
 - [AWS CLI Reference for S3](https://docs.aws.amazon.com/cli/latest/reference/s3/)
 - [AWS S3 API Reference](https://docs.aws.amazon.com/AmazonS3/latest/API/Welcome.html)
 - [AWS Signature Version 4 Signing Process](https://docs.aws.amazon.com/AmazonS3/latest/API/sig-v4-authenticating-requests.html)
-
----
