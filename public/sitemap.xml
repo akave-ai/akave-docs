@@ -2,6 +2,12 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
+    <loc>http://localhost:1313/akave-o3/introduction/</loc>
+    <lastmod>2025-04-28T21:41:52-05:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/akave-o3/</loc>
+    <lastmod>2025-04-28T17:16:58-05:00</lastmod>
+  </url><url>
     <loc>http://localhost:1313/akave-oasis-protocol/data-security-framework/</loc>
     <lastmod>2025-04-26T23:58:37-05:00</lastmod>
   </url><url>
@@ -14,6 +20,9 @@
     <loc>http://localhost:1313/discover-akave/what-is-akave/</loc>
     <lastmod>2025-04-23T22:48:47-05:00</lastmod>
   </url><url>
+    <loc>http://localhost:1313/akave-o3/introduction/what-is-akave-o3/</loc>
+    <lastmod>2025-04-28T21:41:52-05:00</lastmod>
+  </url><url>
     <loc>http://localhost:1313/akave-oasis-protocol/</loc>
     <lastmod>2025-04-26T23:58:37-05:00</lastmod>
   </url><url>
@@ -22,6 +31,9 @@
   </url><url>
     <loc>http://localhost:1313/discover-akave/vision-mission/</loc>
     <lastmod>2025-04-23T22:48:57-05:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/akave-o3/introduction/s3-compatibility-overview/</loc>
+    <lastmod>2025-04-28T21:41:52-05:00</lastmod>
   </url><url>
     <loc>http://localhost:1313/akave-oasis-protocol/data-security-framework/erasure-coding/</loc>
     <lastmod>2025-04-26T23:58:37-05:00</lastmod>
@@ -43,9 +55,6 @@
   </url><url>
     <loc>http://localhost:1313/js-docker-example-code/</loc>
     <lastmod>2025-04-23T22:48:28-05:00</lastmod>
-  </url><url>
-    <loc>http://localhost:1313/akave-o3/</loc>
-    <lastmod>2025-04-28T17:16:58-05:00</lastmod>
   </url><url>
     <loc>http://localhost:1313/akave-sdk-cli/blockchain-integrated/</loc>
     <lastmod>2025-04-26T23:58:37-05:00</lastmod>
