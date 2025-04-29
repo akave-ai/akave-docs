@@ -21,7 +21,7 @@ cascade:
 ## Architectural Highlights
 - **Client-Side S3 API**: The O3 client can run in any environment, connecting directly to the decentralized Akave node network.
 - **Blockchain-Backed Verification**: All object operations are anchored with blockchain proofs to ensure the integrity and availability of stored data.
-- **Programmable Access Control**: Users can define smart contract-based ACLs to manage fine-grained permissions (e.g., Merkle-tree policies, MFA access, payment-gated access).
+- **Programmable Access Control**: Users can define smart contract-based ACLs to manage fine-grained permissions (e.g., MFA access, payment-gated access).
 - **Proof of Data Possession (PDP)**: Storage nodes must continuously prove they still hold your data via on-chain cryptographic proofs.
 - **Self-Healing Storage**: With erasure coding and distributed replication, Akave O3 ensures data recovery even if multiple nodes fail.
 
@@ -29,7 +29,7 @@ cascade:
 - **Zero Vendor Lock-In**: Unlike centralized clouds, your data is fully sovereign and portable across storage providers.
 - **Transparency and Verifiability**: Full on-chain transparency for access, storage integrity, and object lifecycle.
 - **Enterprise Ready**: Seamless migration paths, high performance, customizable zones/geofences, and compliance features for regulated industries.
-- **Web3 Native**: Built for integration into decentralized apps (dApps), AI/ML pipelines, DePIN networks, and zero-disk architectures.
+- **Web3 Native**: Built for integration into decentralized apps (dApps), AI/ML pipelines and DePIN networks.
 
 ## Deployment Flexibility
 - **Self-Hosted O3**: Ideal for enterprises needing full control, compliance with local data laws, or enhanced privacy.
@@ -38,6 +38,5 @@ cascade:
 ## Example Use Cases
 - Enterprise-grade decentralized backup and archiving
 - AI/ML pipelines storing training and model state data
-- Zero-disk dApps needing verifiable decentralized storage
 - Data sovereignty solutions for governments and regulated industries
 - DePIN and decentralized compute projects needing secure, close-to-compute storage
