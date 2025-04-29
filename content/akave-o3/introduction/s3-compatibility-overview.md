@@ -12,9 +12,10 @@ Akave O3 delivers seamless AWS S3 API compatibility to help developers and enter
 
 ## ▶️ Compatibility
 
-Akave O3 is fully compatible with:
+Akave O3 is compatible with the following tools and languages:
 
-- [AWS CLI](https://docs.aws.amazon.com/cli/latest/reference/s3/) (s3api, s3)
+- [AWS S3](https://docs.aws.amazon.com/cli/latest/reference/s3/)
+- [AWS S3api](https://docs.aws.amazon.com/cli/latest/reference/s3api/)
 - [AWS SDK for PHP](https://docs.aws.amazon.com/sdk-for-php/v3/developer-guide/s3-examples.html)
 - [AWS SDK for Go](https://docs.aws.amazon.com/sdk-for-go/api/service/s3/)
 - [AWS SDK for Java](https://sdk.amazonaws.com/java/api/latest/software/amazon/awssdk/services/s3/S3Client.html)
