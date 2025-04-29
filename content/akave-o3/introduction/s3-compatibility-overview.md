@@ -7,7 +7,7 @@ cascade:
   type: docs
 ---
 
-Akave O3 delivers seamless AWS S3 API compatibility to help developers and enterprises migrate cloud-native apps to decentralized infrastructure without code changes. Below is the full list of tested and supported operations as of release **v0.2.1**, with links to official AWS documentation for reference.
+Akave O3 delivers seamless AWS S3 API compatibility to help developers and enterprises migrate cloud-native apps to decentralized infrastructure without code changes. Below is the full list of tested and supported operations, with links to official AWS documentation for reference.
 
 
 ## ▶️ Compatibility

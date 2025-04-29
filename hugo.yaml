@@ -2,6 +2,7 @@ baseURL: https://docs.akave.xyz/
 languageCode: en-us
 title: Akave Docs
 theme: hextra
+enableGitInfo: true
 params:
   navbar:
     displayTitle: true
@@ -19,6 +20,9 @@ params:
     # light | dark | system
     default: dark
     displayToggle: true
+  # Display the last modification date
+  displayUpdatedDate: true
+  dateFormat: "January 2, 2006"
 menu:
   main:
     - name: Search
