@@ -19,6 +19,8 @@ params:
     # light | dark | system
     default: dark
     displayToggle: true
+  docs:
+    autoRedirectToFirstChild: true
 menu:
   main:
     - name: Search
