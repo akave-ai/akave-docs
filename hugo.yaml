@@ -12,6 +12,9 @@ params:
       link: /
       width: 78
       height: 42
+  page:
+    # full (100%), wide (90rem), normal (1280px)
+    width: wide
 menu:
   main:
     - name: Search
