@@ -1,7 +1,7 @@
 ---
 date: '2025-04-23T22:48:28-05:00'
 draft: false
-title: '🛠️ Akavelink'
+title: 'Akavelink'
 weight: 6
 cascade:
   type: docs
@@ -16,7 +16,7 @@ Below, you’ll find quick setup steps, examples of how to use each API endpoint
 
 **Installing Docker:** [https://docs.docker.com/engine/install/](https://docs.docker.com/engine/install/)
 
-# 🚀 Getting Started
+# Getting Started
 
 ## Step 1: Pull the Docker Image
 
@@ -68,7 +68,7 @@ The API will now be running locally at [http://localhost:8000](http://localhost:
 
 ---
 
-# 🛠️ Setting Up the JavaScript Wrapper
+# Setting Up the JavaScript Wrapper
 
 Here's a quick setup to interact with the Akave API using JavaScript:
 
@@ -91,13 +91,13 @@ async function apiRequest(method, endpoint, data = null) {
 }
 ```
 
-# 📄 Example Usage
+# Example Usage
 
 Each section below demonstrates API calls using this wrapper, alongside the `curl` equivalent.
 
 ---
 
-# 📂 Bucket Operations
+# Bucket Operations
 
 ## 1. Create a Bucket
 
@@ -147,7 +147,7 @@ apiRequest('GET', '/buckets/myBucket');
 curl -X GET http://localhost:8000/buckets/myBucket
 ```
 
-# 📁 File Operations
+# File Operations
 
 ## 1. List Files in a Bucket
 
@@ -256,7 +256,7 @@ curl -X GET http://localhost:8000/buckets/myBucket/files/myFile.txt/download -o 
 
 ---
 
-# ⚡ Error Handling
+# Error Handling
 
 All endpoints return errors in the following format:
 
