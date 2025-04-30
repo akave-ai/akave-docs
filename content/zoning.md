@@ -9,7 +9,7 @@ cascade:
 The zoning diagram illustrates how Akave organizes data storage based on geographic zones, which can be useful for geofencing and data localization. Here’s a closer look at each component:
 
 ![Akave Zoning / Geofencing](/images/zoning.avif)
-<p align="center">*Akave Zoning / Geofencing*</p>
+*Akave Zoning / Geofencing*
 
 1. **Akave Zoning**  
     - Zoning allows data to be stored in specific geographic regions or zones based on requirements like data sovereignty, regulatory compliance, or performance needs.
