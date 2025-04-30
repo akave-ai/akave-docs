@@ -1,15 +1,13 @@
 ---
 date: '2025-04-28T21:41:52-05:00'
 draft: false
-title: '🗂️ Object Versioning and Copying'
+title: '🔁 Object Versioning and Copying'
 weight: 7
 cascade:
   type: docs
 ---
 
-## 🔁 Object Versioning and Copying
-
-Akave O3 supports S3-compatible object versioning and copying, allowing you to preserve file history, retrieve older versions, and copy data within or across buckets — all using familiar AWS CLI tools.
+Akave O3 supports S3-compatible object versioning and copying, allowing you to preserve file history, retrieve older versions, and copy data within or across buckets -- all using familiar AWS CLI tools.
 
 ### 🧬 Enable Versioning on a Bucket
 
