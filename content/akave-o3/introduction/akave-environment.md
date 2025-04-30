@@ -7,7 +7,7 @@ cascade:
   type: docs
 ---
 
-**Akave O3** offers multiple decentralized endpoints to interact with different layers of the network — including blockchain-backed metadata operations and high-performance streaming storage APIs. These environments are designed to mirror traditional cloud regions for familiar configuration, while operating on decentralized infrastructure.
+**Akave O3** offers multiple hosted S3 compatible API endpoints to interact with different layers of the network. These environments are designed to mirror traditional cloud regions for familiar configuration, while operating on decentralized infrastructure.
 
 Below is a summary of currently supported Akave O3 regions and endpoints:
 
@@ -22,3 +22,5 @@ Below is a summary of currently supported Akave O3 regions and endpoints:
 AWS_DEFAULT_REGION=akave-network
 ```
 These endpoints support both local testing and production deployment. You can plug them into your existing AWS-compatible tooling (CLI, SDKs, Terraform) with minimal changes.
+
+To authenticate, you’ll need an `AWS_ACCESS_KEY_ID` and `AWS_SECRET_ACCESS_KEY`, which can be obtained through **STILL TO BE DETERMINED**. These credentials allow secure interaction with Akave’s decentralized object storage, just like with traditional AWS services.
