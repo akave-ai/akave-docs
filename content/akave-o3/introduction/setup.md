@@ -29,4 +29,4 @@ aws s3api list-buckets \
 
 You can now run any `AWS CLI` or `s3api` command with `--profile akave-o3` instead of exporting your credentials each time.
 
-> **Note:** Throughout the rest of the documentation, we won’t include the `--profile` flag in every command. It’s up to you whether to use a profile or export credentials manually — both approaches are supported.
+> **Note:** Throughout the rest of the documentation, we won’t include the `--profile` flag in every command. It’s up to you whether to use a profile or export credentials manually -- both approaches are supported.
