@@ -12,15 +12,15 @@ The zoning diagram illustrates how Akave organizes data storage based on geograp
 *Akave Zoning / Geofencing*
 
 1. **Akave Zoning**  
-  - Zoning allows data to be stored in specific geographic regions or zones based on requirements like data sovereignty, regulatory compliance, or performance needs.
+    - Zoning allows data to be stored in specific geographic regions or zones based on requirements like data sovereignty, regulatory compliance, or performance needs.
 
-  - Akave nodes are organized into zones (Zone 1, Zone 2, Zone 3, etc.), where each zone may represent a particular geographic area. Data can be stored within a specified zone, ensuring it doesn’t leave that location.
+    - Akave nodes are organized into zones (Zone 1, Zone 2, Zone 3, etc.), where each zone may represent a particular geographic area. Data can be stored within a specified zone, ensuring it doesn’t leave that location.
 
-1. **Geofencing**  
-  - Geofencing restricts data access or storage to specific locations, which is crucial for regulatory compliance in industries like healthcare or finance. By using zoning, Akave ensures data only resides in permitted regions, meeting privacy and security requirements.
+2. **Geofencing**  
+    - Geofencing restricts data access or storage to specific locations, which is crucial for regulatory compliance in industries like healthcare or finance. By using zoning, Akave ensures data only resides in permitted regions, meeting privacy and security requirements.
 
-1. **Akave Oasis**  
-  - Akave Oasis is our blockchain concept in the zoning setup, representing a core node that connects different zones and subnets together. The Oasis node coordinates data flow between zones and manages geofencing restrictions, ensuring data storage complies with geographic policies.
+3. **Akave Oasis**  
+    - Akave Oasis is our blockchain concept in the zoning setup, representing a core node that connects different zones and subnets together. The Oasis node coordinates data flow between zones and manages geofencing restrictions, ensuring data storage complies with geographic policies.
 
 
 ## Summary of Key Concepts
