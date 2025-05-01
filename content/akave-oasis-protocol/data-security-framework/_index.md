@@ -13,7 +13,7 @@ These technologies work together to protect data against unauthorized access and
 
 [Akave's Erasure Coding Overview](https://docs.akave.xyz/akave-oasis-protocol/data-security-framework/erasure-coding/)
 
-This image outlines the architecture and processes behind Akave's ********encryption** and **erasure coding**, providing a comprehensive view of how data is secured and distributed across the network.
+This image outlines the architecture and processes behind Akave's **encryption** and **erasure coding**, providing a comprehensive view of how data is secured and distributed across the network.
 
 ![Akave encryption and erasure coding flow](/images/data-security-framework.avif)
 *Akave Encryption and Erasure Coding Flow*

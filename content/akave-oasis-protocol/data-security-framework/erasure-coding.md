@@ -22,55 +22,54 @@ Imagine you have a **puzzle with 32 pieces**. Normally, if you lose a few pieces
 
 1. **Data Splitting (chunking)**
 
-- As part of Akave's data security framework, the platform implements data chunking. Before encryption, original files are disassembled into smaller, more manageable pieces, similar to a complex jigsaw puzzle. These fragments are then distributed across Akave's decentralized network and replicated onto Filecoin, ensuring robust security and redundancy.
+    - As part of Akave's data security framework, the platform implements data chunking. Before encryption, original files are disassembled into smaller, more manageable pieces, similar to a complex jigsaw puzzle. These fragments are then distributed across Akave's decentralized network and replicated onto Filecoin, ensuring robust security and redundancy.
 
-    - *Chunking Process:*
+        - *Chunking Process:*
 
-        - Files are divided into chunks, typically 32 MB in size.
-        - Each chunk is further subdivided into smaller data blocks (up to 1 MB) for optimized processing and distribution.
+            - Files are divided into chunks, typically 32 MB in size.
+            - Each chunk is further subdivided into smaller data blocks (up to 1 MB) for optimized processing and distribution.
 
-- This dispersion strategy means that the pieces of a file reside in separate, distinct locations, making unauthorized reassembly virtually impossible. Even if an intruder were to gain access to a single fragment, without the rest and the unique cryptographic keys, it remains an unsolvable riddle.
+    - This dispersion strategy means that the pieces of a file reside in separate, distinct locations, making unauthorized reassembly virtually impossible. Even if an intruder were to gain access to a single fragment, without the rest and the unique cryptographic keys, it remains an unsolvable riddle.
 
 2. **Reed-Solomon Algorithm**
 
-- Akave employs the Reed-Solomon error correction algorithm to generate parity blocks for each data block.
-- Parity blocks provide redundancy, enabling data recovery even if a subset of the original and parity blocks is unavailable.
+    - Akave employs the Reed-Solomon error correction algorithm to generate parity blocks for each data block.
+    - Parity blocks provide redundancy, enabling data recovery even if a subset of the original and parity blocks is unavailable.
 
 3. Network Distribution
 
-- Data and parity blocks are distributed across a network of storage nodes.
-- Nodes are geographically dispersed to enhance reliability and reduce the risk of data loss from localized failures.
-- In addition, each storage node replicates the data blocks to the Filecoin network. This ensures an additional layer of resiliency and decentralization by leveraging Filecoin’s distributed storage capabilities, providing further protection against data loss or corruption.
+    - Data and parity blocks are distributed across a network of storage nodes.
+    - Nodes are geographically dispersed to enhance reliability and reduce the risk of data loss from localized failures.
+    - In addition, each storage node replicates the data blocks to the Filecoin network. This ensures an additional layer of resiliency and decentralization by leveraging Filecoin’s distributed storage capabilities, providing further protection against data loss or corruption.
 
 4. Data Sampling and Mini-Proving
 
-- Akave performs periodic data sampling and mini-proving on stored data blocks to verify their integrity.
-- If a storage node becomes unavailable, these mechanisms identify missing or corrupted data blocks.
-- The system then triggers a process to rebuild the missing data blocks using the Reed-Solomon algorithm, ensuring uninterrupted data availability.
+    - Akave performs periodic data sampling and mini-proving on stored data blocks to verify their integrity.
+    - If a storage node becomes unavailable, these mechanisms identify missing or corrupted data blocks.
+    - The system then triggers a process to rebuild the missing data blocks using the Reed-Solomon algorithm, ensuring uninterrupted data availability.
 
 
 ## Process Flow
 
 1. **Data Chunking**
 
-- A file is split into fixed-size chunks, which are further divided into smaller data blocks.
+    - A file is split into fixed-size chunks, which are further divided into smaller data blocks.
 
 2. **Parity Generation**
 
-- Each set of data blocks is processed using the Reed-Solomon algorithm to produce parity blocks.
-- Example: For every **x** data **blocks**, **n parity blocks** are generated, achieving a **x+n-block** total.
+    - Each set of data blocks is processed using the Reed-Solomon algorithm to produce parity blocks.
+    - Example: For every **x** data **blocks**, **n parity blocks** are generated, achieving a **x+n-block** total.
 
 3. **Distribution**
 
-Data and parity blocks are distributed across multiple storage nodes in the network.
-
-Each node also replicates the data blocks to the Filecoin network for enhanced reliability and durability.
+    - Data and parity blocks are distributed across multiple storage nodes in the network.
+    - Each node also replicates the data blocks to the Filecoin network for enhanced reliability and durability.
 
 4. **Recovery**
 
-- During retrieval, available data blocks and parity blocks are collected.
-- The Reed-Solomon algorithm reconstructs missing data blocks, ensuring data integrity.
-- Data sampling and mini-proving mechanisms help proactively identify and rebuild missing data blocks before they impact data availability.
+    - During retrieval, available data blocks and parity blocks are collected.
+    - The Reed-Solomon algorithm reconstructs missing data blocks, ensuring data integrity.
+    - Data sampling and mini-proving mechanisms help proactively identify and rebuild missing data blocks before they impact data availability.
 
 
 ## Security and Reliability Contributions
@@ -80,9 +79,6 @@ Each node also replicates the data blocks to the Filecoin network for enhanced r
 - **Scalability**: Easily adapts to increasing data volumes and node numbers.
 - **Enhanced Reliability**: Filecoin replication provides a secondary layer of protection against data loss, ensuring long-term availability and security.
 - **Proactive Integrity Verification**: Data sampling and mini-proving ensure that data integrity issues are identified and resolved promptly.
-
-
----
 
 
 ## Example policy
@@ -99,9 +95,6 @@ Each node also replicates the data blocks to the Filecoin network for enhanced r
 This setup means that for every **32 MB of original data, we store an additional 32 MB of parity**, resulting in **100% overhead**. (This is configurable through our SDK)
 
 
----
-
-
 ## Technical Breakdown (Deep Dive)
 
 ### Chunk Size & Structure
@@ -109,6 +102,7 @@ This setup means that for every **32 MB of original data, we store an additional
 - A chunk consists of 32 DataBlocks (typically 1 MB each, totaling 32 MB per chunk).
 - When EC is enabled, 16 DataBlocks are data, and 16 DataBlocks are parity.
 - This matches the code constraint:
+
 ```go
 if s.parityBlocksCount > s.streamingMaxBlocksInChunk/2 {
     return nil, errSDK.Errorf("parity blocks count %d should be <= %d", s.parityBlocksCount, s.streamingMaxBlocksInChunk/2)
