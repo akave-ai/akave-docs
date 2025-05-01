@@ -15,7 +15,7 @@ params:
     displayLogo: true
     logo:
       path: images/akave_logo.png
-      dark: images/akave_logo.png
+      dark: images/akave_logo_dark.png
       link: /
       width: 78
       height: 42
