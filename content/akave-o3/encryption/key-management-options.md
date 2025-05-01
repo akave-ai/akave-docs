@@ -30,7 +30,7 @@ For client-side encryption, you must manage the full lifecycle of your encryptio
 - Use `chmod 600` to restrict key file access
 - Rotate keys regularly and re-encrypt critical data as needed
 
-## 📁 File-based Key Usage Example
+## File-based Key Usage Example
 
 You can pass the encryption key via environment variable or load it from a secured file:
 ```bash
