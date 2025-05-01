@@ -1,13 +1,13 @@
 ---
 date: '2025-04-29T11:41:52-05:00'
 draft: false
-title: '📋 Akave o3 setup'
+title: 'Akave o3 setup'
 weight: 5
 cascade:
   type: docs
 ---
 
-### 🧰 Setting Up an AWS CLI Profile for Akave O3
+### Setting Up an AWS CLI Profile for Akave O3
 
 To streamline your workflow, you can configure a dedicated AWS CLI profile for interacting with Akave O3. This allows you to avoid setting environment variables for each session and keeps your credentials organized under a named profile.
 

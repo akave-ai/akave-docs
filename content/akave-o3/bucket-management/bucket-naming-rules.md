@@ -1,23 +1,23 @@
 ---
 date: '2025-04-28T21:41:52-05:00'
 draft: false
-title: '🏷️ Bucket Naming Rules'
+title: 'Bucket Naming Rules'
 weight: 6
 cascade:
   type: docs
 ---
 
-#### 📛 Bucket Naming Rules
+#### Bucket Naming Rules
 
 When creating buckets with Akave O3 (just like with AWS S3), you must follow strict naming conventions to ensure compatibility with DNS-based addressing and routing:
 
-#### ✅ Allowed:
+#### Allowed:
 - Names must be **globally unique** across the Akave network.
 - Must be **between 3 and 63 characters**.
 - Can include **lowercase letters, numbers, hyphens (-)**.
 - Must **start and end with a letter or number**.
 
-#### ❌ Not Allowed:
+#### Not Allowed:
 - **No uppercase letters** or underscores.
 - **No IP-style names**, e.g., `192.168.0.1`.
 - Cannot contain consecutive periods or dashes (`--`, `..`, `-.`, etc.).

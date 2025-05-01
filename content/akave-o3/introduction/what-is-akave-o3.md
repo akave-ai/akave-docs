@@ -1,7 +1,7 @@
 ---
 date: '2025-04-29T11:41:52-05:00'
 draft: false
-title: '🔒 What is Akave o3'
+title: 'What is Akave o3'
 weight: 2
 cascade:
   type: docs

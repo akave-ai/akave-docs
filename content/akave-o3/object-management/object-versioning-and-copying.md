@@ -1,7 +1,7 @@
 ---
 date: '2025-04-28T21:41:52-05:00'
 draft: false
-title: '🔁 Object Versioning and Copying'
+title: 'Object Versioning and Copying'
 weight: 7
 cascade:
   type: docs
@@ -9,7 +9,7 @@ cascade:
 
 Akave O3 supports S3-compatible object versioning and copying, allowing you to preserve file history, retrieve older versions, and copy data within or across buckets -- all using familiar AWS CLI tools.
 
-### 🧬 Enable Versioning on a Bucket
+### Enable Versioning on a Bucket
 
 **Using `aws s3api`:**
 
@@ -23,7 +23,7 @@ aws s3api put-bucket-versioning \
 > `aws s3` does not support versioning configuration directly — use `s3api` for this.
 
 
-### 📋 List Object Versions
+### List Object Versions
 
 **Using `aws s3api`:**
 
@@ -43,7 +43,7 @@ aws s3 ls s3://my-akave-bucket --recursive --human-readable \
 > Note: `aws s3` will show the latest versions only. Use `s3api` for full version metadata.
 
 
-### ⬇️ Download a Specific Version
+### Download a Specific Version
 
 **Using `aws s3api`:**
 
@@ -60,7 +60,7 @@ aws s3api get-object \
 > Not directly supported for specific versions. Use `s3api` if version targeting is required.
 
 
-### 🗑️ Delete a Specific Version
+### Delete a Specific Version
 
 **Using `aws s3api`:**
 
@@ -76,7 +76,7 @@ aws s3api delete-object \
 > Not supported — use `s3api` for versioned object deletion.
 
 
-### 📄 Copy an Object
+### Copy an Object
 
 **Within the same bucket (using `s3api`):**
 

@@ -6,3 +6,8 @@ weight: 6
 cascade:
   type: docs
 ---
+
+Akave O3 is a decentralized, S3-compatible storage API built for verifiability, performance, and control.  
+It offers seamless integration with existing AWS tooling while enabling blockchain-backed access control and data integrity.
+
+Use this section to explore configuration, usage examples, and architecture details.
