@@ -2,6 +2,12 @@ baseURL: https://docs.akave.xyz/
 languageCode: en-us
 title: Akave Docs
 theme: hextra
+
+[markup]
+  [markup.highlight]
+    noClasses = false
+    style = "github"
+
 enableGitInfo: true
 params:
   navbar:
