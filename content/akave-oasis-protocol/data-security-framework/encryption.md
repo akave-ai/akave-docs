@@ -6,11 +6,11 @@ weight: 2
 cascade:
   type: docs
 ---
-# Read First: Our Data Security Framework
+Read First: [Our Data Security Framework](https://docs.akave.xyz/akave-oasis-protocol/data-security-framework/)
 
 ## Overview
 
-Akave uses robust encryption mechanisms to secure data during storage and transmission. Encryption ensures that data is accessible only to authorized users, preventing unauthorized access and tampering.
+Akave uses **robust encryption mechanisms** to secure data during storage and transmission. Encryption ensures that data is accessible only to authorized users, preventing unauthorized access and tampering.
 
 ## Key Components
 
@@ -29,25 +29,22 @@ Akave uses robust encryption mechanisms to secure data during storage and transm
 
 ## Process Flow
 
-- **Key Generation**  
-  A secure random number generator creates the Master Encryption Key.  
-  Derived Encryption Keys are generated using cryptographic functions, combining the Master Key with file identifiers.
+1. **Key Generation**  
+    - A secure random number generator creates the Master Encryption Key.  
+    - Derived Encryption Keys are generated using cryptographic functions, combining the Master Key with file identifiers.
 
-- **File Upload Encryption**  
-  Files are divided into chunks, and each chunk is encrypted with a Derived Encryption Key.  
-  Encrypted chunks are structured into a Directed Acyclic Graph (DAG) using IPFS/UnixFS-like protocols.
+2. **File Upload Encryption**  
+    - Files are divided into chunks, and each chunk is encrypted with a Derived Encryption Key.  
+    - Encrypted chunks are structured into a Directed Acyclic Graph (DAG) using IPFS/UnixFS-like protocols.
 
-- **File Download Decryption**  
-  Encrypted chunks are retrieved and decrypted using the corresponding Derived Encryption Key.  
-  Decrypted chunks are reassembled to reconstruct the original file.
+3. **File Download Decryption**  
+    - Encrypted chunks are retrieved and decrypted using the corresponding Derived Encryption Key.  
+    - Decrypted chunks are reassembled to reconstruct the original file.
 
 ## Security Contributions
 
-- **Confidentiality**  
-  Ensures data is encrypted before leaving the client’s environment.
+- **Confidentiality:** Ensures data is encrypted before leaving the client’s environment.
 
-- **Integrity**  
-  Protects data from unauthorized modifications.
+- **Integrity:** Protects data from unauthorized modifications.
 
-- **Granularity**  
-  Encrypts data at the chunk level, enhancing security and reducing processing overhead.
+- **Granularity:** Encrypts data at the chunk level, enhancing security and reducing processing overhead.

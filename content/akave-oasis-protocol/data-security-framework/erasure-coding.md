@@ -6,112 +6,159 @@ weight: 3
 cascade:
   type: docs
 ---
-# Read First: Our Data Security Framework
+Read First: [Our Data Security Framework](https://docs.akave.xyz/akave-oasis-protocol/data-security-framework/)
 
 ## Intro
 
 Erasure Coding (EC) is a data protection technique that ensures our data remains safe even if some parts of it are lost. Instead of simply copying data for backup, EC intelligently breaks it into smaller pieces and adds extra recovery data, so that missing parts can be recreated.
 
-Imagine you have a puzzle with 32 pieces. Normally, if you lose a few pieces, the puzzle remains incomplete. With EC, you can create 16 extra puzzle pieces based on the original 16, so even if some pieces are lost, you can still complete the puzzle. This redundancy helps in preventing data loss.
+Imagine you have a **puzzle with 32 pieces**. Normally, if you lose a few pieces, the puzzle remains incomplete. With EC, you can create **16 extra puzzle pieces** based on the original 16, so even if some pieces are lost, you can still complete the puzzle. This redundancy helps in preventing data loss.
 
 ## Overview
 
-Akave's Erasure Coding is a data protection method that splits data into fragments and distributes them across multiple storage nodes. By adding parity fragments, Akave ensures that data can be reconstructed even if some fragments are lost or corrupted. This approach combines data resilience with efficient storage utilization.
+**Akave's Erasure Coding** is a data protection method that splits data into fragments and distributes them across multiple storage nodes. By **adding parity fragments**, Akave ensures that data can be reconstructed even if some fragments are lost or corrupted. This approach combines data resilience with efficient storage utilization.
 
 ## Key Components
 
-- **Data Splitting (Chunking)**  
-  Akave implements data chunking before encryption. Original files are disassembled into smaller pieces and distributed across the network and onto Filecoin for robust security and redundancy.
-  
-  **Chunking Process:**  
-  - Files are divided into chunks, typically 32 MB in size.
-  - Each chunk is subdivided into smaller data blocks (up to 1 MB).
-  - Dispersed pieces reside in distinct locations, making unauthorized reassembly virtually impossible.
+1. **Data Splitting (chunking)**
 
-- **Reed-Solomon Algorithm**  
-  Akave uses the Reed-Solomon error correction algorithm to generate parity blocks for each data block, enabling data recovery even when a subset is missing.
+- As part of Akave's data security framework, the platform implements data chunking. Before encryption, original files are disassembled into smaller, more manageable pieces, similar to a complex jigsaw puzzle. These fragments are then distributed across Akave's decentralized network and replicated onto Filecoin, ensuring robust security and redundancy.
 
-- **Network Distribution**  
-  Data and parity blocks are distributed across geographically dispersed nodes. Each node also replicates data onto Filecoin, ensuring high resiliency.
+    - *Chunking Process:*
 
-- **Data Sampling and Mini-Proving**  
-  Akave periodically verifies data blocks using sampling and mini-proving. If corruption is detected, missing blocks are rebuilt automatically using Reed-Solomon.
+        - Files are divided into chunks, typically 32 MB in size.
+        - Each chunk is further subdivided into smaller data blocks (up to 1 MB) for optimized processing and distribution.
+
+- This dispersion strategy means that the pieces of a file reside in separate, distinct locations, making unauthorized reassembly virtually impossible. Even if an intruder were to gain access to a single fragment, without the rest and the unique cryptographic keys, it remains an unsolvable riddle.
+
+2. **Reed-Solomon Algorithm**
+
+- Akave employs the Reed-Solomon error correction algorithm to generate parity blocks for each data block.
+- Parity blocks provide redundancy, enabling data recovery even if a subset of the original and parity blocks is unavailable.
+
+3. Network Distribution
+
+- Data and parity blocks are distributed across a network of storage nodes.
+- Nodes are geographically dispersed to enhance reliability and reduce the risk of data loss from localized failures.
+- In addition, each storage node replicates the data blocks to the Filecoin network. This ensures an additional layer of resiliency and decentralization by leveraging Filecoin’s distributed storage capabilities, providing further protection against data loss or corruption.
+
+4. Data Sampling and Mini-Proving
+
+- Akave performs periodic data sampling and mini-proving on stored data blocks to verify their integrity.
+- If a storage node becomes unavailable, these mechanisms identify missing or corrupted data blocks.
+- The system then triggers a process to rebuild the missing data blocks using the Reed-Solomon algorithm, ensuring uninterrupted data availability.
+
 
 ## Process Flow
 
-- **Data Chunking**  
-  Files are split into fixed-size chunks, then further into smaller data blocks.
+1. **Data Chunking**
 
-- **Parity Generation**  
-  Each set of data blocks is processed to produce parity blocks using Reed-Solomon.
+- A file is split into fixed-size chunks, which are further divided into smaller data blocks.
 
-- **Distribution**  
-  Data and parity blocks are distributed across nodes and replicated to Filecoin.
+2. **Parity Generation**
 
-- **Recovery**  
-  During retrieval, available blocks are collected, and any missing ones are reconstructed using parity data.
+- Each set of data blocks is processed using the Reed-Solomon algorithm to produce parity blocks.
+- Example: For every **x** data **blocks**, **n parity blocks** are generated, achieving a **x+n-block** total.
 
-- **Integrity Checking**  
-  Data sampling and mini-proving proactively detect and rebuild missing data blocks.
+3. **Distribution**
+
+Data and parity blocks are distributed across multiple storage nodes in the network.
+
+Each node also replicates the data blocks to the Filecoin network for enhanced reliability and durability.
+
+4. **Recovery**
+
+- During retrieval, available data blocks and parity blocks are collected.
+- The Reed-Solomon algorithm reconstructs missing data blocks, ensuring data integrity.
+- Data sampling and mini-proving mechanisms help proactively identify and rebuild missing data blocks before they impact data availability.
+
 
 ## Security and Reliability Contributions
 
-- **Resilience**  
-  Data can be recovered even if several storage nodes are unavailable.
+- **Resilience**: Data can be recovered even if several storage nodes are unavailable.
+- **Efficiency**: Minimizes storage overhead while providing strong fault tolerance.
+- **Scalability**: Easily adapts to increasing data volumes and node numbers.
+- **Enhanced Reliability**: Filecoin replication provides a secondary layer of protection against data loss, ensuring long-term availability and security.
+- **Proactive Integrity Verification**: Data sampling and mini-proving ensure that data integrity issues are identified and resolved promptly.
 
-- **Efficiency**  
-  Minimizes storage overhead while maintaining strong fault tolerance.
 
-- **Scalability**  
-  Easily adapts to increasing data volumes and storage node numbers.
+---
 
-- **Enhanced Reliability**  
-  Filecoin replication provides a secondary layer of protection.
 
-- **Proactive Integrity Verification**  
-  Data sampling ensures issues are identified and resolved before impacting availability.
+## Example policy
 
-## Example Policy
+### How Our EC Policy Works (Simplified Explanation)
 
-### How Our EC Policy Works (Simplified)
+- Every file is **split into 32 MB chunks**.
+- Each **32 MB chunk is further divided into 32 DataBlocks**, with each DataBlock being **1 MB**.
+- **16 of these blocks store the actual data**.
+- **The other 16 blocks store recovery (parity) data**.
+- If some of the 32 DataBlocks go missing, the system can **rebuild the lost data using the 16 recovery DataBlocks**.
+- This ensures data is safe even if storage failures occur.
 
-- Every file is split into **32 MB chunks**.
-- Each chunk is divided into **32 DataBlocks** of **1 MB** each.
-- **16 DataBlocks** store actual data.
-- **16 DataBlocks** store recovery (parity) data.
-- If any DataBlocks are lost, the system rebuilds them using the 16 recovery blocks.
-- **Storage overhead:** 100% — for every 32 MB of data, 32 MB of parity is added.
+This setup means that for every **32 MB of original data, we store an additional 32 MB of parity**, resulting in **100% overhead**. (This is configurable through our SDK)
 
-### Technical Breakdown (Deep Dive)
 
-- **Chunk Size & Structure**  
-  - 32 DataBlocks per chunk (1 MB each).
-  - 16 data + 16 parity = 32 blocks total.
+---
 
-- **EC Schema**  
-  - Formula: `n (total) - k (data) = m (parity)`
-  - In our case: `32 (total) - 16 (data) = 16 (parity)`
-  - Expansion Factor: 2x (100% storage overhead).
 
-- **256 MB File Example**  
-  - Split into 8 chunks (32 MB each).
-  - After applying EC, storage footprint doubles:  
-    256 MB → 512 MB total stored.
+## Technical Breakdown (Deep Dive)
 
-- **Storage Redundancy and Node Requirements**  
-  - Each chunk must be spread across **32 nodes**.
-  - Loss of up to **16 blocks** per chunk is tolerated without data loss.
+### Chunk Size & Structure
+
+- A chunk consists of 32 DataBlocks (typically 1 MB each, totaling 32 MB per chunk).
+- When EC is enabled, 16 DataBlocks are data, and 16 DataBlocks are parity.
+- This matches the code constraint:
+```go
+if s.parityBlocksCount > s.streamingMaxBlocksInChunk/2 {
+    return nil, errSDK.Errorf("parity blocks count %d should be <= %d", s.parityBlocksCount, s.streamingMaxBlocksInChunk/2)
+}
+```
+
+### EC Schema
+
+- **Formula**: `n (total) - k (data) = m (parity)`
+- In our case: `32 (total) - 16 (data) = 16 (parity)
+- **Expansion Factor**: 2x (100% overhead), meaning we **store double the original data size**.
+
+### 256 MB File Example
+
+1. **Chunking:**
+
+- A 256 MB file is divided into **8 chunks**, each **32 MB**.
+- Since only **16 DataBlocks per chunk store actual data**, we read **16 MB at a time**.
+- `256 MB / 16 MB = 16 chunks`.
+
+2. **Applying EC:**
+
+- Each chunk (32 DataBlocks) gets **16 DataBlocks** and **16 parity blocks**.
+- **Total number of blocks in the system: 16 chunks × 32 DataBlocks = 512 DataBlocks**.
+- **Total storage used:** `512 MB` (instead of 256 MB), confirming `100% overhead`.
+
+
+## Storage Redundancy and Node Requirements
+
+- **Each chunk (32 DataBlocks) must be stored across 32 independent storage units (nodes)**.
+- **A single node failure results in losing only 1 DataBlock, ensuring fault tolerance**.
+- Regardless of total file size, the network **requires at least 32** nodes to distribute blocks properly.
+
 
 ## Our EC Policy, Overhead, and Redundancy
 
-- **EC Policy:**  
-  Reed-Solomon Erasure Coding (n=32, k=16, m=16).
+### EC Policy:
 
-- **Overhead:**  
-  100% (storage used is double the original data size).
+- We use **Reed-Solomon Erasure Coding** with a **16 data, 16 parity configuration (n=32, k=16, m=16)**.
+- EC is applied at the **chunk level (32 DataBlocks per chunk, 1 MB per DataBlock)**.
 
-- **Redundancy & Resilience:**  
-  Data remains recoverable even if up to 50% of blocks are lost.  
-  Requires at least 32 nodes for full distribution.
+### Overhead:
 
-This setup ensures **high durability, security, and performance** — even under network stress or storage node failures.
+- **100% storage overhead** (i.e., storing **2x the original data size** due to parity blocks).
+- **For every 256 MB of data, the actual stored size is 512 MB**.
+
+### Redundancy & Resilience:
+
+- **Data is safe as long as at least 16 out of 32 DataBlocks are available**.
+- **Requires at least 32 nodes** to store blocks separately for full fault tolerance.
+- **If up to 16 DataBlocks are lost, data remains intact and always recoverable**.
+
+This setup ensures **high data durability and resilience**, even in the case of multiple failures.

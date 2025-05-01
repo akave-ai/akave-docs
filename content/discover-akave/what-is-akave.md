@@ -8,6 +8,7 @@ cascade:
 ---
 Akave is a decentralized protocol that empowers businesses and individuals with a robust storage layer and advanced data management tools for managing on-chain data lakes. Designed to combine decentralized infrastructure with ease of use, Akave enables users to gain full control of their data assets while unlocking new possibilities for data privacy, security, and monetization. With an intuitive interface and seamless integration capabilities, Akave bridges the gap between traditional data management systems and the decentralized web.
 
+
 # Why Does Akave Exist?
 
 Akave was founded to tackle the growing challenges in data management as users increasingly seek greater autonomy over their digital assets. Centralized cloud storage solutions, while powerful, expose users to various risks and limitations:
@@ -28,6 +29,7 @@ Akave was founded to tackle the growing challenges in data management as users i
   Existing systems rarely offer the tools for users to monetize and creatively leverage their data assets.
 
 Akave envisions a future where data is composable, securely managed, and under user control. It empowers individuals and businesses to innovate with confidence, transforming data into an asset that drives growth, privacy, and transparency.
+
 
 # How Does Akave Solve These Problems?
 

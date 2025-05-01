@@ -6,6 +6,8 @@ weight: 2
 cascade:
   type: docs
 ---
+
+
 # Vision
 
 We envision a future where all assets and transactions seamlessly exist on-chain, enabling a world of transparency, verifiability, and empowerment through data. By leveraging emerging technologies like Artificial General Intelligence (AGI), humanity can unlock unprecedented opportunities for progress, fueled by the ability to fully harness, control, and transact data on-chain. At Akave, we believe in leaving no dataset unturned in this pursuit of advancement.
