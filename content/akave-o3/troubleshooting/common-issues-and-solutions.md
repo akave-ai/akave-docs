@@ -62,4 +62,4 @@ Versions between 2.23.0 and 2.23.5 (and 1.37.0 in CLI v1) are **not compatible**
 
 ## Still having issues?
 
-Try adding `--debug` to your command and refer to the [Debugging S3 Requests](../debugging-s3-requests.md) section.
+Try adding `--debug` to your command and refer to the [Debugging S3 Requests](../troubleshooting/debugging-s3-requests/) section.
