@@ -8,8 +8,8 @@ cascade:
 ---
 Welcome to the Akave Link API! This API wrapper enables seamless integration with Akave's decentralized storage network. Below, you’ll find quick setup steps, examples of how to use each API endpoint with JavaScript, and equivalent `curl` commands.
 
-**GitHub repo for reference:** [https://github.com/akave-ai/akavelink](https://github.com/akave-ai/akavelink)<br>
-**Installing Docker:** [https://docs.docker.com/engine/install/](https://docs.docker.com/engine/install/)
+- **GitHub repo for reference:** [https://github.com/akave-ai/akavelink](https://github.com/akave-ai/akavelink)
+- **Installing Docker:** [https://docs.docker.com/engine/install/](https://docs.docker.com/engine/install/)
 
 
 # Getting Started
