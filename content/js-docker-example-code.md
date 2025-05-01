@@ -6,10 +6,7 @@ weight: 6
 cascade:
   type: docs
 ---
-# 🔗 Akave Link API
-
-Welcome to the Akave Link API!  
-This API wrapper enables seamless integration with Akave's decentralized storage network.  
+Welcome to the Akave Link API! This API wrapper enables seamless integration with Akave's decentralized storage network.  
 Below, you’ll find quick setup steps, examples of how to use each API endpoint with JavaScript, and equivalent `curl` commands.
 
 **GitHub repo for reference:** [https://github.com/akave-ai/akavelink](https://github.com/akave-ai/akavelink)
@@ -28,27 +25,26 @@ docker pull akave/akavelink:latest
 
 ## Step 2: Get a Wallet Address and Request Funds
 
-Visit [https://faucet.akave.ai](https://faucet.akave.ai) to obtain a wallet address and add the Akave chain to MetaMask.
+    - Visit [https://faucet.akave.ai](https://faucet.akave.ai) to obtain a wallet address and add the Akave chain to MetaMask.
+    - Request funds from the faucet to start experimenting with the Akave Link API.
 
-Request funds from the faucet to start experimenting with the Akave Link API.
+![Akave Faucet](/images/faucet.gif)
 
-> ⚠️ **Important Security Notice:**  
-> - Always be careful when dealing with your private key.  
-> - Double-check that you’re not hardcoding it anywhere or committing it to Git.  
-> - Anyone with access to your private key has complete control over your funds.  
-> - Ensure you’re not reusing a private key that’s been deployed on other EVM chains.  
-> - Each blockchain has its own attack vectors, and reusing keys across chains exposes you to cross-chain vulnerabilities.  
-> - Keep separate keys to maintain isolation and protect your assets.
+{{< callout type="warning" >}}
+    **Always be careful when dealing with your private key. Double-check that you’re not hardcoding it anywhere or committing it to Git. Remember: anyone with access to your private key has complete control over your funds.**
+
+    Ensure you’re not reusing a private key that’s been deployed on other EVM chains. Each blockchain has its own attack vectors, and reusing keys across chains exposes you to cross-chain vulnerabilities. Keep separate keys to maintain isolation and protect your assets.
+{{< /callout >}}
 
 **Blockchain Explorer:** [http://explorer.akave.ai](http://explorer.akave.ai)
-
----
 
 ## Step 3: Run the Akave Link Container
 
 Run the container and specify the `PRIVATE_KEY` environment variable.
 
-> With Akavelink, we expect you to use the blockchain-enabled storage network on port **5500**.
+{{< callout type="info" >}}
+    With Akavelink, we expect you to use the blockchain-enabled storage network on port **5500**.
+{{< /callout >}}
 
 ### Node Address Public Endpoint
 
@@ -94,8 +90,6 @@ async function apiRequest(method, endpoint, data = null) {
 # Example Usage
 
 Each section below demonstrates API calls using this wrapper, alongside the `curl` equivalent.
-
----
 
 # Bucket Operations
 
@@ -185,9 +179,9 @@ curl -X GET http://localhost:8000/buckets/myBucket/files/myFile.txt
 
 Upload a file to a bucket.
 
-> **Note:**  
-> Make sure the minimum file size is **127 bytes**!  
-> Recommended maximum test size: **100 MB**.
+{{< callout type="info" >}}
+    Make sure the minimum file size is ********127 bytes**! Keep max size to test at **100MB**
+{{< /callout >}}
 
 **JavaScript Example (using FormData):**
 
@@ -250,11 +244,7 @@ http(s)://ip-or-dns-name/buckets/:BucketName/files/:FileName/download
 ```bash
 curl -X GET http://localhost:8000/buckets/myBucket/files/myFile.txt/download -o myFile.txt
 ```
-
-> **Note:**  
-> Output file extension should be the same as the requested file.
-
----
+Output file extension should be the same as the requested file.
 
 # Error Handling
 
