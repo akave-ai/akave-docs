@@ -17,8 +17,8 @@ params:
       path: images/akave_logo.png
       dark: images/akave_logo_dark.png
       link: /
-      width: 78
-      height: 42
+      width: 48
+      height: 27
   page:
     # full (100%), wide (90rem), normal (1280px)
     width: wide
