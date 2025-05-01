@@ -24,7 +24,7 @@ params:
     width: wide
   theme:
     # light | dark | system
-    default: dark
+    default: system
     displayToggle: true
   # Display the last modification date
   displayUpdatedDate: true
