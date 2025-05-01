@@ -13,6 +13,7 @@ The Akave SDK CLI (`akavesdk`) is a powerful command-line tool for managing stor
 {{< /callout >}}
 
 **[Blockchain integrated SDK / CLI](https://docs.akave.xyz/akave-sdk-cli/blockchain-integrated/)**
+
 **[Streaming non-blockchain integrated SDK / CLI](https://docs.akave.xyz/akave-sdk-cli/streaming/)**
 
 The blockchain integrated network is a separate network that uses different nodes to manage and store your data throughout the network.

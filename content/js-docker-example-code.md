@@ -6,12 +6,11 @@ weight: 6
 cascade:
   type: docs
 ---
-Welcome to the Akave Link API! This API wrapper enables seamless integration with Akave's decentralized storage network.  
-Below, you’ll find quick setup steps, examples of how to use each API endpoint with JavaScript, and equivalent `curl` commands.
+Welcome to the Akave Link API! This API wrapper enables seamless integration with Akave's decentralized storage network. Below, you’ll find quick setup steps, examples of how to use each API endpoint with JavaScript, and equivalent `curl` commands.
 
 **GitHub repo for reference:** [https://github.com/akave-ai/akavelink](https://github.com/akave-ai/akavelink)
-
 **Installing Docker:** [https://docs.docker.com/engine/install/](https://docs.docker.com/engine/install/)
+
 
 # Getting Started
 
@@ -61,7 +60,6 @@ docker run -d \
 
 The API will now be running locally at [http://localhost:8000](http://localhost:8000).
 
----
 
 # Setting Up the JavaScript Wrapper
 
@@ -179,7 +177,7 @@ curl -X GET http://localhost:8000/buckets/myBucket/files/myFile.txt
 Upload a file to a bucket.
 
 {{< callout type="info" >}}
-  Make sure the minimum file size is ********127 bytes**! Keep max size to test at **100MB**
+  Make sure the minimum file size is **127 bytes**! Keep max size to test at **100MB**
 {{< /callout >}}
 
 **JavaScript Example (using FormData):**
