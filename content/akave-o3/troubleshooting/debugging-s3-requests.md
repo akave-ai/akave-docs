@@ -50,7 +50,7 @@ response_checksum_validation = WHEN_REQUIRED
 ```
 ## Advanced: Use curl for low-level testing
 
-You can replicate basic S3 GET/PUT operations manually using presigned URLs or raw signature V4 requests if needed — useful to isolate SDK/CLI bugs.
+You can replicate basic S3 GET/PUT operations manually using presigned URLs or raw signature V4 requests if needed; useful to isolate SDK/CLI bugs.
 
 ## Stay Current
 
