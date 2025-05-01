@@ -1,7 +1,7 @@
 ---
 date: '2025-04-23T22:48:28-05:00'
 draft: false
-title: 'Akavelink'
+title: 'Akavelink API'
 weight: 6
 cascade:
   type: docs
@@ -24,16 +24,15 @@ docker pull akave/akavelink:latest
 ```
 
 ## Step 2: Get a Wallet Address and Request Funds
-
-    - Visit [https://faucet.akave.ai](https://faucet.akave.ai) to obtain a wallet address and add the Akave chain to MetaMask.
-    - Request funds from the faucet to start experimenting with the Akave Link API.
+- Visit [https://faucet.akave.ai](https://faucet.akave.ai) to obtain a wallet address and add the Akave chain to MetaMask.
+- Request funds from the faucet to start experimenting with the Akave Link API.
 
 ![Akave Faucet](/images/faucet.gif)
 
 {{< callout type="warning" >}}
-    **Always be careful when dealing with your private key. Double-check that you’re not hardcoding it anywhere or committing it to Git. Remember: anyone with access to your private key has complete control over your funds.**
+  **Always be careful when dealing with your private key. Double-check that you’re not hardcoding it anywhere or committing it to Git. Remember: anyone with access to your private key has complete control over your funds.**
 
-    Ensure you’re not reusing a private key that’s been deployed on other EVM chains. Each blockchain has its own attack vectors, and reusing keys across chains exposes you to cross-chain vulnerabilities. Keep separate keys to maintain isolation and protect your assets.
+  Ensure you’re not reusing a private key that’s been deployed on other EVM chains. Each blockchain has its own attack vectors, and reusing keys across chains exposes you to cross-chain vulnerabilities. Keep separate keys to maintain isolation and protect your assets.
 {{< /callout >}}
 
 **Blockchain Explorer:** [http://explorer.akave.ai](http://explorer.akave.ai)
@@ -43,7 +42,7 @@ docker pull akave/akavelink:latest
 Run the container and specify the `PRIVATE_KEY` environment variable.
 
 {{< callout type="info" >}}
-    With Akavelink, we expect you to use the blockchain-enabled storage network on port **5500**.
+  With Akavelink, we expect you to use the blockchain-enabled storage network on port **5500**.
 {{< /callout >}}
 
 ### Node Address Public Endpoint
@@ -180,7 +179,7 @@ curl -X GET http://localhost:8000/buckets/myBucket/files/myFile.txt
 Upload a file to a bucket.
 
 {{< callout type="info" >}}
-    Make sure the minimum file size is ********127 bytes**! Keep max size to test at **100MB**
+  Make sure the minimum file size is ********127 bytes**! Keep max size to test at **100MB**
 {{< /callout >}}
 
 **JavaScript Example (using FormData):**
