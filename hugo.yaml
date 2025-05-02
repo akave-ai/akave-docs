@@ -3,6 +3,10 @@ languageCode: en-us
 title: Akave Docs
 theme: hextra
 
+services:
+  googleAnalytics:
+    ID: G-3W2C2X26BD
+
 markup:
   highlight:
     noClasses: false
