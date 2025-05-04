@@ -5,7 +5,7 @@ theme: hextra
 
 services:
   googleAnalytics:
-    ID: G-3W2C2X26BD
+    id: G-3W2C2X26BD
 
 markup:
   highlight:
