@@ -179,6 +179,10 @@ akavecli ipc file upload <bucket-name> <file-path> --node-address=connect.akave.
 ```bash
 akavecli ipc file download <bucket-name> <file-name> <destination-folder> --node-address=connect.akave.ai:5500 --private-key="your-private-key"
 ```
+- **Delete File:** Deletes a file from a specified bucket.
+```bash
+akavecli ipc file delete <bucket-name> <file-name> --node-address=connect.akave.ai:5500 --private-key="your-private-key"
+```
 > Note: IPC-based commands are highly recommended as they ensure data integrity through blockchain-based operations, making them ideal for decentralized storage use cases.
 
 
