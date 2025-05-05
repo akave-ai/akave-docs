@@ -31,6 +31,28 @@ aws s3 cp ./myfile.txt s3://my-akave-bucket/myfile.txt \
   --endpoint-url https://o3-rc1.akave.xyz
 ```
 
+### List Objects
+
+**Using `aws s3api`:**
+
+```bash
+aws s3api list-objects \
+  --bucket my-akave-bucket \
+  --endpoint-url https://o3-rc1.akave.xyz
+```
+
+**Note:** When using the "list-objects" command with the aws s3api you may notice that your objects have /null following their key. This is expected behavior and represents that you are not using object versioning, so the object you've uploaded has no version associated with it.
+```bash
+"Key": "myfile.txt/null",
+```
+
+**Using `aws s3`:**
+
+```bash
+aws s3 ls s3://my-akave-bucket \
+  --endpoint-url https://o3-rc1.akave.xyz
+```
+
 ### Download an Object
 
 **Using `aws s3api`:**
