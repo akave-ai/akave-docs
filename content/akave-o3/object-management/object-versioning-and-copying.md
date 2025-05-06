@@ -20,7 +20,7 @@ aws s3api put-bucket-versioning \
   --endpoint-url https://o3-rc1.akave.xyz
 ```
 
-> `aws s3` does not support versioning configuration directly — use `s3api` for this.
+> `aws s3` does not support versioning configuration directly -- use `s3api` for this.
 
 
 ### List Object Versions
