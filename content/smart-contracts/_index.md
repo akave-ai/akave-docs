@@ -34,15 +34,17 @@ The below example meets the following criteria for use:
 ### Mac OS Node.js install example
 
 If you don't already have Node.js installed you can install it by running:
-
-    brew install node
+```sh
+brew install node
+```
 
 This will install the latest version of Node.js and npm (Node Package Manager), which is bundled with Node.js.
 
 **Verify Installation:** After installation, verify that Node.js and npm were successfully installed by checking their versions:
-
-      node -v
-      npm -v
+```sh
+node -v
+npm -v
+```
 
 This should display the installed versions of both Node.js and npm.
 
@@ -55,7 +57,9 @@ Hardhat requires a certain directory structure, which the [akave-ai/policy-guide
 
 For our example today start by moving into the data-marketplace-policy folder
 
-      cd data-marketplace-policy
+```sh
+cd data-marketplace-policy
+```
 
 It should contain the following folders and files at this stage (if you don't see these make sure to your version of the repository is up to date using "git pull" from the parent directory, [akave-ai/policy-guide](https://github.com/akave-ai/policy-guide)):
 ```
@@ -99,7 +103,7 @@ This will deploy the `MarketplacePolicy` contract using [Hardhat Ignition](https
 
 If everything is set up correctly, the output should look similar to:
 
-```
+```sh
 Hardhat Ignition 🚀
 
 Deploying [ MarketplacePolicyModule ]
@@ -134,7 +138,7 @@ npx hardhat test --verbose
 
 If all tests pass, you should see an output similar to this:
 
-```
+```sh
    MarketplacePolicy
        ✔ Should deploy and check initial state
        ✔ Should allow owner to set subscription price
@@ -174,7 +178,7 @@ This first step is one that requires modifying your contract before deployment a
 
 You may use this static variable change as an example of how to add to or modify other aspects of the contract before deployment.
 
-In your codebase go to contracts/MarketplacePolicy.sol and find where the SUBSCRIPTION_DURATION variable is defined ([line 11 ](https://github.com/akave-ai/policy-guide/blob/main/data-marketplace-policy/contracts/MarketplacePolicy.sol#L11) if using the contract as defined in the policy-guide repo)
+In your codebase go to contracts/MarketplacePolicy.sol and find where the SUBSCRIPTION_DURATION variable is defined ([line 11](https://github.com/akave-ai/policy-guide/blob/main/data-marketplace-policy/contracts/MarketplacePolicy.sol#L11) if using the contract as defined in the policy-guide repo)
 
 ```solidity
 uint256 constant SUBSCRIPTION_DURATION = 30 days;
