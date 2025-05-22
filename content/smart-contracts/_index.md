@@ -196,11 +196,15 @@ Now that you've updated the contract you can redeploy it using the commands from
 
 Once the existing network has been cleanly exited, start it back up:
 
-      npx hardhat node
+```sh
+npx hardhat node
+```
 
 Then redeploy your modified contract:
 
-      npx hardhat ignition deploy ./ignition/modules/MarketplacePolicy.ts --network localhost
+```sh
+npx hardhat ignition deploy ./ignition/modules/MarketplacePolicy.ts --network localhost
+```
 
 #### Optional: Update Tests
 
@@ -213,18 +217,24 @@ To test that all the behavior still works as expected after changing the subscri
 - Change the values here to the number of seconds it should take for a user subscription to expire
   - For example if you are using "3 days" as your SUBSCRIPTION_DURATION value you can change this line to the below to represent 4 days
 
-         await time.increase(60 * 60 * 24 * 4);
+```solidity
+await time.increase(60 * 60 * 24 * 4);
+```
 
 **[Subscription can be prolonged](https://github.com/akave-ai/policy-guide/blob/main/data-marketplace-policy/test/marketplace-policy.test.ts#L61)**
 - Modify the [first time increase](https://github.com/akave-ai/policy-guide/blob/main/data-marketplace-policy/test/marketplace-policy.test.ts#L74) to be just less than 3x your SUBSCRIPTION_DURATION
   - For example if your subscription should expire after 3 days, increase this value to 8 days
 
-          await time.increase(60 * 60 * 24 * 8);
+```solidity
+await time.increase(60 * 60 * 24 * 8);
+```
 
 - Also modify the [second time increase ](https://github.com/akave-ai/policy-guide/blob/main/data-marketplace-policy/test/marketplace-policy.test.ts#L82) to make sense with an increased length that **should** expire access
   - In our example 2 days is enough time so that access should expire after 3 subscription durations have been paid
 
-            await time.increase(60 * 60 * 24 * 2); // 2 days
+```solidity
+await time.increase(60 * 60 * 24 * 2); // 2 days
+```
 
 ### Set the subscription price for your data
 
@@ -232,13 +242,17 @@ For this step we'll be interacting with our deployed contract! For now you can c
 
 First, make sure that you have a succesfully deployed Marketplace Policy contract with an address which you can find at the end of the output after the "npx hardhat ignition deploy" command:
 
-      MarketplacePolicyModule#MarketplacePolicy - 0x5FbDB2315678afecb367f032d93F642f64180aa3
+```sh
+MarketplacePolicyModule#MarketplacePolicy - 0x5FbDB2315678afecb367f032d93F642f64180aa3
+```
 
 **Note:** This contract address will change every time you redeploy the contract, so make sure you have the latest one that you want to work with.
 
 Now run setPrice.js to change the price of your subscription for your deployed contract
 
-    npx hardhat run setPrice.js --network localhost
+```sh
+npx hardhat run setPrice.js --network localhost
+```
 
 It requires 2 inputs:
 - The contract address from the previous step
@@ -246,9 +260,10 @@ It requires 2 inputs:
 
 If successful the output will return a transaction hash (different every time) and your new subscription price
 
-    Transaction sent. Hash: 0x3ebf891751e6fd5926f3e49943052049e303a2f277aab1c783dcde4b9218de2b
-    ✅ Subscription price set to: 0.5 ETH
-
+```solidity
+Transaction sent. Hash: 0x3ebf891751e6fd5926f3e49943052049e303a2f277aab1c783dcde4b9218de2b
+✅ Subscription price set to: 0.5 ETH
+```
 
 ## Deploy your contract to Akave 
 Now that we've successfully launched and tested our contracts locally it's time to deploy the to Akave!
@@ -261,10 +276,11 @@ Now that you have funds in your wallet, export your newly created key. Here is a
 [How to Export an Accounts Private Key](https://support.metamask.io/configure/accounts/how-to-export-an-accounts-private-key/)
 
 Then, duplicate the .env.example file and add your private key:
-
+```sh
     PRIVATE_KEY="replace-with-your-private-key"
+```
 
-Rename the file with your private key _.env_
+Rename the file with your private key to _".env"_
 
 {{< callout type="warning" >}}
   **Always be careful when dealing with your private key. Double-check that you’re not hardcoding it anywhere or committing it to Git. Remember: anyone with access to your private key has complete control over your funds.**
@@ -274,7 +290,9 @@ Rename the file with your private key _.env_
 
 Then run the below command to deploy your contract to the Akave network:
 
-    npx hardhat ignition deploy ./ignition/modules/MarketplacePolicy.ts --network akaveFuji
+```sh
+npx hardhat ignition deploy ./ignition/modules/MarketplacePolicy.ts --network akaveFuji
+```
 
 After this you're live! You can visit the [Akave Blockchain Explorer](http://explorer.akave.ai/) and look for transactions from your **public** wallet address. You should see one that looks like this on the Akave Network:
 
@@ -282,7 +300,9 @@ After this you're live! You can visit the [Akave Blockchain Explorer](http://exp
 
 Now when you want to modify the contract, for example to change the price, make sure to use akaveFuji network flag in your commands and ensure your wallet holds enough Akave Tokens to interact with the blockchain (you can always use the [Akave Faucet](https://faucet.akave.ai) to get more.
 
-    npx hardhat run setPrice.js --network akaveFuji
+```sh
+npx hardhat run setPrice.js --network akaveFuji
+```
 
 ### Define where your data lives
 
@@ -300,15 +320,21 @@ This section contains a list of common errors and details on how to resolve them
 #### Resolution Steps
 If not already installed, install node version manager using Homebrew:
 
-      brew install nvm
+```sh
+brew install nvm
+```
 
 Then install an even version of Node.js with a Current, Active LTS or Maintenance status (you can check the status of a version by checking the [nodejs/Release page](https://github.com/nodejs/Release))
-      
-      nvm install v22
+
+```sh
+nvm install v22
+```
 
 And switch to that version using nvm
 
-      nvm use v22
+```sh
+nvm use v22
+```
 
 Now when running npx hardhat commands this warning will go away, and your deployment behavior should avoid unneccesary errors.
 
@@ -320,15 +346,21 @@ Now when running npx hardhat commands this warning will go away, and your deploy
 #### Resolution Steps
 First, find what's using the port (8545 in this example):
 
-      lsof -i :8545
+```sh
+lsof -i :8545
+```
 
 Example output:
 
-      COMMAND   PID   USER   FD   TYPE             DEVICE SIZE/OFF NODE NAME
-      node    50439  you    22u  IPv4 0x1234567890      0t0  TCP *:8545 (LISTEN)
+```sh
+COMMAND   PID   USER   FD   TYPE             DEVICE SIZE/OFF NODE NAME
+node    50439  you    22u  IPv4 0x1234567890      0t0  TCP *:8545 (LISTEN)
+```
 
 Then kill the process (replace 12345 with the actual number you see under PID in the output above)
 
-      kill -9 12345
+```sh
+kill -9 12345
+```
 
 Now you should be able to relaunch your local ETH test network with Hardhat!
