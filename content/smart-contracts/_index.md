@@ -24,9 +24,10 @@ The below example meets the following criteria for use:
 
 1. **Clone the policy-guide repository**:
 
-   ```bash
-   git clone https://github.com/akave-ai/policy-guide.git
-   cd policy-guide
+```bash
+git clone https://github.com/akave-ai/policy-guide.git
+cd policy-guide
+```
 2. **Install Dependencies** (Requirements: Node.js, Hardhat)
   - **Node.js:** For all OS installation instructions visit https://nodejs.org/en/download (LTS Version recommended)
   - **Hardhat:** For all package manager installation instruction visit https://hardhat.org/hardhat-runner/docs/getting-started#installation
