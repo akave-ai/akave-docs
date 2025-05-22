@@ -29,7 +29,7 @@ aws s3api list-buckets \
 Check that:
 
 - The region is set to `akave-network`
-- You're using the correct profile (`--profile o3`)
+- You're using the correct profile (`--profile akave-o3`)
 - Your credentials are loaded correctly
 
 ## Common Debug Traps
