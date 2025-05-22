@@ -63,6 +63,8 @@ data-marketplace-policy/
 ├── contracts/        # Smart contracts
 ├── test/             # Test files
 ├── ignition/         # Deployment automation (Hardhat Ignition)
+├── setPrice.ts       # Sets the price of a deployed data marketplace contract
+├── .env.example      # Example .env file for using a private key
 ├── hardhat.config.ts # Hardhat configuration
 ├── package.json      # Project dependencies
 ├── tsconfig.json     # TypeScript configuration
@@ -234,20 +236,57 @@ First, make sure that you have a succesfully deployed Marketplace Policy contrac
 
 **Note:** This contract address will change every time you redeploy the contract, so make sure you have the latest one that you want to work with.
 
-------------------
-TO DO: ADD SNIPPET FOR MAKING CONTRACT CALLS
-------------------
+Now run setPrice.js to change the price of your subscription for your deployed contract
+
+    npx hardhat run setPrice.js --network localhost
+
+It requires 2 inputs:
+- The contract address from the previous step
+- Your new subscription price
+
+If successful the output will return a transaction hash (different every time) and your new subscription price
+
+    Transaction sent. Hash: 0x3ebf891751e6fd5926f3e49943052049e303a2f277aab1c783dcde4b9218de2b
+    ✅ Subscription price set to: 0.5 ETH
+
 
 ## Deploy your contract to Akave 
-------------------
-TO ADD
-------------------
+Now that we've successfully launched and tested our contracts locally it's time to deploy the to Akave!
+
+To start, you’ll need an Akave wallet address. Visit [https://faucet.akave.ai](https://faucet.akave.ai), where you can connect, add the Akave chain to MetaMask, and request funds from the faucet.
+
+![Akave Faucet](/images/faucet.gif)
+
+Now that you have funds in your wallet, export your newly created key. Here is an example for how to do so using MetaMask: 
+[How to Export an Accounts Private Key](https://support.metamask.io/configure/accounts/how-to-export-an-accounts-private-key/)
+
+Then, duplicate the .env.example file and add your private key:
+
+    PRIVATE_KEY="replace-with-your-private-key"
+
+Rename the file with your private key _.env_
+
+{{< callout type="warning" >}}
+  **Always be careful when dealing with your private key. Double-check that you’re not hardcoding it anywhere or committing it to Git. Remember: anyone with access to your private key has complete control over your funds.**
+
+  Ensure you’re not reusing a private key that’s been deployed on other EVM chains. Each blockchain has its own attack vectors, and reusing keys across chains exposes you to cross-chain vulnerabilities. Keep separate keys to maintain isolation and protect your assets.
+{{< /callout >}}
+
+Then run the below command to deploy your contract to the Akave network:
+
+    npx hardhat ignition deploy ./ignition/modules/MarketplacePolicy.ts --network akaveFuji
+
+After this you're live! You can visit the [Akave Blockchain Explorer](http://explorer.akave.ai/) and look for transactions from your **public** wallet address. You should see one that looks like this on the Akave Network:
+
+![Explorer Transaction](/images/explorertx.png)
+
+Now when you want to modify the contract, for example to change the price, make sure to use akaveFuji network flag in your commands and ensure your wallet holds enough Akave Tokens to interact with the blockchain (you can always use the [Akave Faucet](https://faucet.akave.ai) to get more.
+
+    npx hardhat run setPrice.js --network akaveFuji
 
 ### Define where your data lives
 
-------------------
-TO ADD
-------------------
+🚨 TO ADD 🚨
 
 
 ## Troubleshooting
