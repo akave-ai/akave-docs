@@ -253,10 +253,10 @@ MarketplacePolicyModule#MarketplacePolicy - 0x5FbDB2315678afecb367f032d93F642f64
 
 **Note:** This contract address will change every time you redeploy the contract, so make sure you have the latest one that you want to work with.
 
-Now run setPrice.js to change the price of your subscription for your deployed contract
+Now run setPrice.ts to change the price of your subscription for your deployed contract
 
 ```sh
-npx hardhat run setPrice.js --network localhost
+npx hardhat run setPrice.ts --network localhost
 ```
 
 It requires 2 inputs:
@@ -296,7 +296,7 @@ Rename the file with your private key to _".env"_
 Then run the below command to deploy your contract to the Akave network:
 
 ```sh
-npx hardhat ignition deploy ./ignition/modules/MarketplacePolicy.ts --network akaveFuji
+npx hardhat ignition deploy ./ignition/modules/MarketplacePolicy.ts --network akaveNetwork
 ```
 
 After this you're live! You can visit the [Akave Blockchain Explorer](http://explorer.akave.ai/) and look for transactions from your **public** wallet address. You should see one that looks like this on the Akave Network:
@@ -306,7 +306,7 @@ After this you're live! You can visit the [Akave Blockchain Explorer](http://exp
 Now when you want to modify the contract, for example to change the price, make sure to use akaveFuji network flag in your commands and ensure your wallet holds enough Akave Tokens to interact with the blockchain (you can always use the [Akave Faucet](https://faucet.akave.ai) to get more.
 
 ```sh
-npx hardhat run setPrice.js --network akaveFuji
+npx hardhat run setPrice.ts --network akaveNetwork
 ```
 
 ### Define where your data lives
