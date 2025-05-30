@@ -359,7 +359,7 @@ Example output:
 
 ```sh
 COMMAND   PID   USER   FD   TYPE             DEVICE SIZE/OFF NODE NAME
-node    50439  you    22u  IPv4 0x1234567890      0t0  TCP *:8545 (LISTEN)
+node    12345  you    22u  IPv4 0x1234567890      0t0  TCP *:8545 (LISTEN)
 ```
 
 Then kill the process (replace 12345 with the actual number you see under PID in the output above)
