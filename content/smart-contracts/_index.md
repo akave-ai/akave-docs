@@ -280,10 +280,13 @@ To start, you’ll need an Akave wallet address. Visit [https://faucet.akave.ai]
 Now that you have funds in your wallet, export your newly created key. Here is an example for how to do so using MetaMask: 
 [How to Export an Accounts Private Key](https://support.metamask.io/configure/accounts/how-to-export-an-accounts-private-key/)
 
-Then, duplicate the .env.example file and add your private key:
+Then, duplicate the .env.example file and add your private key and a valid Akave RPC URL:
 ```sh
     PRIVATE_KEY="replace-with-your-private-key"
+    RPC_URL="akave-rpc-url"
 ```
+For the current testnet you can use this RPC URL for the Akave Network:
+https://n1-us.akave.ai/ext/bc/2JMWNmZbYvWcJRPPy1siaDBZaDGTDAaqXoY5UBKh4YrhNFzEce/rpc
 
 Rename the file with your private key to _".env"_
 
