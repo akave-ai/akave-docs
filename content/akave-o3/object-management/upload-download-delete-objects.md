@@ -50,6 +50,23 @@ aws s3 cp s3://my-akave-bucket/myfile.txt ./downloaded-myfile.txt \
   --endpoint-url https://o3-rc1.akave.xyz
 ```
 
+### List Objects
+
+**Using `aws s3api`:**
+
+```bash
+aws s3api list-objects \
+  --bucket my-akave-bucket \
+  --endpoint-url https://o3-rc1.akave.xyz
+```
+
+**Using `aws s3`:**
+
+```bash
+aws s3 ls s3://my-akave-bucket \
+  --endpoint-url https://o3-rc1.akave.xyz
+```
+
 ### Delete an Object
 
 **Using `aws s3api`:**
