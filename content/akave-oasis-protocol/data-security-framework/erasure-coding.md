@@ -112,7 +112,7 @@ if s.parityBlocksCount > s.streamingMaxBlocksInChunk/2 {
 ### EC Schema
 
 - **Formula**: `n (total) - k (data) = m (parity)`
-- In our case: `32 (total) - 16 (data) = 16 (parity)
+- In our case: `32 (total) - 16 (data) = 16 (parity)`
 - **Expansion Factor**: 2x (100% overhead), meaning we **store double the original data size**.
 
 ### 256 MB File Example

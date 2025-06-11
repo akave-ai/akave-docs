@@ -20,8 +20,10 @@ cd akavesdk
 ```
 2. **Install dependency** (Requirements: Go 1.23.5+)
 
-Go to: [https://go.dev/doc/install](https://go.dev/doc/install)
+Official Documentation: [https://go.dev/doc/install](https://go.dev/doc/install)
 
+<details>
+<summary>Go Installation Guide</summary>
 
 ### Mac OS Go install example
 
@@ -59,6 +61,8 @@ export PATH=$PATH:/usr/local/go/bin
 ```bash
 go version
 ```
+
+</details>
 
 ## Build
 
