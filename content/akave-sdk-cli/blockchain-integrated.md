@@ -158,7 +158,7 @@ akavecli ipc bucket list --node-address=connect.akave.ai:5500 --private-key="you
 ```
 **To secure your key, you can put it in a keyfile and use this: (temporary until new release)**
 ```bash
-akavecli ipc bucket create <bucket-name> --node-address=connect.akave.ai:5500 --private-key "$(cat ~/.key/private.key)"
+akavecli ipc bucket create <bucket-name> --node-address=connect.akave.ai:5500 --private-key "$(cat ~/.key/user.akvf.key)"
 ```
 
 ### File Commands
