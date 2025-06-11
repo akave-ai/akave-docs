@@ -11,6 +11,19 @@ Akave O3 supports `multipart uploads` for large files using the standard AWS S3-
 
 Below are examples using both `aws s3api` and `aws s3` commands for initiating, completing, and aborting multipart uploads.
 
+# Using `aws s3` (simple option)
+
+The high-level `aws s3 cp` command will **automatically handle multipart uploads** when the file is large enough (default is 8 MB+):
+```bash
+aws s3 cp ./largefile.zip s3://my-akave-bucket/largefile.zip \
+  --endpoint-url https://o3-rc1.akave.xyz
+```
+No need to manage `UploadId`, parts, or ETags manually.
+
+> Use `--expected-size` and `--part-size` for more control during automatic multipart uploads.
+
+# Using `aws s3api` (more granular)
+
 ## Initiate Multipart Upload
 
 **Using `aws s3api`:**
@@ -80,18 +93,6 @@ aws s3api abort-multipart-upload \
   --endpoint-url https://o3-rc1.akave.xyz
 ```
 This will cancel the upload and remove all uploaded parts.
-
-
-## Using `aws s3` (Simpler Alternative)
-
-The high-level `aws s3 cp` command will **automatically handle multipart uploads** when the file is large enough (default is 8 MB+):
-```bash
-aws s3 cp ./largefile.zip s3://my-akave-bucket/largefile.zip \
-  --endpoint-url https://o3-rc1.akave.xyz
-```
-No need to manage `UploadId`, parts, or ETags manually.
-
-> Use `--expected-size` and `--part-size` for more control during automatic multipart uploads.
 
 {{< callout type="info" >}}
  Akave O3 supports multipart uploads via S3-compatible APIs only. IPC CLI support is not available for multipart uploads at this time.
