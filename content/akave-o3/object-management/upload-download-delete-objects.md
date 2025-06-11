@@ -9,7 +9,7 @@ cascade:
 
 
 
-Once you've created a bucket in Akave O3, you can use standard AWS CLI commands to manage your objects. Below are examples using both `aws s3api` and the simpler `aws s3 cli` syntax.
+Once you've created a bucket in Akave O3, you can use standard AWS CLI commands to manage your objects. Below are examples using both `aws s3api` and the simpler `aws s3` CLI syntax.
 
 
 ### Upload an Object
