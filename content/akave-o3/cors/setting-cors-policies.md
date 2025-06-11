@@ -9,7 +9,7 @@ cascade:
 
 Cross-Origin Resource Sharing (CORS) policies in Akave O3 allow your bucket to be accessed by web apps from other origins. This is essential for use cases involving frontend apps, embedded content, or external data consumers.
 
-Akave O3 supports full S3-compatible CORS configuration via both `aws s3api` and `aws s3`.
+Akave O3 supports full S3-compatible CORS configuration via the `aws s3api`.
 
 ## Put a CORS Policy
 
