@@ -1,0 +1,18 @@
+---
+date: '2025-06-10T22:51:37-05:00'
+draft: true
+title: 'Solutions and Integrations'
+weight: 25
+cascade:
+  type: docs
+---
+Here you'll find solutions and integrations that can be utilized with the Akave Network for common use cases.
+
+<!-- #### **[DuckDB](/akave-o3/solutions-and-integrations/duckdb)** - Data Analytics Integration
+- Perform powerful analytics directly on data stored in Akave -->
+
+#### **[Rclone](/akave-o3/solutions-and-integrations/rclone)** - CLI Migration Tool
+- Simplify data migration to and from Akave Network
+
+#### **[Snowflake](/akave-o3/solutions-and-integrations/snowflake)** - Data Warehouse Integration
+- Connect your Snowflake data warehouse with Akave storage
