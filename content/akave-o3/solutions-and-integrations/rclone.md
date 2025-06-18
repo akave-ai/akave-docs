@@ -14,49 +14,7 @@ Rclone is a command-line program to manage files on cloud storage that enables s
 1. **Akave O3 Credentials**
 These can be requested by contacting Akave at [Akave Cloud Contact](https://www.akave.cloud/contact).
 
-2. **Install dependencies** (Requirements: Go, Rclone)
-
-### Go Installation Guide
-
-Rclone requires Go to be installed on your system, you can check the lowest compatible version of Go required to use Rclone [here](https://github.com/rclone/rclone/blob/master/go.mod). 
-
-For all latest OS installation instructions go to [https://go.dev/dl/](https://go.dev/dl/)
-
-#### Mac OS Go install example
-
-**If you don’t already have Go installed, you can add it with:**
-```bash
-brew install go
-```
-**If Go is installed and you need to upgrade to a higher version use:**
-```bash
-brew upgrade go
-```
-**After installing or upgrading, confirm the version:**
-```bash
-go version
-```
-
-#### Ubuntu OS Go install example
-
-**Download package, check online for new version if needed.**
-```bash
-wget https://go.dev/dl/go1.23.0.linux-amd64.tar.gz
-```
-**Install Go package**
-```bash
-rm -rf /usr/local/go && tar -C /usr/local -xzf go1.23.0.linux-amd64.tar.gz
-```
-**Set path** 
-Add to `~/.bashrc`
-```bash
-export PATH=$PATH:/usr/local/go/bin
-```
-**After installing or upgrading, confirm the version:**
-```bash
-go version
-```
-
+2. **Install dependencies** (Requirements: Rclone)
 
 ### Rclone Installation Guide
 
