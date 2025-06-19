@@ -7,7 +7,7 @@ cascade:
   type: docs
 ---
 
-#### [What is Akave](/discover-akave/what-is-akave)
-#### [Vision & Mission](/discover-akave/vision-mission)
-#### [Who are we](/discover-akave/who-are-we)
-#### [Our Values](/discover-akave/our-values)
+##### [What is Akave](/discover-akave/what-is-akave)
+##### [Vision & Mission](/discover-akave/vision-mission)
+##### [Who are we](/discover-akave/who-are-we)
+##### [Our Values](/discover-akave/our-values)
