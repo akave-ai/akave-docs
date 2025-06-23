@@ -109,7 +109,7 @@ https://o3-rc1.akave.xyz
 
 ## Usage
 
-Storj supports many of the same commands as S3 and the Akave CLI. Below is a partial list of the most commonly used commands.
+Rclone supports many of the same commands as S3 and the Akave CLI. Below is a partial list of the most commonly used commands.
 
 **Note**: Replace `Akave` with the name you chose for your remote in the commands below.
 
