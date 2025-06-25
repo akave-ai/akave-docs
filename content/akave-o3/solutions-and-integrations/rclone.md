@@ -95,16 +95,16 @@ https://o3-rc1.akave.xyz
 ```
 > Select the endpoint corresponding to your credentials from the options provided here: [Akave Environment](/akave-o3/introduction/akave-environment).
 
-1.   **Location Constraint**
+10.   **Location Constraint**
     Leave blank
 
-2.   **ACL**
+11.   **ACL**
     Choose `Default`
 
-3.   **Edit advanced config**
+12.   **Edit advanced config**
     Choose `No`
 
-4.   **Keep this remote?**
+13.   **Keep this remote?**
     Choose `Yes`
 
 ## Usage
