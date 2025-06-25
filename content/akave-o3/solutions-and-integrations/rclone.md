@@ -93,18 +93,18 @@ akave-network
 ```bash
 https://o3-rc1.akave.xyz
 ```
-> Select the endpoint corresponding to your credentials from the options provided here: [Akave Environment](https://docs.akave.xyz/akave-o3/introduction/akave-environment/).
+> Select the endpoint corresponding to your credentials from the options provided here: [Akave Environment](/akave-o3/introduction/akave-environment).
 
-10.  **Location Constraint**
+1.   **Location Constraint**
     Leave blank
 
-11.  **ACL**
+2.   **ACL**
     Choose `Default`
 
-12.  **Edit advanced config**
+3.   **Edit advanced config**
     Choose `No`
 
-13.  **Keep this remote?**
+4.   **Keep this remote?**
     Choose `Yes`
 
 ## Usage
