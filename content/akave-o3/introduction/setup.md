@@ -13,7 +13,7 @@ To streamline your workflow, you can configure a dedicated AWS CLI profile for i
 
 ### Step 1: Configure the Profile
 
-aws configure --profile akave-o3
+`aws configure --profile akave-o3`
 
 Enter:
 - AWS Access Key ID: `<your-access-key>`
@@ -23,9 +23,11 @@ Enter:
 
 ### Step 2: Use the Profile in Commands
 
+```bash
 aws s3api list-buckets \
   --profile akave-o3 \
   --endpoint-url https://o3-rc1.akave.xyz
+```
 
 You can now run any `AWS CLI` or `s3api` command with `--profile akave-o3` instead of exporting your credentials each time.
 
