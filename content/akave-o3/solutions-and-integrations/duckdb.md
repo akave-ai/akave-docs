@@ -56,12 +56,13 @@ Configure DuckDB to use Akave's S3 compatible API. For more information on DuckD
 ```bash
 duckdb
 ```
+> **Note:** Running DuckDB without a database file will cause the session to be reset every time you close the CLI. Run the command with a database name such as `duckdb mydatabase.duckdb` when launching DuckDB to create or open a persistent database which will be stored locally in the active directory.
 
 2. **To load a Parquet file from S3, the httpfs extension is required. This can be installed using the INSTALL SQL command.**
 ```sql
 INSTALL httpfs;
 ```
-> **Note:** This only needs to be run once.
+> This only needs to be run once.
 
 3. **Load the httpfs extension using the LOAD SQL command.**
 ```sql
@@ -70,7 +71,7 @@ LOAD httpfs;
 
 4. **After loading the httpfs extension, set up the credentials, region, and endpoint to read data.**
 ```sql
-CREATE OR REPLACE SECRET secret (
+CREATE OR REPLACE PERSISTENT SECRET akave_secret (
     TYPE s3,
     PROVIDER config,
     KEY_ID '<your-access-key>',
@@ -79,7 +80,9 @@ CREATE OR REPLACE SECRET secret (
     ENDPOINT 'o3-rc1.akave.xyz'
 );
 ```
-> Select the endpoint corresponding to your credentials from the options provided here: [Akave Environment](/akave-o3/introduction/akave-environment) and make sure to exclude `https://` from the endpoint as DuckDB automatically adds it.
+- Select the endpoint corresponding to your credentials from the options provided here: [Akave Environment](/akave-o3/introduction/akave-environment)
+  - **Note:** Make sure to exclude `https://` from the endpoint as DuckDB automatically adds it
+- Secrets are not saved between sessions by default. The `PERSISTENT` flag will save the secret between sessions. For more information on managing secrets within DuckDB see [Secrets Manager](https://duckdb.org/docs/stable/configuration/secrets_manager.html)
 
 ### (Optional) Attach Akave as a database
 
