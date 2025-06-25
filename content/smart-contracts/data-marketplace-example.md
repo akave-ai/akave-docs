@@ -31,6 +31,12 @@ cd policy-guide
   - **Node.js:** For all OS installation instructions visit https://nodejs.org/en/download (LTS Version recommended)
   - **Hardhat:** For all package manager installation instruction visit https://hardhat.org/hardhat-runner/docs/getting-started#installation
   
+
+{{< callout type="info" >}}
+**Important Note on Node Version Compatibility:** 
+Hardhat only supports _even_ versions of Node.js with a release status of: Current, Active LTS or Maintenance. If the latest version of Node.js is currently _odd_ install an _even_ version using the node version manager. See the [Troubleshooting](/smart-contracts/data-marketplace-example/#incompatible-hardhat-and-node-version) section for more information on how to resolve
+{{< /callout >}}
+
 ### Mac OS Node.js install example
 
 If you don't already have Node.js installed you can install it by running:
@@ -48,8 +54,32 @@ npm -v
 
 This should display the installed versions of both Node.js and npm.
 
-#### Important Note on Node Version Compatibility:
-Hardhat only supports _even_ versions of Node.js with a release status of: Current, Active LTS or Maintenance. If the latest version of Node.js is currently _odd_ install an _even_ version using the node version manager. See the Troubleshooting section at the bottom for more information on how to resolve
+### Linux Node.js install example
+
+The below is an example for how to install Node.js on Linux. For other OS distributions visit https://nodejs.org/en/download (LTS Version recommended)
+
+1. Download and install nvm:
+```sh
+curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.40.3/install.sh | bash
+```
+2. in lieu of restarting the shell, run the following:
+```sh
+\. "$HOME/.nvm/nvm.sh"
+```
+3. Download and install Node.js:
+```sh
+nvm install 22
+```
+
+This will install the latest version of Node.js and npm (Node Package Manager), which is bundled with Node.js.
+
+**Verify Installation:** After installation, verify that Node.js and npm were successfully installed by checking their versions:
+```sh
+node -v
+npm -v
+```
+
+This should display the installed versions of both Node.js and npm.
 
 ### Hardhat npm install example
 
