@@ -58,18 +58,18 @@ duckdb
 ```
 > **Note:** Running DuckDB without a database file will cause the session to be reset every time you close the CLI. Run the command with a database name such as `duckdb mydatabase.duckdb` when launching DuckDB to create or open a persistent database which will be stored locally in the active directory.
 
-2. **To load a Parquet file from S3, the httpfs extension is required. This can be installed using the INSTALL SQL command.**
+2. **To load a Parquet file from S3, the httpfs extension is required. This can be installed using the INSTALL SQL command:**
 ```sql
 INSTALL httpfs;
 ```
 > This only needs to be run once.
 
-3. **Load the httpfs extension using the LOAD SQL command.**
+3. **Load the httpfs extension using:**
 ```sql
 LOAD httpfs;
 ```
 
-4. **After loading the httpfs extension, set up the credentials, region, and endpoint to read data.**
+4. **Define the credentials, region, and endpoint:**
 ```sql
 CREATE OR REPLACE PERSISTENT SECRET akave_secret (
     TYPE s3,
