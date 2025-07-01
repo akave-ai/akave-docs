@@ -7,7 +7,6 @@ cascade:
   type: docs
 ---
 
-# Akave MCP Server
 
 A Model Context Protocol (MCP) server that enables AI models to interact with Akave's S3-compatible storage. This server provides a set of tools for managing your Akave storage buckets and objects through AI models like Claude and local LLMs.
 
@@ -183,10 +182,3 @@ Upload the content 'Hello World' to 'greeting.txt' in bucket 'my-bucket'
    - Verify the configuration file syntax
    - Try restarting Claude Desktop
 
-## Contributing
-
-Contributions are welcome! Please feel free to submit an issue or a pull request.
-
-## Support
-
-For issues and feature requests, please create an issue in the GitHub repository. 
