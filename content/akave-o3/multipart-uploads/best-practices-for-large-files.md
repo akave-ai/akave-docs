@@ -34,20 +34,20 @@ Uploading parts in parallel improves speed significantly, especially over high-l
 
 When using `aws s3api upload-part`, always record the returned **ETag** value — it’s required to complete the multipart upload.
 
-Store them in a temporary file or variable structure for use in `complete-multipart-upload`.
+Store them in a temporary file or variable structure for use in `aws s3api complete-multipart-upload`.
 
 ## Abort Failed or Incomplete Uploads
 
 Multipart uploads that aren’t completed **will persist** as orphaned parts, consuming storage.
 
 Always:
-- Use `abort-multipart-upload` if your process fails or is interrupted.
-- Periodically run `list-multipart-uploads` to clean up stale uploads.
+- Use `aws s3api abort-multipart-upload` if your process fails or is interrupted.
+- Periodically run `aws s3api list-multipart-uploads` to clean up stale uploads.
 
 ## Validate Upload Results
 
 After completing a multipart upload:
-- Use `head-object` or `s3 ls` to confirm the file exists.
+- Use `aws s3api head-object` or `aws s3 ls` to confirm the file exists.
 - Optionally download and checksum the file for data integrity validation.
 
 ## Use Streaming Upload for Large Data Pipelines

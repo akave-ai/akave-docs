@@ -53,6 +53,8 @@ aws s3api delete-bucket-encryption \
   --bucket my-akave-bucket \
   --endpoint-url https://o3-rc1.akave.xyz
 ```
+**Note:** The bucket must be empty for bucket encryption to be removed. See the [Delete an Object](https://docs.akave.xyz/akave-o3/object-management/upload-download-delete-objects/#delete-an-object) section for how to remove objects from a bucket.
+
 ## Client-Side Encryption (CSE)
 
 Client-side encryption is handled **before** data reaches the Akave network. You are responsible for managing encryption keys and performing encryption/decryption locally.
