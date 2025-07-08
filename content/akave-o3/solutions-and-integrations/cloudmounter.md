@@ -1,6 +1,6 @@
 ---
 date: '2025-06-11T19:23:35-07:00'
-draft: true
+draft: false
 title: 'CloudMounter'
 weight: 29
 cascade:
@@ -36,7 +36,7 @@ For all latest OS installation instructions go to [https://cloudmounter.net/](ht
 
 1. **Open CloudMounter and you should see a window similar to the one below (screenshot taken on Mac OS):**
 
-![CloudMounter](/images/cloudmounter.png)
+![CloudMounter](/content/images/cloudmounter.png)
 
 2. **Click on the "Amazon S3" button to add a new S3 compatible storage mount.**
 
@@ -50,8 +50,8 @@ For all latest OS installation instructions go to [https://cloudmounter.net/](ht
 - **Bucket:** Enter "/" to mount all your S3 buckets or enter the name of the Akave bucket you want to mount.
 > If you don't already have a bucket, you can create a new one using the AWS CLI: [Create, List, Delete Buckets](/akave-o3/bucket-management/create-list-delete-buckets/)
 
-![Akave Mount](/images/akave_mount.png)
+![Akave Mount](/content/images/akave_mount.png)
 
 4. **Click on the "Mount" button to mount the S3 compatible storage.**
 
-You're now able to access your Akave bucket(s) as a local file system! Drag and drop items in and out of the mounted bucket to upload and download files, view images, and more.
+You're now able to access your Akave bucket(s) as a local file system! Drag and drop items in and out of the mounted bucket(s) to upload and download files, view images, and more.
