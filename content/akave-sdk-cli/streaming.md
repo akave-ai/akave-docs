@@ -132,19 +132,19 @@ The streaming API enables efficient file uploads by chunking files and distribut
 
 - **Create Bucket**: Creates a new bucket.
 ```bash
-akavecli bucket create <bucket-name> --node-address=localhost:5000
+akavecli bucket create <bucket-name> --node-address=connect.akave.ai:5000
 ```
 - **View Bucket**: Retrieves details of a specific bucket.
 ```bash
-akavecli bucket view <bucket-name> --node-address=localhost:5000
+akavecli bucket view <bucket-name> --node-address=connect.akave.ai:5000
 ```
 - **List Buckets**: Lists all available buckets.
 ```bash
-akavecli bucket list --node-address=localhost:5000
+akavecli bucket list --node-address=connect.akave.ai:5000
 ```
 - **Delete Bucket**: Soft deletes a specific bucket.
 ```bash
-akavecli bucket delete <bucket-name> --node-address=localhost:5000
+akavecli bucket delete <bucket-name> --node-address=connect.akave.ai:5000
 ```
 
 ### File Management with Streaming API
