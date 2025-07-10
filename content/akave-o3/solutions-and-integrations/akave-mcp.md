@@ -8,7 +8,7 @@ cascade:
 ---
 
 
-A Model Context Protocol (MCP) server that enables AI models to interact with Akave's S3-compatible storage. This server provides a set of tools for managing your Akave storage buckets and objects through AI models like Claude and local LLMs.
+Akave offers a Model Context Protocol (MCP) server designed to let AI models interact with its S3-compatible storage. This server provides a set of tools for managing your Akave storage buckets and objects through AI models like Claude and local LLMs.
 
 ## What is MCP?
 
@@ -17,25 +17,26 @@ The Model Context Protocol (MCP) is an open protocol that standardizes how appli
 ## Features
 
 - List and manage buckets
-- Upload, download, and manage **objects**
-- Generate signed URLs for secure access
+- Upload, download, and manage objects
+- Generate pre-signed URLs for secure access
 - Support for both Claude and local LLMs (via Ollama)
 - Simple configuration through JSON
 
 ## Prerequisites
 
-- Node.js 16+
+- [Node.js](https://nodejs.org/en/download) version 16+
+- For local LLM support:
+  - [Go](https://go.dev/doc/install) version 1.23 or later  
+  - [Ollama](https://ollama.ai) installed
 - Access to an Akave account with:
   - Access Key ID
   - Secret Access Key
   - Endpoint URL
-- For local LLM support:
-  - Go 1.23 or later  
-  - [Ollama](https://ollama.ai) installed
-
+     - Select the endpoint associated with your credentials from the options provided here: [Akave Environment](/akave-o3/introduction/akave-environment)
+> **Note:** If you do not already have credentials, please reach out to us for access to [Akave Cloud](https://www.akave.cloud/contact)
 ## Quick Start
 
-Create a configuration file (e.g., `mcp.json`):
+Create a configuration file (e.g., `mcp.json`) and copy/paste the below information, replacing the env variables with your credentials:
 ```json
 {
   "mcpServers": {
