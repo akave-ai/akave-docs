@@ -8,7 +8,7 @@ cascade:
 ---
 
 
-Akave has a Model Context Protocol (MCP) server that enables AI models to interact with Akave's S3-compatible storage. This server provides a set of tools for managing your Akave storage buckets and objects through AI models like Claude and local LLMs.
+Akave offers a Model Context Protocol (MCP) server designed to let AI models interact with its S3-compatible storage. This server provides a set of tools for managing your Akave storage buckets and objects through AI models like Claude and local LLMs.
 
 ## What is MCP?
 
