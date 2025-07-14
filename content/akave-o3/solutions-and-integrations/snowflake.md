@@ -23,8 +23,6 @@ Akave O3 is a fully S3 compatible decentralized storage solution that integrates
     - **region:** akave-network
 
 > **Note:** All commands pointing to Akave should use one of the custom endpoints listed in the [Akave Environment](/akave-o3/introduction/akave-environment) documentation. 
-> 
-> For high performance workloads we recommend using the Streaming API endpoint (https://o3-rc2.akave.xyz) as it is designed to quickly read and write data to our decentralized storage nodes without waiting for blockchain finality.
 
 ## Setup Guide
 
