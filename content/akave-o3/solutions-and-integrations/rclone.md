@@ -125,8 +125,9 @@ rclone lsd Akave:
 ```
 - **Delete Bucket:**
 ```bash
-rclone rmdir Akave:<bucket-name>
+rclone purge Akave:<bucket-name>
 ```
+> **Note:** Since Akave O3 has versioning enabled by default this will only work if you have not uploaded any data into the bucket. If you want to delete a versioned bucket and all of it's contents you must first delete all versions of an object. See [Deleting Object Versions](https://docs.aws.amazon.com/AmazonS3/latest/userguide/DeletingObjectVersions.html) for more information.
 
 ### File Commands
 
