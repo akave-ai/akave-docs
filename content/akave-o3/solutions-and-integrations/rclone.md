@@ -93,23 +93,23 @@ akave-network
 ```bash
 https://o3-rc1.akave.xyz
 ```
-> Select the endpoint corresponding to your credentials from the options provided here: [Akave Environment](https://docs.akave.xyz/akave-o3/introduction/akave-environment/).
+> Select the endpoint corresponding to your credentials from the options provided here: [Akave Environment](/akave-o3/introduction/akave-environment).
 
-10.  **Location Constraint**
+10.   **Location Constraint**
     Leave blank
 
-11.  **ACL**
+11.   **ACL**
     Choose `Default`
 
-12.  **Edit advanced config**
+12.   **Edit advanced config**
     Choose `No`
 
-13.  **Keep this remote?**
+13.   **Keep this remote?**
     Choose `Yes`
 
 ## Usage
-
 Rclone supports many of the same commands as S3 and the Akave CLI. Below is a partial list of the most commonly used commands. You can find the full list of commands that Rclone supports on their website: [Rclone commands](https://rclone.org/commands/)
+
 
 **Note**: Replace `Akave` with the name you chose for your remote in the commands below.
 

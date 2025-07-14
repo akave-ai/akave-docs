@@ -22,7 +22,7 @@ Akave O3 is a fully S3 compatible decentralized storage solution that integrates
     - **secret_key:** Provided by Akave
     - **region:** akave-network
 
-> **Note:** All commands pointing to Akave should use one of the custom endpoints listed in the [Akave Environment](https://docs.akave.xyz/akave-o3/introduction/akave-environment/) documentation. 
+> **Note:** All commands pointing to Akave should use one of the custom endpoints listed in the [Akave Environment](/akave-o3/introduction/akave-environment) documentation. 
 > 
 > For high performance workloads we recommend using the Streaming API endpoint (https://o3-rc2.akave.xyz) as it is designed to quickly read and write data to our decentralized storage nodes without waiting for blockchain finality.
 
@@ -30,7 +30,7 @@ Akave O3 is a fully S3 compatible decentralized storage solution that integrates
 
 ### O3 API
 
-The following section is a quick start guide to using Akave with the AWS CLI for basic Snowflake setup requirements. For more information and usage instructions on using Akave O3, refer to the [Akave O3 documentation](https://docs.akave.xyz/akave-o3/introduction/what-is-akave-o3/).
+The following section is a quick start guide to using Akave with the AWS CLI for basic Snowflake setup requirements. For more information and usage instructions on using Akave O3, refer to the [Akave O3 documentation](/akave-o3/introduction/what-is-akave-o3).
 
 #### 1. Test that your credentials are valid
 Ensure your credentials are valid by listing buckets in your account:
@@ -180,6 +180,6 @@ Below are some additional resources from Snowflake, AWS, and Akave that may be h
 - **Snowflake**
   - [Snowflake S3 compatible storage docs](https://docs.snowflake.com/en/user-guide/data-load-s3-compatible-storage)
 - **Akave**
-  - [Akave O3 docs](https://docs.akave.xyz/akave-o3/)
+  - [Akave O3 docs](/akave-o3/)
 - **AWS**
   - [Installing the CLI](https://docs.aws.amazon.com/cli/latest/userguide/getting-started-install.html)
