@@ -84,3 +84,7 @@ aws s3api delete-object \
 aws s3 rm s3://my-akave-bucket/myfile.txt \
   --endpoint-url https://o3-rc1.akave.xyz
 ```
+
+{{< callout type="info" >}}
+ Akave O3 supports safe characters for object naming only. If using characters that require special handling please be aware that these are not fully supported and may cause issues with the O3 API. See [Naming Amazon S3 objects](https://docs.aws.amazon.com/AmazonS3/latest/userguide/object-keys.html) for more information.
+{{< /callout >}}
