@@ -207,7 +207,7 @@ Using `--private-key "$(cat ~/.key/user.akvf.key)"` offers protection because:
 4. **Ease of Use and Consistency:** You can reuse the stored key across multiple commands without retyping it, making it convenient for automation and reducing the risk of accidental exposure.
 
 
-## How to Implement This Securely
+### How to Implement This Securely
 1. Create and Secure the Private Key File: Save your private key to a secure, hidden directory:
 
 ```bash
@@ -228,7 +228,7 @@ akavecli ipc bucket create workshop --private-key "$(cat ~/.key/user.akvf.key)" 
 - It passes the key to the `--private-key` option for akavecli ipc bucket create.
 - The `--node-address` flag specifies the node to connect to.
 
-## Steps to Set Up an Environment Variable for Your Private Key
+### Steps to Set Up an Environment Variable for Your Private Key
 
 {{< callout type="info" >}}
  Export key in MetaMask: [link](https://support.metamask.io/configure/accounts/how-to-export-an-accounts-private-key/)
@@ -260,7 +260,7 @@ To remove the key from memory, unset the environment variable once you’re fini
 unset AKAVE_PRIVATE_KEY
 ```
 
-## Optional: Add the Environment Variable in Your `.bashrc` or `.zshrc`
+### Optional: Add the Environment Variable in Your `.bashrc` or `.zshrc`
 
 If you frequently need the private key across sessions, you can add this line to your `.bashrc` or `.zshrc` file:
 
@@ -275,3 +275,45 @@ source ~/.bashrc  # or source ~/.zshrc
 ```
 
 Using this approach keeps your private key secure while making it accessible for the command without exposing it on the command line or in history.
+
+## Troubleshooting
+
+This section lists known issues when using the Akave CLI and provides tested workarounds or solutions.
+
+### Downloading Versioned Files from O3
+
+If you are running a self-hosted instance of Akave O3 and enable bucket versioning, the object names in the Akave Network include version tags appending to them. 
+
+For example for a an object file.txt:
+- file.txt/null
+- file.txt/V1
+- file.txt/V2
+- etc.
+
+Because of this if you want to download this file using the akavecli which interprets the value following a "/" character as a directory, you must follow these steps:
+1. Create a directory with your file name
+```shell
+mkdir file.txt
+```
+2. Perform the download using the akavecli
+```shell
+akavecli ipc file download <bucket-name> file.txt/null . --node-address=connect.akave.ai:5500 --private-key "your-private-key"
+```
+> This will create a file inside your new directory named `null`, `V1`, `V2` or whatever version it is, and `your-private-key` in this case is the private key used for your O3 instance.
+3. Move into that directory
+```shell
+cd file.txt
+```
+4. Rename the downloaded file (e.g., null, V1, etc.) to a temporary name and move it up one level
+```shell
+mv * ../file.tmp
+```
+5. Return to the parent directory and remove the temporary directory
+```shell
+cd ..
+rmdir file.txt
+```
+6. Rename the file back to it's original file name (file.txt in this example)
+```shell
+mv file.tmp file.txt
+```
