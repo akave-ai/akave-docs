@@ -108,8 +108,8 @@ https://o3-rc1.akave.xyz
     Choose `Yes`
 
 ## Usage
+Rclone supports many of the same commands as S3 and the Akave CLI. Below is a partial list of the most commonly used commands. You can find the full list of commands that Rclone supports on their website: [Rclone commands](https://rclone.org/commands/)
 
-Rclone supports many of the same commands as S3 and the Akave CLI. Below is a partial list of the most commonly used commands.
 
 **Note**: Replace `Akave` with the name you chose for your remote in the commands below.
 
@@ -127,10 +127,6 @@ rclone lsd Akave:
 ```bash
 rclone rmdir Akave:<bucket-name>
 ```
-- **View Bucket:**
-```bash
-rclone lsd Akave:<bucket-name>
-```
 
 ### File Commands
 
@@ -140,16 +136,17 @@ rclone ls Akave:<bucket-name>
 ```
 - **Upload File:**
 ```bash
-rclone copy <file-path> Akave:<bucket-name>
+rclone copy <file-path> Akave:<bucket-name> 
 ```
 - **Download File:**
 ```bash
-rclone copy Akave:<bucket-name> <file-path>
+rclone copyto Akave:<bucket-name>/<file-path> <file-path>
 ```
 - **Delete File:**
 ```bash
-rclone rm Akave:<bucket-name> <file-path>
+rclone deletefile Akave:<bucket-name>/<file-path>
 ```
+
 ### Data Migration Example
 
 The most common use case for Rclone is to migrate data from one storage platform to another. Here is an example of how to migrate data from AWS S3 to Akave O3 using Rclone:
