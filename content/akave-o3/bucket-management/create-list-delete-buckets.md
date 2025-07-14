@@ -59,4 +59,7 @@ aws s3 rb s3://my-akave-bucket \
   --endpoint-url https://o3-rc1.akave.xyz
 ```
 
-**Note**: Make sure your bucket is empty before deleting it. The operation will fail otherwise!
+
+**Notes**: 
+- Make sure your bucket is empty before deleting it. The operation will fail otherwise!
+- After a bucket has been deleted a bucket cannot be created with the same name across the O3 instance, so be careful when deleting! 
