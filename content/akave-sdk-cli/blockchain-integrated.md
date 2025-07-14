@@ -20,8 +20,10 @@ cd akavesdk
 ```
 2. **Install dependency** (Requirements: Go 1.23.5+)
 
-Go to: [https://go.dev/doc/install](https://go.dev/doc/install)
+Official Documentation: [https://go.dev/doc/install](https://go.dev/doc/install)
 
+<details>
+<summary>Go Installation Guide</summary>
 
 ### Mac OS Go install example
 
@@ -59,6 +61,8 @@ export PATH=$PATH:/usr/local/go/bin
 ```bash
 go version
 ```
+
+</details>
 
 ## Build
 
@@ -154,7 +158,7 @@ akavecli ipc bucket list --node-address=connect.akave.ai:5500 --private-key="you
 ```
 **To secure your key, you can put it in a keyfile and use this: (temporary until new release)**
 ```bash
-akavecli ipc bucket create <bucket-name> --node-address=connect.akave.ai:5500 --private-key "$(cat ~/.key/private.key)"
+akavecli ipc bucket create <bucket-name> --node-address=connect.akave.ai:5500 --private-key "$(cat ~/.key/user.akvf.key)"
 ```
 
 ### File Commands
@@ -178,6 +182,10 @@ akavecli ipc file upload <bucket-name> <file-path> --node-address=connect.akave.
 - **Download File:** Downloads a file from a specified bucket.
 ```bash
 akavecli ipc file download <bucket-name> <file-name> <destination-folder> --node-address=connect.akave.ai:5500 --private-key="your-private-key"
+```
+- **Delete File:** Deletes a file from a specified bucket.
+```bash
+akavecli ipc file delete <bucket-name> <file-name> --node-address=connect.akave.ai:5500 --private-key="your-private-key"
 ```
 > Note: IPC-based commands are highly recommended as they ensure data integrity through blockchain-based operations, making them ideal for decentralized storage use cases.
 

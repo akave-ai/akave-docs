@@ -29,7 +29,7 @@ aws s3api list-buckets \
 Check that:
 
 - The region is set to `akave-network`
-- You're using the correct profile (`--profile o3`)
+- You're using the correct profile (`--profile akave-o3`)
 - Your credentials are loaded correctly
 
 ## Common Debug Traps
@@ -56,6 +56,6 @@ You can replicate basic S3 GET/PUT operations manually using presigned URLs or r
 
 The AWS CLI and SDKs change frequently. If a bug is suspected:
 
-- Check known issues on GitHub (boto3, aws-cli, s3transfer)
+- Check known issues on GitHub ([boto3](https://github.com/boto/boto3), [aws-cli](https://github.com/aws/aws-cli), [s3transfer](https://github.com/boto/s3transfer))
 - Try downgrading or upgrading versions
 - Use profiles with custom settings to isolate test cases
