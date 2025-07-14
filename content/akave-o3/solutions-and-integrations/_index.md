@@ -17,5 +17,8 @@ Here you'll find solutions and integrations that can be utilized with the Akave 
 #### **[Snowflake](/akave-o3/solutions-and-integrations/snowflake)** - Data Warehouse Integration
 - Connect your Snowflake data warehouse with Akave storage
 
+#### **[Cloud Mounter](/akave-o3/solutions-and-integrations/cloudmounter)** - Mount Akave Storage as a Local Drive
+- Access Akave storage through your file system as a virtual drive
+
 #### **[Akave MCP Server](/akave-o3/solutions-and-integrations/akave-mcp)** - LLM Model Context Protocol
 - Interact with Akave storage using natural language
