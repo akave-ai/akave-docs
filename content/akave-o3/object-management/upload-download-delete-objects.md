@@ -7,9 +7,9 @@ cascade:
   type: docs
 ---
 
-## Uploading, Downloading, and Deleting Objects with AWS CLI
 
-Once you've created a bucket in Akave O3, you can use standard AWS CLI commands to manage your objects. Below are examples using both `aws s3api` and the simpler `aws s3 cli` syntax.
+
+Once you've created a bucket in Akave O3, you can use standard AWS CLI commands to manage your objects. Below are examples using both `aws s3api` and the simpler `aws s3` CLI syntax.
 
 
 ### Upload an Object
@@ -47,6 +47,23 @@ aws s3api get-object \
 
 ```bash
 aws s3 cp s3://my-akave-bucket/myfile.txt ./downloaded-myfile.txt \
+  --endpoint-url https://o3-rc1.akave.xyz
+```
+
+### List Objects
+
+**Using `aws s3api`:**
+
+```bash
+aws s3api list-objects \
+  --bucket my-akave-bucket \
+  --endpoint-url https://o3-rc1.akave.xyz
+```
+
+**Using `aws s3`:**
+
+```bash
+aws s3 ls s3://my-akave-bucket \
   --endpoint-url https://o3-rc1.akave.xyz
 ```
 

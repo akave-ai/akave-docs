@@ -7,7 +7,7 @@ cascade:
   type: docs
 ---
 
-# Key Management Options
+
 
 Managing keys securely is critical when using encryption on Akave O3. You can choose between **self-managed keys** for client-side encryption or **automatic server-side encryption** using the S3-compatible API.
 

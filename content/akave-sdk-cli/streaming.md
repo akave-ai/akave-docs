@@ -25,7 +25,10 @@ cd akavesdk
 ```
 2. **Install dependency** (Requirements: Go 1.23.5+)
 
-Go to : [https://go.dev/doc/install](https://go.dev/doc/install)
+Official Documentation: [https://go.dev/doc/install](https://go.dev/doc/install)
+
+<details>
+<summary>Go Installation Guide</summary>
 
 ## Mac OS Go install example
 **Mac OS Installation instructions for Go (for all latest OS installation instructions go to https://go.dev/dl/)**
@@ -61,6 +64,9 @@ export PATH=$PATH:/usr/local/go/bin
 ```bash
 go version
 ```
+</details>
+
+
 ## Build
 1. **Clone repository**
 
@@ -116,12 +122,32 @@ This command should run without needing the full path, indicating that it’s co
 ### Streaming API CLI Commands
 The CLI also supports direct interaction with the Akave node for bucket and file operations. These commands are useful for high-performance data transfers but do not use the blockchain-based operations provided by the IPC API.
 
-### File Management with Streaming API
 **Node Address**
 Public endpoint non-blockchain based network  (`--node-address=connect.akave.ai:5000`)
 
-**Bucket Management Commands**
 The streaming API enables efficient file uploads by chunking files and distributing blocks across nodes.
+
+
+### Bucket Management with Streaming API
+
+- **Create Bucket**: Creates a new bucket.
+```bash
+akavecli bucket create <bucket-name> --node-address=connect.akave.ai:5000
+```
+- **View Bucket**: Retrieves details of a specific bucket.
+```bash
+akavecli bucket view <bucket-name> --node-address=connect.akave.ai:5000
+```
+- **List Buckets**: Lists all available buckets.
+```bash
+akavecli bucket list --node-address=connect.akave.ai:5000
+```
+- **Delete Bucket**: Soft deletes a specific bucket.
+```bash
+akavecli bucket delete <bucket-name> --node-address=connect.akave.ai:5000
+```
+
+### File Management with Streaming API
 
 - **List Files:** List all files in a specific bucket.
 ```bash
