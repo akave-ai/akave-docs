@@ -280,17 +280,39 @@ Using this approach keeps your private key secure while making it accessible for
 
 This section lists known issues when using the Akave CLI and provides tested workarounds or solutions.
 
-### Downloading Versioned Files from O3
+### Issue: Downloading Versioned Files from O3 Results in Directory Structure
 
-If you are running a self-hosted instance of Akave O3 and enable bucket versioning, the object names in the Akave Network include version tags appending to them. 
+#### Error:
 
-For example for a an object file.txt:
+If you are running a self-hosted instance of Akave O3 and enable bucket versioning, the object names in the Akave Network include version tags appended to them. 
+
+For example for an object file.txt:
 - file.txt/null
 - file.txt/V1
 - file.txt/V2
 - etc.
 
-Because of this if you want to download this file using the akavecli which interprets the value following a "/" character as a directory, you must follow these steps:
+When downloading the file using the akavecli, the file will be downloaded with the version tag as the file name, while the file name is the name of the directory.
+
+For example after downloading:
+
+```shell
+cd file.txt
+```
+Shows a directory containing the version tag:
+
+```shell
+V1
+```
+
+#### Cause:
+
+The akavecli interprets the value following a "/" character as a directory, so it creates a directory with the name of the file and downloads the file into it.
+
+#### Workaround:
+
+If you want to download this file using the akavecli, you must follow these steps:
+
 1. Create a directory with your file name
 ```shell
 mkdir file.txt
