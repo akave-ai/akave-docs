@@ -12,9 +12,9 @@ Welcome to the Akave Link API! This API wrapper enables seamless integration wit
 - **Installing Docker:** [https://docs.docker.com/engine/install/](https://docs.docker.com/engine/install/)
 
 
-# Getting Started
+## Getting Started
 
-## Step 1: Pull the Docker Image
+### Step 1: Pull the Docker Image
 
 To start, pull the Akave Link Docker image:
 
@@ -22,7 +22,7 @@ To start, pull the Akave Link Docker image:
 docker pull akave/akavelink:latest
 ```
 
-## Step 2: Get a Wallet Address and Request Funds
+### Step 2: Get a Wallet Address and Request Funds
 - Visit [https://faucet.akave.ai](https://faucet.akave.ai) to obtain a wallet address and add the Akave chain to MetaMask.
 - Request funds from the faucet to start experimenting with the Akave Link API.
 
@@ -36,7 +36,7 @@ docker pull akave/akavelink:latest
 
 **Blockchain Explorer:** [http://explorer.akave.ai](http://explorer.akave.ai)
 
-## Step 3: Run the Akave Link Container
+### Step 3: Run the Akave Link Container
 
 Run the container and specify the `PRIVATE_KEY` environment variable.
 
@@ -61,7 +61,7 @@ docker run -d \
 The API will now be running locally at [http://localhost:8000](http://localhost:8000).
 
 
-# Setting Up the JavaScript Wrapper
+## Setting Up the JavaScript Wrapper
 
 Here's a quick setup to interact with the Akave API using JavaScript:
 
@@ -84,13 +84,13 @@ async function apiRequest(method, endpoint, data = null) {
 }
 ```
 
-# Example Usage
+## Example Usage
 
 Each section below demonstrates API calls using this wrapper, alongside the `curl` equivalent.
 
-# Bucket Operations
+### Bucket Operations
 
-## 1. Create a Bucket
+#### 1. Create a Bucket
 
 Create a new storage bucket.
 
@@ -106,7 +106,7 @@ apiRequest('POST', '/buckets', { bucketName: 'myBucket' });
 curl -X POST http://localhost:8000/buckets -H "Content-Type: application/json" -d '{"bucketName": "myBucket"}'
 ```
 
-## 2. List Buckets
+#### 2. List Buckets
 
 Retrieve all existing buckets.
 
@@ -122,7 +122,7 @@ apiRequest('GET', '/buckets');
 curl -X GET http://localhost:8000/buckets
 ```
 
-## 3. View Bucket Details
+#### 3. View Bucket Details
 
 Retrieve details of a specific bucket.
 
@@ -138,9 +138,25 @@ apiRequest('GET', '/buckets/myBucket');
 curl -X GET http://localhost:8000/buckets/myBucket
 ```
 
-# File Operations
+#### 4. Delete a Bucket
 
-## 1. List Files in a Bucket
+Delete a specific bucket.
+
+**JavaScript Example:**
+
+```javascript
+apiRequest('DELETE', '/buckets/myBucket');
+```
+
+**curl Command:**
+
+```bash
+curl -X DELETE http://localhost:8000/buckets/myBucket
+```
+
+### File Operations
+
+#### 1. List Files in a Bucket
 
 Retrieve a list of files within a bucket.
 
@@ -156,7 +172,7 @@ apiRequest('GET', '/buckets/myBucket/files');
 curl -X GET http://localhost:8000/buckets/myBucket/files
 ```
 
-## 2. Get File Info
+#### 2. Get File Info
 
 Fetch metadata about a specific file.
 
@@ -172,7 +188,7 @@ apiRequest('GET', '/buckets/myBucket/files/myFile.txt');
 curl -X GET http://localhost:8000/buckets/myBucket/files/myFile.txt
 ```
 
-## 3. Upload a File
+#### 3. Upload a File
 
 Upload a file to a bucket.
 
@@ -209,7 +225,7 @@ uploadFile('myBucket', './path/to/file.txt');
 curl -X POST http://localhost:8000/buckets/myBucket/files -F file=@/path/to/file.txt
 ```
 
-## 4. Download a File
+#### 4. Download a File
 
 Download a file from a bucket.
 
@@ -243,7 +259,7 @@ curl -X GET http://localhost:8000/buckets/myBucket/files/myFile.txt/download -o 
 ```
 Output file extension should be the same as the requested file.
 
-# Error Handling
+## Error Handling
 
 All endpoints return errors in the following format:
 
