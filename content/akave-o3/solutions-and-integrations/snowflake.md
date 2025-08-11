@@ -9,6 +9,10 @@ cascade:
 
 Akave O3 is a fully S3 compatible decentralized storage solution that integrates seamlessly with Snowflake, allowing you to leverage decentralized storage for your data warehousing needs.
 
+**Below is a short video demo for using Akave O3 with Snowflake:**
+
+{{< youtube jFCd_snG0D0 >}}
+
 ## Prerequisites
 
 - **A Snowflake account**
@@ -35,7 +39,7 @@ Ensure your credentials are valid by listing buckets in your account:
 
 ```bash
 aws s3api list-buckets \
-  --endpoint-url https://o3-rc2.akave.xyz
+  --endpoint-url https://o3-rc1.akave.xyz
 ```
 
 **Expected output:**
@@ -56,7 +60,7 @@ Then, create a bucket using the AWS CLI and your Akave credentials:
 
 ```bash
 aws s3 mb s3://my-snowflake-bucket \
-  --endpoint-url https://o3-rc2.akave.xyz
+  --endpoint-url https://o3-rc1.akave.xyz
 ```
 
 **Expected output:**
@@ -68,7 +72,7 @@ make_bucket: my-snowflake-bucket
 Finally, test uploading an object to your bucket:
 ```bash
 aws s3 cp ./myfile.txt s3://my-snowflake-bucket/myfile.txt \
-  --endpoint-url https://o3-rc2.akave.xyz
+  --endpoint-url https://o3-rc1.akave.xyz
 ```
 
 **Expected output:**
@@ -84,7 +88,7 @@ Start by creating a stage in your account by running the below command for the b
 ```sql
 CREATE STAGE my_akave_stage
   URL = 's3compat://my-snowflake-bucket/'
-  ENDPOINT = 'o3-rc2.akave.xyz'
+  ENDPOINT = 'o3-rc1.akave.xyz'
   CREDENTIALS = (AWS_KEY_ID = '1a2b3c...' AWS_SECRET_KEY = '4x5y6z...')
   DIRECTORY = ( ENABLE = true );
 ```
@@ -163,7 +167,7 @@ You can retrieve the data stored in Akave from Snowflake by synchronizing the ra
 
 ```bash
 aws s3 sync s3://my-snowflake-bucket/nation_data ./local-directory \
-  --endpoint-url https://o3-rc2.akave.xyz
+  --endpoint-url https://o3-rc1.akave.xyz
 ```
 
 **Expected output:**
