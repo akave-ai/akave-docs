@@ -91,7 +91,7 @@ akave-network
 
 9. **Enter Endpoint**
 ```bash
-https://o3-rc1.akave.xyz
+https://o3-rc2.akave.xyz
 ```
 > Select the endpoint corresponding to your credentials from the options provided here: [Akave Environment](/akave-o3/introduction/akave-environment).
 

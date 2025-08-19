@@ -77,7 +77,7 @@ CREATE OR REPLACE PERSISTENT SECRET akave_secret (
     KEY_ID '<your-access-key>',
     SECRET '<your-secret-key>',
     REGION 'akave-network',
-    ENDPOINT 'o3-rc1.akave.xyz'
+    ENDPOINT 'o3-rc2.akave.xyz'
 );
 ```
 - Select the endpoint corresponding to your credentials from the options provided here: [Akave Environment](/akave-o3/introduction/akave-environment)
@@ -91,7 +91,7 @@ If you have an existing DuckDB database, you can attach Akave as a database.
 First, move the database file into an Akave bucket. In this example using the AWS CLI:
 ```bash
 aws s3 cp database.duckdb s3://bucket/database.duckdb \
-  --endpoint-url https://o3-rc1.akave.xyz
+  --endpoint-url https://o3-rc2.akave.xyz
 ```
 > For more information on object management using the AWS CLI with Akave see [Upload, Download, Delete Objects](/akave-o3/object-management/upload-download-delete-objects).
 

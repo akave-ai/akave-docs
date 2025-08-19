@@ -16,7 +16,7 @@ Below are examples using both `aws s3api` and `aws s3` commands for initiating, 
 The high-level `aws s3 cp` command will **automatically handle multipart uploads** when the file is large enough (default is 8 MB+):
 ```bash
 aws s3 cp ./largefile.zip s3://my-akave-bucket/largefile.zip \
-  --endpoint-url https://o3-rc1.akave.xyz
+  --endpoint-url https://o3-rc2.akave.xyz
 ```
 No need to manage `UploadId`, parts, or ETags manually.
 
@@ -31,7 +31,7 @@ No need to manage `UploadId`, parts, or ETags manually.
 aws s3api create-multipart-upload \
   --bucket my-akave-bucket \
   --key largefile.zip \
-  --endpoint-url https://o3-rc1.akave.xyz
+  --endpoint-url https://o3-rc2.akave.xyz
 ```
 This returns an `UploadId` which you must reference in the next steps.
 
@@ -46,7 +46,7 @@ aws s3api upload-part \
   --part-number 1 \
   --body part1.zip \
   --upload-id <UploadId> \
-  --endpoint-url https://o3-rc1.akave.xyz
+  --endpoint-url https://o3-rc2.akave.xyz
 ```
 Repeat this step for each part of the file, incrementing the `--part-number`.
 
@@ -62,7 +62,7 @@ aws s3api complete-multipart-upload \
   --key largefile.zip \
   --upload-id <UploadId> \
   --multipart-upload file://parts.json \
-  --endpoint-url https://o3-rc1.akave.xyz
+  --endpoint-url https://o3-rc2.akave.xyz
 ```
 `parts.json` should look like this:
 ```json
@@ -90,7 +90,7 @@ aws s3api abort-multipart-upload \
   --bucket my-akave-bucket \
   --key largefile.zip \
   --upload-id <UploadId> \
-  --endpoint-url https://o3-rc1.akave.xyz
+  --endpoint-url https://o3-rc2.akave.xyz
 ```
 This will cancel the upload and remove all uploaded parts.
 

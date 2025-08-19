@@ -33,7 +33,7 @@ You can then apply the ACL policy to your bucket using the `aws s3api put-bucket
 aws s3api put-bucket-policy \
   --bucket my-akave-bucket \
   --policy file://acl.json \
-  --endpoint-url https://o3-rc1.akave.xyz
+  --endpoint-url https://o3-rc2.akave.xyz
 ```
 
 ## Confirm the ACL Policy
@@ -42,7 +42,7 @@ You can confirm the ACL policy has been applied to your bucket using the `aws s3
 ```bash
 aws s3api get-bucket-policy \
   --bucket my-akave-bucket \
-  --endpoint-url https://o3-rc1.akave.xyz
+  --endpoint-url https://o3-rc2.akave.xyz
 ```
 
 Which will return the policy if it has been applied.
@@ -55,7 +55,7 @@ Which will return the policy if it has been applied.
 
 Verify the policy has been applied by loading the data in a browser or with a CURL command with the following URL structure:
 ```
-https://my-akave-bucket.o3-rc1.akave.xyz/your-object-name
+https://my-akave-bucket.o3-rc2.akave.xyz/your-object-name
 ```
 
 If the policy has been applied, you should see the object data in the browser or in the response from the CURL command.
@@ -70,14 +70,14 @@ You can delete the ACL policy from your bucket using the `aws s3api delete-bucke
 ```bash
 aws s3api delete-bucket-policy \
   --bucket my-akave-bucket \
-  --endpoint-url https://o3-rc1.akave.xyz
+  --endpoint-url https://o3-rc2.akave.xyz
 ```
 
 To verify the policy has been deleted, you can use the `aws s3api get-bucket-policy` command:
 ```bash
 aws s3api get-bucket-policy \
   --bucket my-akave-bucket \
-  --endpoint-url https://o3-rc1.akave.xyz
+  --endpoint-url https://o3-rc2.akave.xyz
 ```
 
 Which will return an empty response if the policy has been deleted.

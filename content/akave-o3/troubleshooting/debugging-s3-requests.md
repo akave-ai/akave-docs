@@ -21,7 +21,7 @@ Add `--debug` to any AWS CLI command to see:
 Example:
 ```bash
 aws s3api list-buckets \
-  --endpoint-url https://o3-rc1.akave.xyz \
+  --endpoint-url https://o3-rc2.akave.xyz \
   --debug
 ```
 ## Review Signature and Region

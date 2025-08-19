@@ -21,7 +21,7 @@ A presigned URL is a time-limited, signed link that allows access to a specific 
 ```bash
 aws s3 presign s3://my-akave-bucket/myfile.txt \
   --expires-in 3600 \
-  --endpoint-url https://o3-rc1.akave.xyz
+  --endpoint-url https://o3-rc2.akave.xyz
 ```
 > This generates a URL valid for 1 hour (3600 seconds) to download the file.
 
@@ -29,7 +29,7 @@ aws s3 presign s3://my-akave-bucket/myfile.txt \
 
 Anyone with the URL can download the file:
 ```bash
-curl "https://o3-rc1.akave.xyz/my-akave-bucket/myfile.txt?...signature..."
+curl "https://o3-rc2.akave.xyz/my-akave-bucket/myfile.txt?...signature..."
 ```
 Or open it directly in a browser.
 

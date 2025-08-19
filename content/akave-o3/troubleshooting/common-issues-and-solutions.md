@@ -45,7 +45,7 @@ Then use the profile in your commands:
 ```bash
 aws s3 cp ./file.txt s3://my-akave-bucket/ \
   --profile o3 \
-  --endpoint-url https://o3-rc1.akave.xyz
+  --endpoint-url https://o3-rc2.akave.xyz
 ```
 ### Workaround 3: Explicitly specify a supported checksum (e.g., CRC32)
 ```bash
@@ -54,7 +54,7 @@ aws s3api put-object \
   --key example.txt \
   --body ./example.txt \
   --checksum-algorithm CRC32 \
-  --endpoint-url https://o3-rc1.akave.xyz
+  --endpoint-url https://o3-rc2.akave.xyz
 ```
 ### Why this matters:
 

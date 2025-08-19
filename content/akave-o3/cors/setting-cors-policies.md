@@ -18,7 +18,7 @@ Akave O3 supports full S3-compatible CORS configuration via the `aws s3api`.
 aws s3api put-bucket-cors \
   --bucket my-akave-bucket \
   --cors-configuration file://cors.json \
-  --endpoint-url https://o3-rc1.akave.xyz
+  --endpoint-url https://o3-rc2.akave.xyz
 ```
 **Using `aws s3`:**
 
@@ -30,7 +30,7 @@ Not supported for CORS. Use `s3api` for CORS operations.
 ```bash
 aws s3api get-bucket-cors \
   --bucket my-akave-bucket \
-  --endpoint-url https://o3-rc1.akave.xyz
+  --endpoint-url https://o3-rc2.akave.xyz
 ```
 ## Delete Existing CORS Policy
 
@@ -38,7 +38,7 @@ aws s3api get-bucket-cors \
 ```bash
 aws s3api delete-bucket-cors \
   --bucket my-akave-bucket \
-  --endpoint-url https://o3-rc1.akave.xyz
+  --endpoint-url https://o3-rc2.akave.xyz
 ```
 {{< callout type="info" >}}
  - CORS applies at the **bucket level**.
