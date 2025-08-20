@@ -21,14 +21,14 @@ aws s3api put-object \
   --bucket my-akave-bucket \
   --key myfile.txt \
   --body ./myfile.txt \
-  --endpoint-url https://o3-rc1.akave.xyz
+  --endpoint-url https://o3-rc2.akave.xyz
 ```
 
 **Using `aws s3`:**
 
 ```bash
 aws s3 cp ./myfile.txt s3://my-akave-bucket/myfile.txt \
-  --endpoint-url https://o3-rc1.akave.xyz
+  --endpoint-url https://o3-rc2.akave.xyz
 ```
 
 ### Download an Object
@@ -40,14 +40,14 @@ aws s3api get-object \
   --bucket my-akave-bucket \
   --key myfile.txt \
   ./downloaded-myfile.txt \
-  --endpoint-url https://o3-rc1.akave.xyz
+  --endpoint-url https://o3-rc2.akave.xyz
 ```
 
 **Using `aws s3`:**
 
 ```bash
 aws s3 cp s3://my-akave-bucket/myfile.txt ./downloaded-myfile.txt \
-  --endpoint-url https://o3-rc1.akave.xyz
+  --endpoint-url https://o3-rc2.akave.xyz
 ```
 
 ### List Objects
@@ -57,14 +57,14 @@ aws s3 cp s3://my-akave-bucket/myfile.txt ./downloaded-myfile.txt \
 ```bash
 aws s3api list-objects \
   --bucket my-akave-bucket \
-  --endpoint-url https://o3-rc1.akave.xyz
+  --endpoint-url https://o3-rc2.akave.xyz
 ```
 
 **Using `aws s3`:**
 
 ```bash
 aws s3 ls s3://my-akave-bucket \
-  --endpoint-url https://o3-rc1.akave.xyz
+  --endpoint-url https://o3-rc2.akave.xyz
 ```
 
 ### Delete an Object
@@ -75,14 +75,14 @@ aws s3 ls s3://my-akave-bucket \
 aws s3api delete-object \
   --bucket my-akave-bucket \
   --key myfile.txt \
-  --endpoint-url https://o3-rc1.akave.xyz
+  --endpoint-url https://o3-rc2.akave.xyz
 ```
 
 **Using `aws s3`:**
 
 ```bash
 aws s3 rm s3://my-akave-bucket/myfile.txt \
-  --endpoint-url https://o3-rc1.akave.xyz
+  --endpoint-url https://o3-rc2.akave.xyz
 ```
 
 {{< callout type="info" >}}

@@ -23,7 +23,7 @@ With SSE, Akave encrypts your objects at rest using one of the supported methods
 aws s3api put-bucket-encryption \
   --bucket my-akave-bucket \
   --server-side-encryption-configuration file://sse.json \
-  --endpoint-url https://o3-rc1.akave.xyz
+  --endpoint-url https://o3-rc2.akave.xyz
 ```
 **Example `sse.json`:**
 ```json
@@ -43,7 +43,7 @@ aws s3api put-bucket-encryption \
 ```bash
 aws s3api get-bucket-encryption \
   --bucket my-akave-bucket \
-  --endpoint-url https://o3-rc1.akave.xyz
+  --endpoint-url https://o3-rc2.akave.xyz
 ```
 ## Disable Bucket Encryption
 
@@ -51,7 +51,7 @@ aws s3api get-bucket-encryption \
 ```bash
 aws s3api delete-bucket-encryption \
   --bucket my-akave-bucket \
-  --endpoint-url https://o3-rc1.akave.xyz
+  --endpoint-url https://o3-rc2.akave.xyz
 ```
 **Note:** The bucket must be empty for bucket encryption to be removed. See the [Delete an Object](https://docs.akave.xyz/akave-o3/object-management/upload-download-delete-objects/#delete-an-object) section for how to remove objects from a bucket.
 
@@ -65,7 +65,7 @@ Client-side encryption is handled **before** data reaches the Akave network. You
 ```bash
 aws s3 cp myfile.txt s3://my-akave-bucket/encrypted.txt \
   --sse AES256 \
-  --endpoint-url https://o3-rc1.akave.xyz
+  --endpoint-url https://o3-rc2.akave.xyz
 ```
 **Using `aws s3api`:**
 ```bash
@@ -74,7 +74,7 @@ aws s3api put-object \
   --key encrypted.txt \
   --body myfile.txt \
   --server-side-encryption AES256 \
-  --endpoint-url https://o3-rc1.akave.xyz
+  --endpoint-url https://o3-rc2.akave.xyz
 ```
 {{< callout type="info" >}}
  - SSE is best for simplifying key handling while maintaining secure storage at rest.

@@ -26,7 +26,7 @@ Enter:
 ```bash
 aws s3api list-buckets \
   --profile akave-o3 \
-  --endpoint-url https://o3-rc1.akave.xyz
+  --endpoint-url https://o3-rc2.akave.xyz
 ```
 
 You can now run any `AWS CLI` or `s3api` command with `--profile akave-o3` instead of exporting your credentials each time.

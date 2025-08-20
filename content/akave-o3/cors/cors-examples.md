@@ -57,6 +57,6 @@ Save any of these examples to a file named `cors.json`, then run:
 aws s3api put-bucket-cors \
   --bucket my-akave-bucket \
   --cors-configuration file://cors.json \
-  --endpoint-url https://o3-rc1.akave.xyz
+  --endpoint-url https://o3-rc2.akave.xyz
 ```
 This will apply the configuration to your bucket.
