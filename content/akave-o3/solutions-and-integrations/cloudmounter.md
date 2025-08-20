@@ -9,6 +9,10 @@ cascade:
 
 [CloudMounter](https://cloudmounter.net/) is a tool that allows you to mount Akave Network storage as a local file system. This enables you to access your data as if it were stored locally, while still benefiting from the security and accessibility of the Akave Network.
 
+**Below is a short video demo for using Akave O3 with CloudMounter:**
+
+{{< youtube UUbSkvHf7vE >}}
+
 ## Pre-requisites
 
 1. **Akave O3 Credentials**
