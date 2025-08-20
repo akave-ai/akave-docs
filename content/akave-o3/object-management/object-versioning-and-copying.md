@@ -7,21 +7,11 @@ cascade:
   type: docs
 ---
 
-Akave O3 supports S3-compatible object versioning and copying, allowing you to preserve file history, retrieve older versions, and copy data within or across buckets -- all using familiar AWS CLI tools.
+Akave O3 has S3-compatible object versioning and copying enabled by default, allowing you to preserve file history, retrieve older versions, and copy data within or across buckets -- all using familiar AWS CLI tools.
 
-### Enable Versioning on a Bucket
-
-**Using `aws s3api`:**
-
-```bash
-aws s3api put-bucket-versioning \
-  --bucket my-akave-bucket \
-  --versioning-configuration Status=Enabled \
-  --endpoint-url https://o3-rc2.akave.xyz
-```
-
-> `aws s3` does not support versioning configuration directly -- use `s3api` for this.
-
+{{< callout type="info" >}}
+Note that versioning **cannot be disabled** on Akave O3 as data is immutably stored on the blockchain.
+{{< /callout >}}
 
 ### List Object Versions
 
