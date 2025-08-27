@@ -130,7 +130,7 @@ To start, you’ll need an Akave wallet address. Visit [https://faucet.akave.ai]
 
 Public endpoint blockchain-based network: `--node-address=connect.akave.ai:5500`
 
-## IPC API Commands (Preferred)
+## IPC API Commands
 
 The IPC API is the recommended approach for interacting with Akave’s decentralized storage. It provides access to Akave’s smart contracts, enabling secure, blockchain-based bucket and file operations. You will need your private key to operate on the network.
 
@@ -164,7 +164,7 @@ akavecli ipc bucket create <bucket-name> --node-address=connect.akave.ai:5500 --
 ### File Commands
 
 {{< callout type="info" >}}
- Make sure the minimum file size is 127 bytes! Keep max size to test at 100MB.
+ The maximum file size for upload is 5GB. For larger files please use Multipart Uploads with the [Akave O3 API](/akave-o3/multipart-uploads/best-practices-for-large-files/)
 {{< /callout >}}
 
 - **List Files:** Lists all files in a specified bucket.
@@ -187,7 +187,6 @@ akavecli ipc file download <bucket-name> <file-name> <destination-folder> --node
 ```bash
 akavecli ipc file delete <bucket-name> <file-name> --node-address=connect.akave.ai:5500 --private-key="your-private-key"
 ```
-> Note: IPC-based commands are highly recommended as they ensure data integrity through blockchain-based operations, making them ideal for decentralized storage use cases.
 
 
 ## Approach to Protect Your Private Key
