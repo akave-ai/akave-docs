@@ -11,6 +11,10 @@ cascade:
 
 To streamline your workflow, you can configure a dedicated AWS CLI profile for interacting with Akave O3. This allows you to avoid setting environment variables for each session and keeps your credentials organized under a named profile.
 
+### Installation
+
+Before setting up the profile, make sure you have the AWS CLI installed for your operating system using the installation instructions [here](https://docs.aws.amazon.com/cli/latest/userguide/getting-started-install.html).
+
 ### Step 1: Configure the Profile
 
 `aws configure --profile akave-o3`
