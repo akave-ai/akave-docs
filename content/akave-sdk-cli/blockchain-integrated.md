@@ -116,12 +116,6 @@ To start, you’ll need an Akave wallet address. Visit [https://faucet.akave.ai]
 
 ![Akave Faucet](/images/faucet.gif)
 
-{{< callout type="warning" >}}
-  **Always be careful when dealing with your private key. Double-check that you’re not hardcoding it anywhere or committing it to Git. Remember: anyone with access to your private key has complete control over your funds.**
-
-  Ensure you’re not reusing a private key that’s been deployed on other EVM chains. Each blockchain has its own attack vectors, and reusing keys across chains exposes you to cross-chain vulnerabilities. Keep separate keys to maintain isolation and protect your assets.
-{{< /callout >}}
-
 ### Blockchain Explorer
 
 [http://explorer.akave.ai](http://explorer.akave.ai)
@@ -134,9 +128,17 @@ Public endpoint blockchain-based network: `--node-address=connect.akave.ai:5500`
 
 The IPC API is the recommended approach for interacting with Akave’s decentralized storage. It provides access to Akave’s smart contracts, enabling secure, blockchain-based bucket and file operations. You will need your private key to operate on the network.
 
-{{< callout type="info" >}}
- Export your newly created key! (Example through MetaMask): [link](https://support.metamask.io/configure/accounts/how-to-export-an-accounts-private-key/)
+It's highly recommend you use a new wallet for this purpose. You can do so by creating a wallet using [Metamask](https://metamask.io/) or any other self-custody EVM wallet provider. For an example of how to export your private key from MetaMask see this example: [Export your private key from MetaMask](https://support.metamask.io/configure/accounts/how-to-export-an-accounts-private-key/)
+
+{{< callout type="warning" >}}
+  **Always be careful when dealing with your private key. Double-check that you’re not hardcoding it anywhere or committing it to Git.**
+  
+  **Remember: anyone with access to your private key has complete control over your funds.**
+
+  Ensure you’re not reusing a private key that’s been deployed on other EVM chains. Each blockchain has its own attack vectors, and reusing keys across chains exposes you to cross-chain vulnerabilities. Keep separate keys to maintain isolation and protect your assets.
 {{< /callout >}}
+
+For more information on securing your private key, see the [Approach to Protect Your Private Key](#approach-to-protect-your-private-key) section below.
 
 ### Bucket Commands
 
@@ -192,7 +194,7 @@ akavecli ipc file delete <bucket-name> <file-name> --node-address=connect.akave.
 ## Approach to Protect Your Private Key
 
 {{< callout type="info" >}}
- Export key in MetaMask: [link](https://support.metamask.io/configure/accounts/how-to-export-an-accounts-private-key/)
+ Export your private key from MetaMask: [link](https://support.metamask.io/configure/accounts/how-to-export-an-accounts-private-key/)
 {{< /callout >}}
 
 Using `--private-key "$(cat ~/.key/user.akvf.key)"` offers protection because:
@@ -230,7 +232,7 @@ akavecli ipc bucket create workshop --private-key "$(cat ~/.key/user.akvf.key)" 
 ### Steps to Set Up an Environment Variable for Your Private Key
 
 {{< callout type="info" >}}
- Export key in MetaMask: [link](https://support.metamask.io/configure/accounts/how-to-export-an-accounts-private-key/)
+ Export your private key from MetaMask: [link](https://support.metamask.io/configure/accounts/how-to-export-an-accounts-private-key/)
 {{< /callout >}}
 
 1. Save the Private Key to an Environment Variable Temporarily

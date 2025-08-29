@@ -28,25 +28,23 @@ docker pull akave/akavelink:latest
 
 ![Akave Faucet](/images/faucet.gif)
 
-{{< callout type="warning" >}}
-  **Always be careful when dealing with your private key. Double-check that you’re not hardcoding it anywhere or committing it to Git. Remember: anyone with access to your private key has complete control over your funds.**
-
-  Ensure you’re not reusing a private key that’s been deployed on other EVM chains. Each blockchain has its own attack vectors, and reusing keys across chains exposes you to cross-chain vulnerabilities. Keep separate keys to maintain isolation and protect your assets.
-{{< /callout >}}
-
 **Blockchain Explorer:** [http://explorer.akave.ai](http://explorer.akave.ai)
 
 ### Step 3: Run the Akave Link Container
 
-Run the container and specify the `PRIVATE_KEY` environment variable.
+Run the container and specify the `PRIVATE_KEY` environment variable and the `NODE_ADDRESS` public endpoint.
 
-{{< callout type="info" >}}
-  With Akavelink, we expect you to use the blockchain-enabled storage network on port **5500**.
+The Node Address (`NODE_ADDRESS`) is ➔ `connect.akave.ai:5500`
+
+The private key is the private key of an EVM wallet address. For steps on how to access this private key see this example using [Metamask](https://support.metamask.io/configure/accounts/how-to-export-an-accounts-private-key/).
+
+{{< callout type="warning" >}}
+  **Always be careful when dealing with your private key. Double-check that you’re hard-coding it anywhere and not committing it to Git.**
+
+  **Remember: Anyone with access to your private key has complete control over your funds.**
+
+  Ensure you’re not reusing a private key that’s been deployed on other EVM chains. Each blockchain has its own attack vectors, and reusing keys across chains exposes you to cross-chain vulnerabilities. Keep separate keys to maintain isolation and protect your assets.
 {{< /callout >}}
-
-### Node Address Public Endpoint
-
-**Node Address (`NODE_ADDRESS`) ➔** `connect.akave.ai:5500`
 
 ### Run the Akave Link Docker Container
 
@@ -193,7 +191,7 @@ curl -X GET http://localhost:8000/buckets/myBucket/files/myFile.txt
 Upload a file to a bucket.
 
 {{< callout type="info" >}}
-  Make sure the minimum file size is **127 bytes**! Keep max size to test at **100MB**
+ The maximum file size for upload is 5GB. For larger files please use Multipart Uploads with the [Akave O3 API](/akave-o3/multipart-uploads/best-practices-for-large-files/)
 {{< /callout >}}
 
 **JavaScript Example (using FormData):**
