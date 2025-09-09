@@ -67,6 +67,16 @@ aws s3 ls s3://my-akave-bucket \
   --endpoint-url https://o3-rc2.akave.xyz
 ```
 
+### Total Size for All Objects in a Bucket
+
+**Using `aws s3`:**
+
+```bash
+aws s3 ls s3://my-akave-bucket \
+--recursive --human-readable --summarize \
+--endpoint-url https://o3-rc2.akave.xyz
+```
+
 ### Delete an Object
 
 **Using `aws s3api`:**
