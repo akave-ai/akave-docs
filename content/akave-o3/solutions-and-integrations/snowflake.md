@@ -7,7 +7,7 @@ cascade:
   type: docs
 ---
 
-Akave O3 is a fully S3 compatible decentralized storage solution that integrates seamlessly with Snowflake, allowing you to leverage decentralized storage for your data warehousing needs.
+[Snowflake](https://www.snowflake.com/) is a enterprise grade data warehouse platform that provides a secure, scalable, and cost-effective way to store and analyze large volumes of data. It is fully compatible with the Akave O3 decentralized storage endpoint. 
 
 **Below is a short video demo for using Akave O3 with Snowflake:**
 

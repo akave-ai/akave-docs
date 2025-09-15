@@ -7,7 +7,7 @@ cascade:
   type: docs
 ---
 
-DuckDB is an in-memory, SQL query engine that enables data analytics directly on data stored in Akave.
+[DuckDB](https://duckdb.org/) is an in-memory, SQL query engine that enables data analytics directly on data stored in Akave.
 
 ## Pre-requisites
 
