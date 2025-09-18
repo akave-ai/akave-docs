@@ -22,8 +22,8 @@ Before setting up the profile, make sure you have the AWS CLI installed for your
 Enter:
 - AWS Access Key ID: `<your-access-key>`
 - AWS Secret Access Key: `<your-secret-key>`
-- Default region name: akave-network
-- Default output format: json
+- Default region name: `akave-network`
+- Default output format: `json`
 
 ### Step 2: Use the Profile in Commands
 
