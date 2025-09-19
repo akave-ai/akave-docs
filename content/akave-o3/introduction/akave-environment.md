@@ -1,7 +1,7 @@
 ---
 date: '2025-04-29T11:41:52-05:00'
 draft: false
-title: 'Akave o3 environment'
+title: 'Akave O3 environment'
 weight: 4
 cascade:
   type: docs
@@ -22,4 +22,4 @@ AWS_DEFAULT_REGION=akave-network
 ```
 These endpoints support both local testing and production deployment. You can plug them into your existing AWS-compatible tooling (CLI, SDKs, Terraform) with minimal changes.
 
-To authenticate, you’ll need an `AWS_ACCESS_KEY_ID` and `AWS_SECRET_ACCESS_KEY`, which can be obtained through **STILL TO BE DETERMINED**. These credentials allow secure interaction with Akave’s decentralized object storage, just like with traditional AWS services.
+To authenticate, you’ll need an `AWS_ACCESS_KEY_ID` and `AWS_SECRET_ACCESS_KEY`, which can be obtained through our [Telegram Builders Channel](https://t.me/akavebuilders) for testing, or by contacting our sales team for production use at [akave.com/contact](https://akave.com/contact). These credentials allow secure interaction with Akave’s decentralized object storage, just like with traditional AWS services.

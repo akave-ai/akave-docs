@@ -1,7 +1,7 @@
 ---
 date: '2025-04-30T11:41:52-05:00'
 draft: false
-title: 'Akave o3 Self-Hosted'
+title: 'Akave O3 Self-Hosted'
 weight: 7
 cascade:
   type: docs
@@ -9,8 +9,8 @@ cascade:
 
 Akave O3 can be deployed as a self-Hosted S3 compatible API in your own infrastructure; on-premises, in the cloud, or at the edge. This gives you full control over storage operations, compliance, and data locality.
 
-![Akave o3 Self-Hosted vs Akave.cloud](/images/hosted-self-hosted.png)
-*Akave o3 Self-Hosted vs Akave.cloud*
+![Akave O3 Self-Hosted vs Akave.cloud](/images/hosted-self-hosted.png)
+*Akave O3 Self-Hosted vs Akave.cloud*
 
 ### Key Benefits
 

@@ -1,7 +1,7 @@
 ---
 date: '2025-04-30T11:41:52-05:00'
 draft: false
-title: 'Akave o3 Hosted'
+title: 'Akave O3 Hosted'
 weight: 6
 cascade:
   type: docs
