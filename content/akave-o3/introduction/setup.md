@@ -25,6 +25,25 @@ Enter:
 - Default region name: `akave-network`
 - Default output format: `json`
 
+You can also edit the credentials file at `~/.aws/credentials` and add the endpoint URL to avoid having to use the `--endpoint-url` flag in every command. Note that this only applies to commands used with the specific profile(s) you have the `endpoint_url` variable listed for.
+
+Use the below command to edit the credentials file:
+
+```bash
+nano ~/.aws/credentials
+```
+
+Then add the following to the file:
+
+```ini
+[akave-o3]
+aws_access_key_id = <your_access_key>
+aws_secret_access_key = <your_secret_key>
+endpoint_url = https://o3-rc2.akave.xyz
+```
+
+Make sure to save your changes and exit the editor.
+
 ### Step 2: Use the Profile in Commands
 
 ```bash
