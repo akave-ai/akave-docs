@@ -36,7 +36,7 @@ aws --version
 
 In `~/.aws/config`, add the following under your O3 profile:
 ```bash
-[profile o3]  
+[profile akave-o3]  
 region = akave-network  
 request_checksum_calculation = WHEN_REQUIRED  
 response_checksum_validation = WHEN_REQUIRED
@@ -44,7 +44,7 @@ response_checksum_validation = WHEN_REQUIRED
 Then use the profile in your commands:
 ```bash
 aws s3 cp ./file.txt s3://my-akave-bucket/ \
-  --profile o3 \
+  --profile akave-o3 \
   --endpoint-url https://o3-rc2.akave.xyz
 ```
 ### Workaround 3: Explicitly specify a supported checksum (e.g., CRC32)
