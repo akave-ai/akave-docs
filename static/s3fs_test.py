@@ -3,7 +3,7 @@
 S3FS Test Script for Akave O3
 
 
-This script demonstrates common S3FS operations using the AWS CLI profile "rc2"
+This script demonstrates common S3FS operations using the AWS CLI profile "akave-o3"
 for authentication. It provides examples of listing, uploading, downloading, and
 other operations with Akave O3 storage.
 """
@@ -17,9 +17,9 @@ import argparse
 
 
 def create_s3fs_client():
-    """Initialize and return an S3FS client using the rc2 profile."""
+    """Initialize and return an S3FS client using the akave-o3 profile."""
     return S3FileSystem(
-        profile="rc2",
+        profile="akave-o3",
         endpoint_url="https://o3-rc2.akave.xyz"
     )
 
