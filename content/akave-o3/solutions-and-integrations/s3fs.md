@@ -1,6 +1,6 @@
 ---
 date: '2025-04-23T22:48:28-05:00'
-draft: true
+draft: false
 title: 'S3FS'
 weight: 31
 cascade:
@@ -199,39 +199,43 @@ On Linux:
 journalctl -t s3fs --since "1 hour ago"
 ```
 
-### Python
+### Python 
 
 The S3FS Python library provides a powerful interface to work with Akave O3 storage programmatically. Below are examples of common operations and best practices.
 
-#### Security Best Practices
+#### Imports
 
-Always follow these security guidelines when working with credentials:
+To use S3FS in Python, you need to import the `s3fs` module:
 
 ```python
 import s3fs
-import pandas as pd
+```
+
+Some other imports that are helpful are OS for environment variables and pandas for data analysis.
+
+```python
 import os
-
-# Never hardcode credentials in your code
-access_key = os.environ.get("AKAVE_ACCESS_KEY")
-secret_key = os.environ.get("AKAVE_SECRET_KEY")
-
-if access_key and secret_key:
-    fs = s3fs.S3FileSystem(
-        key=access_key,
-        secret=secret_key,
-        endpoint_url="https://o3-rc2.akave.xyz",
-        client_kwargs={"region_name": "akave-network"}
-    )
-else:
-    raise ValueError("Missing Akave credentials in environment variables")
+import pandas as pd
 ```
 
 #### Authentication Options
 
+{{< callout type="warning" >}}
+**Note:** Never hardcode credentials in your code, instead use one of the secure methods outlined below.
+{{< /callout >}}
+
+The below sections outline different ways to securely authenticate with Akave O3 storage using S3FS.
+
 **Using Environment Variables**
 
-Environment variables are a secure way to handle credentials. You can load them directly:
+Environment variables are a secure way to handle credentials. You can load them directly by exporting them in your shell:
+
+```bash
+export AKAVE_ACCESS_KEY=your_access_key_here
+export AKAVE_SECRET_KEY=your_secret_key_here
+```
+
+Then in your Python code you can reference the credentials:
 
 ```python
 import os
@@ -239,13 +243,12 @@ import os
 access_key = os.environ.get("AKAVE_ACCESS_KEY")
 secret_key = os.environ.get("AKAVE_SECRET_KEY")
 
-if access_key and secret_key:
-    fs = s3fs.S3FileSystem(
-        key=access_key,
-        secret=secret_key,
-        endpoint_url="https://o3-rc2.akave.xyz",
-        client_kwargs={"region_name": "akave-network"}
-    )
+fs = s3fs.S3FileSystem(
+    key=access_key,
+    secret=secret_key,
+    endpoint_url="https://o3-rc2.akave.xyz",
+    client_kwargs={"region_name": "akave-network"}
+)
 ```
 
 **Using .env Files**
@@ -258,7 +261,7 @@ AKAVE_ACCESS_KEY=your_access_key_here
 AKAVE_SECRET_KEY=your_secret_key_here
 ```
 
-Then in your Python code:
+Then in your Python code you can load the credentials from the .env file:
 ```python
 import os
 from dotenv import load_dotenv
@@ -269,7 +272,8 @@ load_dotenv()
 fs = s3fs.S3FileSystem(
     key=os.environ.get("AKAVE_ACCESS_KEY"),
     secret=os.environ.get("AKAVE_SECRET_KEY"),
-    endpoint_url="https://o3-rc2.akave.xyz"
+    endpoint_url="https://o3-rc2.akave.xyz",
+    client_kwargs={"region_name": "akave-network"}
 )
 ```
 
@@ -279,12 +283,13 @@ Make sure to add your `.env` file to `.gitignore` to prevent accidentally commit
 
 **Using AWS CLI Profile**
 
-The most secure option is to use AWS CLI profiles, where credentials are stored in your system's credential store:
+You may also use AWS CLI profiles, where credentials are stored in your system's credential store:
 
 ```python
 fs = s3fs.S3FileSystem(
     profile="akave-o3",
-    endpoint_url="https://o3-rc2.akave.xyz"
+    endpoint_url="https://o3-rc2.akave.xyz",
+    client_kwargs={"region_name": "akave-network"}
 )
 ```
 
@@ -310,10 +315,11 @@ fs.mkdir("your-bucket-name/new-directory")
 
 **Upload a file**
 ```python
-# Simple file upload
 fs.put("local-file.txt", "your-bucket-name/remote-file.txt")
+```
 
-# Upload with progress tracking
+**Upload a large file with progress tracking**
+```python
 with fs.open("your-bucket-name/large-file.zip", "wb") as remote_file:
     with open("local-large-file.zip", "rb") as local_file:
         remote_file.write(local_file.read())
@@ -322,10 +328,11 @@ with fs.open("your-bucket-name/large-file.zip", "wb") as remote_file:
 
 **Download a file**
 ```python
-# Simple file download
 fs.get("your-bucket-name/remote-file.txt", "downloaded-file.txt")
+```
 
-# Stream a large file
+**Download a large file in chunks**
+```python
 with fs.open("your-bucket-name/large-file.csv", "rb") as remote_file:
     # Process the file in chunks to avoid loading it all into memory
     chunk_size = 1024 * 1024  # 1 MB chunks
@@ -336,15 +343,18 @@ with fs.open("your-bucket-name/large-file.csv", "rb") as remote_file:
         # Process chunk here
 ```
 
-**Delete files**
+**Delete a file**
 ```python
-# Delete a single file
 fs.rm("your-bucket-name/file-to-delete.txt")
+```
 
-# Delete multiple files
+**Delete multiple files**
+```python
 fs.rm(["your-bucket-name/file1.txt", "your-bucket-name/file2.txt"])
+```
 
-# Delete a directory and all its contents recursively
+**Delete a directory and all its contents recursively**
+```python
 fs.rm("your-bucket-name/directory-to-delete", recursive=True)
 ```
 
@@ -352,30 +362,33 @@ fs.rm("your-bucket-name/directory-to-delete", recursive=True)
 
 S3FS integrates well with pandas for data analysis workflows:
 
+**Read CSV directly from Akave storage**
 ```python
-# Read CSV directly from Akave storage
 df = pd.read_csv(fs.open("your-bucket-name/data.csv"))
+```
 
-# Write DataFrame back to Akave storage
+**Write DataFrame back to Akave storage as CSV**
+```python
 df.to_csv(fs.open("your-bucket-name/processed-data.csv", "w"))
+```
 
-# Read/write parquet files
+**Read parquet files directly from Akave storage**
+```python
 df = pd.read_parquet(fs.open("your-bucket-name/data.parquet"))
+```
+
+**Write DataFrame back to Akave storage as parquet**
+```python
 df.to_parquet(fs.open("your-bucket-name/processed-data.parquet", "wb"))
 ```
 
 #### Advanced Operations
 
-**File metadata and info**
+**Get file metadata and info**
 ```python
-# Get file metadata
 info = fs.info("your-bucket-name/myfile.txt")
 print(f"File size: {info['size']} bytes")
 print(f"Last modified: {info['LastModified']}")
-
-# Check if path exists
-exists = fs.exists("your-bucket-name/some-file.txt")
-print(f"File exists: {exists}")
 ```
 
 **Copy objects within storage**
@@ -383,34 +396,11 @@ print(f"File exists: {exists}")
 fs.copy("your-bucket-name/source.txt", "your-bucket-name/destination.txt")
 ```
 
-**Batch operations for better performance**
-```python
-# Batch upload multiple files
-files_to_upload = [
-    ("local1.txt", "your-bucket-name/remote1.txt"),
-    ("local2.txt", "your-bucket-name/remote2.txt"),
-    ("local3.txt", "your-bucket-name/remote3.txt")
-]
-
-for local, remote in files_to_upload:
-    fs.put(local, remote)
-```
-
-**Streaming large files in chunks**
-```python
-# Upload a large file in chunks
-chunk_size = 5 * 1024 * 1024  # 5 MB chunks
-
-with fs.open("your-bucket-name/large-file.bin", "wb") as dest_file:
-    with open("local-large-file.bin", "rb") as source_file:
-        while True:
-            chunk = source_file.read(chunk_size)
-            if not chunk:
-                break
-            dest_file.write(chunk)
-```
-
 #### Error Handling and Best Practices
+
+**Error handling**
+
+Use try/except blocks to handle errors by checking the error code and handling it accordingly.
 
 ```python
 import botocore.exceptions
@@ -428,10 +418,26 @@ except botocore.exceptions.ClientError as e:
         print(f"Error occurred: {e}")
 ```
 
-**Connection pooling for multiple operations**
+**Batch operations for better performance**
+
+Use batch operations to upload multiple files at once for better performance.
+
 ```python
-# Use the same S3FileSystem instance for multiple operations
-# to benefit from connection pooling
+files_to_upload = [
+    ("local1.txt", "your-bucket-name/remote1.txt"),
+    ("local2.txt", "your-bucket-name/remote2.txt"),
+    ("local3.txt", "your-bucket-name/remote3.txt")
+]
+
+for local, remote in files_to_upload:
+    fs.put(local, remote)
+```
+
+**Connection pooling for multiple operations**
+
+Use the same S3FileSystem instance for multiple operations to benefit from connection pooling by setting the `max_pool_connections` parameter.
+
+```python
 fs = s3fs.S3FileSystem(
     profile="akave-o3",
     endpoint_url="https://o3-rc2.akave.xyz",
@@ -440,8 +446,10 @@ fs = s3fs.S3FileSystem(
 ```
 
 **Caching configuration**
+
+Enable client-side caching to reduce the number of requests made to Akave storage by setting the `use_listings_cache` and `listings_expiry_time` parameters.
+
 ```python
-# Enable client-side caching
 fs = s3fs.S3FileSystem(
     profile="akave-o3",
     endpoint_url="https://o3-rc2.akave.xyz",
@@ -450,32 +458,63 @@ fs = s3fs.S3FileSystem(
 )
 ```
 
-#### Asynchronous Operations
+### Example Python Script
 
-For high-throughput applications, S3FS supports asynchronous operations:
+A comprehensive example script demonstrating all S3FS operations with Akave O3 is available at:
 
-```python
-import asyncio
-import s3fs
+**[s3fs_test.py](/s3fs_test.py)**
 
-async def process_file(path):
-    async with s3fs.S3FileSystem(
-        profile="akave-o3", 
-        endpoint_url="https://o3-rc2.akave.xyz", 
-        asynchronous=True
-    ) as fs:
-        async with fs.open(f"your-bucket-name/{path}", "rb") as f:
-            content = await f.read()
-            # Process content
-            return len(content)
+This script includes:
+- **Bucket operations**: List buckets and their contents
+- **File operations**: Upload, download, delete, and copy files
+- **Directory operations**: Create directories and manage folder structures
+- **Pandas integration**: Read and write DataFrames directly to/from Akave storage
+- **Error handling**: Robust error handling patterns
+- **CLI interface**: Command-line arguments for flexible testing
 
-async def main():
-    files = ["file1.txt", "file2.txt", "file3.txt"]
-    tasks = [process_file(file) for file in files]
-    results = await asyncio.gather(*tasks)
-    print(f"Processed {sum(results)} bytes")
+#### Dependencies
 
-# Run the async main function
-asyncio.run(main())
+**Required packages (install via pip):**
+- `s3fs`: Python library for S3-compatible object storage file system operations
+- `pandas`: Data analysis library for working with DataFrames and structured data
+
+**Standard library modules (included with Python):**
+- `os`: Operating system interface for file operations
+- `datetime`: Date and time handling
+- `argparse`: Command-line argument parsing
+
+**Install dependencies:**
+```bash
+pip install s3fs pandas
 ```
 
+#### Usage examples
+
+You can run the script with the following commands to run all tests or test specific operations with variable bucket and file names.
+
+**Run all tests on a bucket:**
+```bash
+python s3fs_test.py my-bucket
+```
+
+**List buckets and contents:**
+```bash
+python s3fs_test.py my-bucket --operation list
+```
+
+**Upload a specific file:**
+```bash
+python s3fs_test.py my-bucket --operation upload --file data.csv
+```
+
+**Download a specific file:**
+```bash
+python s3fs_test.py my-bucket --operation download --file data.csv
+```
+
+**Delete a specific file:**
+```bash
+python s3fs_test.py my-bucket --operation delete --file data.csv
+```
+
+**Note:** The script uses the AWS CLI profile `akave-o3` by default. Modify the `create_s3fs_client()` function to use your configured profile name (e.g., `akave-o3`) or to use environment variables for authentication using the `key` and `secret` parameters described in the [Authentication](#authentication) section above

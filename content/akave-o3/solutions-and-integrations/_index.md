@@ -22,3 +22,7 @@ Here you'll find solutions and integrations that can be utilized with the Akave 
 
 #### **[Akave MCP Server](/akave-o3/solutions-and-integrations/akave-mcp)** - LLM Model Context Protocol
 - Interact with Akave storage using natural language
+
+#### **[S3FS](/akave-o3/solutions-and-integrations/s3fs)** - S3 File System
+- Mount Akave storage as a local file system
+
