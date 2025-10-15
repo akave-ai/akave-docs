@@ -15,8 +15,9 @@ cascade:
 
 ## Prerequisites
 
-- **A Snowflake account**
+- **A Snowflake account with proper permissions**
   - Snowflake has all *akave.xyz* endpoints enabled by default starting in the 9.10 release
+  - For most of these queries `SYSADMIN` is the highest level of permissions required, however for Iceberg compatibility `ACCOUNTADMIN` is required
 - **Akave Cloud Credentials**
   - If you do not already have these, please reach out to us for access to [Akave Cloud](https://www.akave.cloud/contact)
 - **[AWS CLI](https://docs.aws.amazon.com/cli/latest/userguide/getting-started-install.html)**
@@ -175,12 +176,107 @@ aws s3 sync s3://my-snowflake-bucket/nation_data ./local-directory \
 download: s3://my-snowflake-bucket/nation_data/data_0_0_0.csv.gz to local-directory/data_0_0_0.csv.gz
 ```
 
+### Iceberg Configuration
+
+Iceberg is a columnar storage format that is compatible with S3 and can be used with Snowflake to store and query data. To use Iceberg with Snowflake on external storage you will need to use an external volume which requires ACCOUNTADMIN permissions. 
+
+#### 1. Create a Volume in Snowflake
+
+Start by creating an external volume in your Snowflake account by running the below command for the bucket you created in the [O3 API](#2-create-a-bucket) section:
+
+```sql
+CREATE OR REPLACE EXTERNAL VOLUME akaveO3extvol
+STORAGE_LOCATIONS = (
+(
+NAME = 'akave_storage_location'
+STORAGE_PROVIDER = 'S3COMPAT'
+STORAGE_BASE_URL = 's3compat://my-snowflake-bucket/'
+CREDENTIALS = (
+AWS_KEY_ID = 'ABC'
+AWS_SECRET_KEY = 'xyz'
+)
+STORAGE_ENDPOINT = 'o3-rc2.akave.xyz'
+)
+);
+```
+
+**Expected Output:**
+
+```
+AKAVEO3EXTVOL successfully created.
+```
+
+#### 2. Create an Iceberg Table
+
+```sql
+CREATE OR REPLACE ICEBERG TABLE AKAVE_ICEBERG
+(  
+ A VARCHAR(134217728), 
+ B FLOAT, 
+ C NUMBER(38,0)
+)  
+CATALOG = 'SNOWFLAKE' 
+EXTERNAL_VOLUME = 'akaveO3extvol' 
+BASE_LOCATION = 'my_iceberg_table_data'; 
+```
+
+**Expected Output:**
+
+```
+Table AKAVE_ICEBERG successfully created.
+```
+
+**Note:** BASE_LOCATION can be set to anything you want data to be prefixed with in your Akave bucket. This creates a prefix/directory in S3 with a hash after like below:
+```
+  aws s3 ls s3://my-snowflake-bucket --profile akave-o3
+	PRE my_iceberg_table_data.yZNuGJ87/
+```
+
+#### 3. Load data into the Iceberg table
+
+```sql
+INSERT INTO AKAVE_ICEBERG (A, B, C)
+SELECT N_NAME, N_REGIONKEY, N_NATIONKEY
+FROM SNOWFLAKE_SAMPLE_DATA.TPCH_SF1.NATION;
+```
+> For this example we use TPCH_SF1.NATION from the SNOWFLAKE_SAMPLE_DATA database, a 4KB table with only 25 rows and 4 columns. 
+
+**Expected output:**
+
+![Snowflake Iceberg Load Output](/images/iceberg_load_output.png)
+
+#### 4. Query data from the Iceberg table
+
+```sql
+SELECT * FROM AKAVE_ICEBERG;
+```
+
+**Expected output:**
+
+![Snowflake Iceberg Query Output](/images/iceberg_query_output.png)
+
+#### 5. Retrieve data stored in Akave from Snowflake
+
+```bash
+aws s3 sync s3://my-snowflake-bucket/my_iceberg_table_data ./local-directory \
+  --endpoint-url https://o3-rc2.akave.xyz
+```
+
+**Expected output:**
+```
+download: s3://my-snowflake-bucket/my_iceberg_table_data.UxEro55R/data/72/snow_CLSW4FMgWLc_QG9-VOmtbhg_0_1_002.parquet to local-directory/data/72/snow_CLSW4FMgWLc_QG9-VOmtbhg_0_1_002.parquet
+download: s3://my-snowflake-bucket/my_iceberg_table_data.UxEro55R/metadata/00001-42c971ee-ba5c-4c27-a88c-92500bf1547a.metadata.json to local-directory/metadata/00001-42c971ee-ba5c-4c27-a88c-92500bf1547a.metadata.json
+download: s3://my-snowflake-bucket/my_iceberg_table_data.UxEro55R/metadata/1760535841784000000-SghOCoESn4x2NpZ6ai8GUw.avro to local-directory/metadata/1760535841784000000-SghOCoESn4x2NpZ6ai8GUw.avro
+```
+> Note that your data and metadata downloads will look different depending on the data you inserted into the Iceberg table
+
 ## Links to Additional Resources
 
 Below are some additional resources from Snowflake, AWS, and Akave that may be helpful:
 
 - **Snowflake**
   - [Snowflake S3 compatible storage docs](https://docs.snowflake.com/en/user-guide/data-load-s3-compatible-storage)
+  - [Snowflake Iceberg docs](https://docs.snowflake.com/en/user-guide/tables-iceberg)
 - **Akave**
   - [Akave O3 docs](/akave-o3/)
 - **AWS**
