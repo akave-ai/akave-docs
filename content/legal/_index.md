@@ -11,3 +11,4 @@ Here you’ll find the legal documents that govern your use of our services.
 - [Service Level Agreement (SLA)](https://docs.akave.xyz/legal/akave_cloud_sla.pdf)
 - [Terms of Service (ToS)](https://docs.akave.xyz/legal/akave_cloud_tos.pdf)
 - [Privacy Policy](https://docs.akave.xyz/legal/akave_cloud_privacy_policy.pdf)
+- [Akave Data Storage Agreement](https://docs.akave.xyz/akave_data_storage_agreement.pdf)
