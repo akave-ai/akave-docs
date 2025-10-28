@@ -62,4 +62,5 @@ aws s3 rb s3://my-akave-bucket \
 
 **Notes**: 
 - Make sure your bucket is empty before deleting it. The operation will fail otherwise!
+  - Akave has object versioning enabled by default, so to delete objects you must delete **each** object version. Specific instructions for deleting object versions can be found in the [Object Versioning and Copying](/akave-o3/object-management/object-versioning-and-copying/) section.
 - After a bucket has been deleted a bucket cannot be created with the same name across the O3 instance, so be careful when deleting! 
