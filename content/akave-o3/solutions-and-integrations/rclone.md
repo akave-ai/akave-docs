@@ -49,11 +49,11 @@ rclone version
 ```
 
 ## Configuration
-Configure Rclone to use Akave's S3 compatible API. For more information on Rclone S3 configuration, see [Rclone S3](https://rclone.org/s3/).
+Configure Rclone to use Akave's S3 compatible API, Akave O3. For more information on Rclone S3 configuration, see [Rclone S3](https://rclone.org/s3/).
 
-### Akave S3 Configuration
+### Akave O3 Configuration
 
-**Configure Akave S3 for use with Rclone by running:**
+**Configure Akave O3 for use with Rclone by running:**
 ```bash
 rclone config
 ```

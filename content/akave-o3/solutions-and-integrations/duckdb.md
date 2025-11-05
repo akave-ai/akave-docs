@@ -48,9 +48,9 @@ duckdb --version
 ```
 
 ## Configuration
-Configure DuckDB to use Akave's S3 compatible API. For more information on DuckDB S3 configuration, see [DuckDB S3 API Support](https://duckdb.org/docs/stable/core_extensions/httpfs/s3api).
+Configure DuckDB to use Akave's S3 compatible API, Akave O3. For more information on DuckDB S3 configuration, see [DuckDB S3 API Support](https://duckdb.org/docs/stable/core_extensions/httpfs/s3api).
 
-### Akave S3 Configuration
+### Akave O3 Configuration
 
 1. **Open the DuckDB CLI by running the following command in your terminal:**
 ```bash
