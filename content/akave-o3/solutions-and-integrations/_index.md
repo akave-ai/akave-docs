@@ -26,3 +26,5 @@ Here you'll find solutions and integrations that can be utilized with the Akave 
 #### **[S3FS](/akave-o3/solutions-and-integrations/s3fs)** - S3 File System
 - Mount Akave storage as a local file system
 
+#### **[Hugging Face](/akave-o3/solutions-and-integrations/huggingface)** - Machine Learning Dataset Management
+- Store, version, and access ML datasets with Hugging Face and Akave storage
