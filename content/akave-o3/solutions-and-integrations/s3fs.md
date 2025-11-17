@@ -460,9 +460,14 @@ fs = s3fs.S3FileSystem(
 
 ### Example Python Script
 
-A comprehensive example script demonstrating all S3FS operations with Akave O3 is available at:
+An example script demonstrating S3FS operations with Akave O3 is available in the [urandom](https://github.com/akave-ai/urandom) repository on the [Akave GitHub page](https://github.com/akave-ai).
 
-**[s3fs_test.py](/s3fs_test.py)**
+To use the script clone the repository and navigate to the s3fs directory:
+
+```bash
+git clone https://github.com/akave-ai/urandom.git
+cd urandom/s3fs
+```
 
 This script includes:
 - **Bucket operations**: List buckets and their contents

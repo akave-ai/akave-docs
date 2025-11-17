@@ -72,16 +72,21 @@ For more information on S3FS usage with Akave see the [S3FS](/akave-o3/solutions
 
 ### Configuration
 
-Start by downloading the helper scripts below by copy/pasting each of them into new `.py` files in your working directory with the same name:
+Start by accessing the helper scripts in the [urandom](https://github.com/akave-ai/urandom) repository on the [Akave GitHub page](https://github.com/akave-ai). Clone the repository and navigate to the huggingface directory:
 
-- **[huggingface_s3.py](/huggingface_s3.py)**
-
-- **[huggingface_test.py](/huggingface_test.py)**
-
-
-Then create a `.env` file in the same directory as your scripts with the following contents:
-
+```bash
+  git clone https://github.com/akave-ai/urandom.git
+  cd urandom/huggingface
 ```
+The directory contains the following helper scripts as well as an example `.env` file:
+
+- **[huggingface_s3.py](https://github.com/akave-ai/urandom/blob/main/huggingface/huggingface_s3.py)**
+- **[huggingface_test.py](https://github.com/akave-ai/urandom/blob/main/huggingface/huggingface_test.py)**
+
+
+Duplicate the `.env.example` file and rename it to `.env`, then fill in the values for your Akave O3 storage.
+
+```bash
 AKAVE_ACCESS_KEY=your_access_key
 AKAVE_SECRET_KEY=your_secret_key
 AKAVE_ENDPOINT_URL=https://o3-rc2.akave.xyz
