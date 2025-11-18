@@ -1,7 +1,7 @@
 ---
 date: '2025-04-26T23:58:37-05:00'
 draft: false
-title: 'PDP Archival and Akave CLI'
+title: 'PDP Archival Usage'
 weight: 60
 cascade:
   type: docs
@@ -12,16 +12,16 @@ Akave integrates **Proof-of-Data-Possession (PDP)** for an archival storage tier
 This section explains:
 
 - How data flows into PDP archival storage
-- How to check archival status
-- How to download via PDP
+- How to check the archival status of a file
+- How to download a file from archival storage using PDP
 
 {{< callout type="info" >}}
-You must use node-address: `connect.akave.ai:9500` to access archival tier of Akave Storage. 
+You must use the node-address: `connect.akave.ai:9500` to access archival tier of Akave Storage. 
 {{< /callout >}}
 
 ## 1. Uploading Data
 
-Data upload with PDP does not require any special flags; archival happens in the background as part of the network’s pipeline.
+Data upload with PDP does not require any special flags; archival processing happens in the background as part of the network’s pipeline.
 
 Standard upload:
 
@@ -30,11 +30,11 @@ akavecli file upload <bucket> <file> \
   --account <wallet-name> \
   --node-address connect.akave.ai:9500
 ```
-Once uploaded, the file is first available from the primary storage tier. Over time, it becomes available in archival PDP storage.
+Once uploaded, the file is first available from the primary storage tier. After the network has aggregated the data into a multiple of 1.6 GB and uploaded it to PDP-SPs, it becomes available in archival PDP storage.
 
 ## 2. PDP Archival Cadence (1.6 GB Batches)
 
-Archival uploads to PDP-SPs occur in **batches/ peices of approximately 1.6 GB** across the network.
+Archival uploads to PDP-SPs occur in **batches/ pieces of approximately 1.6 GB** across the network.
 
 This implies:
 
@@ -42,9 +42,9 @@ This implies:
 - The network aggregates data until it reaches a multiple of 1.6 GB:
   - If the network has uploaded `1.6 * n GB`, your data becomes PDP-available when the network reaches `1.6 * (n+1) GB`.
 - PDP archival availability is therefore **eventually consistent**.
-- Data once uploded to PDP archival layer is then deleted from Akave Storage Nodes.
+- Data once it is uploaded to the PDP archival layer is then deleted from Akave Storage Nodes.
 
-If your file is not yet PDP-available, you can still download it using standard storage (without `--archival`).
+If your file is not yet PDP-available, you can still download it using standard storage (without the `--archival` flag).
 
 ## 3. Checking PDP Archival Status
 
@@ -94,7 +94,7 @@ This is useful for debugging archival gaps or looking up status of Dataset on [F
 
 ## 4. Downloading Data via PDP
 
-To explicitly download from PDP archival storage:
+To explicitly download from PDP archival storage, use the `--archival` flag:
 
 ```bash
 akavecli file download <bucket> <file> <output-dir> \

@@ -11,10 +11,10 @@ This page documents the main **bucket** and **file** commands in `akavecli`.
 
 Global flags you will commonly use:
 
-- `--account <wallet-name>` — which wallet to use
-- `--node-address <host:port>` — Akave node RPC address
-- `--metadata-encryption` — enable metadata encryption
-- `--encryption-key <key>` — encryption key for file data
+- `--account <wallet-name>` which wallet to use
+- `--node-address <host:port>` Akave node RPC address
+- `--metadata-encryption` enable metadata encryption
+- `--encryption-key "<key>"` encryption key for file data
 
 ## Buckets
 

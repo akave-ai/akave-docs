@@ -1,29 +1,29 @@
 ---
 date: '2025-04-26T23:58:37-05:00'
 draft: false
-title: 'Wallet Management with Akave CLI'
+title: 'Wallet Management'
 weight: 40
 cascade:
   type: docs
 ---
 
-The Akave CLI includes a built-in **wallet subsystem** so you no longer need to pass raw private keys on every command.
+The Akave CLI includes a built-in **wallet subsystem** to prevent needing to pass raw private keys with every command, minimizing the risk of exposure.
 
-From `akavecli --help`:
+Run `akavecli wallet --help` to see available wallet commands:
 
-- Top-level command: `wallet`
-- Global flags include:
-  - `--account string`          Optional: Wallet name to use. If not provided, will use the first available wallet
-  - `--node-address string`     The address of the node RPC (default "127.0.0.1:5000")
-  - `--private-key string`      Private key for signing transactions (advanced / optional)
-  - `--metadata-encryption`     Enable metadata encryption
-  - `--encryption-key string`   Encryption key for encrypting file data
+- `balance`     Shows the AKVT token balance for a wallet
+- `create`      Creates a new wallet
+- `export-key`  Exports private key for a wallet
+- `import`      Import a wallet using a private key
+- `list`        Lists all wallets
 
 ## Wallet Storage
 
 Wallets are stored in: `~/.akave_wallets`
 
-## Create a New Wallet
+## Usage Examples
+
+### Create a New Wallet
 
 ```bash
 akavecli wallet create
@@ -34,15 +34,15 @@ This will:
 - Store it in the keystore directory
 - Assign it a wallet name
 
-You can then use it via:
+You can then use it with [bucket and file commands](/akave-sdk-cli/akavecli-bucket-file) via the `--account` flag:
 
 ```bash
---account <wallet-name>
+akavecli bucket create mybucket --account <wallet-name>
 ```
 
-If you do not pass `--account`, the CLI uses the **first available wallet**.
+**Note:** If you do not use the `--account` flag, the CLI uses the **first available wallet**.
 
-## List Wallets
+### List Wallets
 
 ```bash
 akavecli wallet list
@@ -50,9 +50,9 @@ akavecli wallet list
 
 This shows all wallets stored in the keystore.
 
-## Import a Private Key
+### Import a Private Key
 
-If you have a private key (e.g., exported from MetaMask), you can import it:
+If you have a private key (e.g., exported from MetaMask), you can import it using:
 
 ```bash
 akavecli wallet import <wallet-name> <private-key>
@@ -64,9 +64,9 @@ The CLI will create a wallet entry for that key, which you can then reference us
   Never share your private key with anyone. Do not paste it into shared logs, screenshots, or public repositories.
 {{< /callout >}}
 
-## Export a Private Key
+### Export a Private Key
 
-To export the private key for a wallet:
+To export the private key for a wallet, use:
 
 ```bash
 akavecli wallet export-key <wallet-name>
@@ -87,12 +87,12 @@ akavecli bucket create mybucket \
 ```
 If `--account` is not provided, and at least one wallet exists, the first wallet in the keystore will be used.
 
-## Advanced: Using --private-key Directly (Optional)
+## Using `--private-key` Directly (Advanced/Optional)
 
-The recommended way is to use wallets. However, `--private-key` is still available for advanced flows or automated environments.
+The recommended way is to use wallets. However, the `--private-key` flag is still available for advanced flows or automated environments.
 
 {{< callout type="info" >}}
-If you must use `--private-key`, avoid typing the raw key in the command line directly. Use a file or environment variable where possible.
+If you must use `--private-key`, avoid typing the raw key in the command line directly. Use a file or environment variable instead as shown below.
 {{< /callout >}}
 
 ### Approach 1: Private Key File
@@ -107,7 +107,7 @@ chmod 600 ~/.key/user.akvf.key
 2. Use it in commands:
 
 ```bash
-akavecli bucket create workshop \
+akavecli bucket create mybucket \
     --private-key "$(cat ~/.key/user.akvf.key)" \
     --node-address connect.akave.ai:5500
 ```
@@ -116,13 +116,13 @@ akavecli bucket create workshop \
 1. Set the variable for the current session:
 
 ```bash
-export AKAVE_PRIVATE_KEY="<private-key>"
+export AKAVE_PRIVATE_KEY="<your-private-key>"
 ```
 
 2. Use it in commands:
 
 ```bash
-akavecli bucket create workshop \
+akavecli bucket create mybucket \
     --private-key "$AKAVE_PRIVATE_KEY" \
     --node-address connect.akave.ai:5500
 ```
@@ -133,3 +133,7 @@ unset AKAVE_PRIVATE_KEY
 ```
 
 If you add the `export` line to your shell RC (`~/.bashrc` or `~/.zshrc`), it will be available in every new shell session. Be sure your machine is secure and not shared if you choose this approach.
+
+## Next Steps
+
+Now that you have completed the wallet setup, you can proceed to [Bucket and File Commands]({{< relref "akave-sdk-cli/akavecli-bucket-file.md" >}}) for bucket and file management.

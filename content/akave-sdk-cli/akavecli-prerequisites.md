@@ -1,86 +1,100 @@
 ---
 date: '2025-04-26T23:58:37-05:00'
 draft: false
-title: 'Akave CLI Prerequisites'
+title: 'Prerequisites'
 weight: 20
 cascade:
   type: docs
 ---
 
-This page covers the prerequisites for using the **Akave CLI (`akavecli`)**.
+This page covers the prerequisites for using the **Akave CLI (`akavecli`)** including:
 
-## Go (for building from source)
+- The Go Programming Language
+- An Ethereum Compatible Wallet
+- A Valid Akave Node Address
+- MetaMask and On-Chain Identity (Optional)
 
-If you are building the CLI from source, you need:
+## Go Programming Language
 
-- **Go 1.23.5 or newer**
+If you are building the Akave CLI from source, you need **Go version 1.23.5 or newer**.
 
-For the latest installation instructions, see:
+For the latest installation instructions, see: [https://go.dev/doc/install](https://go.dev/doc/install)
 
-`https://go.dev/doc/install`
+### Installation Example: macOS (Homebrew)
 
-### Example: macOS (Homebrew)
+To install Go on macOS using Homebrew, run:
 
 ```bash
 brew install go
 brew upgrade go
 go version
 ```
+If Go was installed successfully, you should see the version number in the output (e.g., `go version go1.23.5 darwin/amd64`).
 
-### Example: Ubuntu
+### Installation Example: Ubuntu
+
+To install Go on Ubuntu, run:
 
 ```bash
 wget https://go.dev/dl/go1.23.5.linux-amd64.tar.gz
 sudo rm -rf /usr/local/go && sudo tar -C /usr/local -xzf go1.23.5.linux-amd64.tar.gz
 ```
-Add Go to your PATH in `~/.bashrc`:
+Then, add Go to your PATH in `~/.bashrc`:
 
 ```bash
 export PATH=$PATH:/usr/local/go/bin
 ```
 
-Reload your shell:
+Next, reload your shell:
 
 ```bash
 source ~/.bashrc
 ```
 
-Verify:
+Finally, verify that Go was installed successfully by running:
 
 ```bash
 go version
 ```
+If Go was installed successfully, you should see the version number in the output (e.g., `go version go1.23.5 linux/amd64`).
 
 ## Wallet
 
-Akave CLI includes an integrated **wallet system**, so you do not need to manage raw private keys manually.
+Akave's network runs on an EVM blockchain, so you need an Ethereum compatible wallet to manage your Akave address.
 
-Wallets are stored locally at (by default): `~/.akave_wallets`
+To make this process easier, the Akave CLI includes an integrated **wallet system**, so you do not need to manage raw private keys manually.
 
-You can:
+Wallets you've created or imported are stored locally on your machine at: `~/.akave_wallets`
+
+The Akave CLI wallet system allows you to:
 
 - Create a wallet
 - Import an existing private key
 - List wallets
 - Export stored private keys
 
-See: [Wallet Management]({{< relref "akave-sdk-cli/akavecli-wallet.md" >}})
+For more information, see: [Wallet Management]({{< relref "akave-sdk-cli/akavecli-wallet.md" >}})
 
 ## Node Address
 
-To interact with the Akave network you need an RPC address.
+To interact with the Akave network you need to use the `--node-address` flag with an RPC address.
 
-- Public hosted network: `connect.akave.ai:5500`
+- Akave Hot Storage: `connect.akave.ai:5500`
 
-- Archival Storage: `connect.akave.ai:9500`
+- Akave Archival Storage with Filecoin: `connect.akave.ai:9500`
 
-All CLI commands accept: `--node-address=<host:port>`
+All Akave CLI commands accept the `--node-address` flag: `--node-address=<host:port>`
 
 ## MetaMask and On-Chain Identity (Optional)
 
-You can use MetaMask (or another EVM wallet) to manage your Akave address off-chain, and then:
+You can use MetaMask (or another EVM wallet) to manage your Akave address by:
 
-- Export the private key from MetaMask
-- Import it into `akavecli` using `wallet import`
+- Exporting a private key from MetaMask
+- Importing it into the Akave CLI using the `akavecli wallet import` command
 
-For MetaMask export instructions: https://support.metamask.io/configure/accounts/how-to-export-an-accounts-private-key/
+For instructions on how to export a private key from MetaMask, see: https://support.metamask.io/configure/accounts/how-to-export-an-accounts-private-key/
+
+
+## Next Steps
+
+Now that you have completed the prerequisites, you can proceed to [Install and Build Akave CLI]({{< relref "akave-sdk-cli/akavecli-installation-build.md" >}}).

@@ -1,7 +1,7 @@
 ---
 date: '2025-04-26T23:58:37-05:00'
 draft: false
-title: 'Blockchain Integrated Storage with Akave CLI'
+title: 'Getting Started'
 weight: 11
 cascade:
   type: docs
@@ -22,20 +22,20 @@ Akave operates a blockchain-integrated storage layer where all storage actions a
 
 ### Blockchain Explorer
 
-`httpa://explorer.akave.ai`
+[https://explorer.akave.ai](https://explorer.akave.ai)
 
-Use this to inspect blocks, transactions, and storage-related activity on the Akave chain.
+Use the Akave blockchain explorer to inspect blocks, transactions, and storage-related activity on the Akave chain.
 
 ### Faucet and Chain Setup
 
-To get started with a wallet and funds, visit:
+[https://faucet.akave.ai](https://faucet.akave.ai)
 
-`https://faucet.akave.ai`
+Visit the Akave Faucet to:
 
-From there you can:
+- Add the Akave chain to MetaMask using the **"Add Akave to Metamask"** button or by copying the RPC information and adding it manually
+- Request test funds by pasting in your wallet address and clicking **"Claim AKVT"**
 
-- Add the Akave chain to MetaMask / get RPC information
-- Request test funds
+**Note:** If you don't yet have the MetaMask browser extension, visit [https://metamask.io](https://metamask.io) to download and install it. You can also create a wallet for use with the Akave CLI by using the [wallet management commands](/akave-sdk-cli/akavecli-wallet/).
 
 ![Akave Faucet](/images/faucet.gif)
 
@@ -48,9 +48,9 @@ The public endpoint for the Akave network is:
 
 ## Where to Go Next
 
-- Prerequisites: [Akave CLI Prerequisites]({{< relref "akave-sdk-cli/akavecli-prerequisites.md" >}})
-- Installation & Build: [Install and Build Akave CLI]({{< relref "akave-sdk-cli/akavecli-installation-build.md" >}})
-- Wallet Management: [Wallet Management with Akave CLI]({{< relref "akave-sdk-cli/akavecli-wallet.md" >}})
-- Bucket & File Commands: [Bucket and File Commands]({{< relref "akave-sdk-cli/akavecli-bucket-file.md" >}})
-- PDP Archival Usage: [PDP Archival Usage]({{< relref "akave-sdk-cli/akavecli-pdp-archival.md" >}})
-- Troubleshooting: [Akave CLI Troubleshooting]({{< relref "akave-sdk-cli/akavecli-troubleshooting.md" >}})
+- [Prerequisites]({{< relref "akave-sdk-cli/akavecli-prerequisites.md" >}})
+- [Install and Build the Akave CLI]({{< relref "akave-sdk-cli/akavecli-installation-build.md" >}})
+- [Wallet Management]({{< relref "akave-sdk-cli/akavecli-wallet.md" >}})
+- [Bucket and File Commands]({{< relref "akave-sdk-cli/akavecli-bucket-file.md" >}})
+- [PDP Archival Usage]({{< relref "akave-sdk-cli/akavecli-pdp-archival.md" >}})
+- [Troubleshooting the Akave CLI]({{< relref "akave-sdk-cli/akavecli-troubleshooting.md" >}})

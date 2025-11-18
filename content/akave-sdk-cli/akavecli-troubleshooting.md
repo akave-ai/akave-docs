@@ -1,7 +1,7 @@
 ---
 date: '2025-04-26T23:58:37-05:00'
 draft: false
-title: 'Akave CLI Troubleshooting'
+title: 'Troubleshooting the Akave CLI'
 weight: 70
 cascade:
   type: docs
@@ -95,9 +95,10 @@ mv file.tmp file.txt
 
 You will now have a flat file named `file.txt` in the current directory.
 
-### If you encounter other repeatable issues with `akavecli`, consider:
+### Additional Troubleshooting
 
-- Running with additional logging or verbose flags (where available)
+If you encounter other repeatable issues with `akavecli` consider:
+- Running with additional logging or `--verbose` flags (where available)
 - Verifying `--node-address` points to the correct network
 - Confirming the wallet `--account` has sufficient balance and exists locally
 
@@ -106,7 +107,8 @@ You can also refer back to:
 - [Bucket and File Commands]({{< relref "akave-sdk-cli/akavecli-bucket-file.md" >}}) for usage patterns
 - [PDP Archival Usage]({{< relref "akave-sdk-cli/akavecli-pdp-archival.md" >}}) for archival-related behavior
 
-If you have questions other questions, need technical guidance, or want to connect with other builders:
+If you have other questions, need technical guidance, or want to connect with other builders:
 
-- **Support Email:** support@akave.com
-- **Telegram Builders Group:** https://t.me/akavebuilders
+- **Email Our Support:** support@akave.io
+- **Visit Our Support Page:** https://support.akave.xyz
+- **Join Our Telegram Builders Group:** https://t.me/akavebuilders
