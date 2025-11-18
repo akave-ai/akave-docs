@@ -25,11 +25,11 @@ Data upload with PDP does not require any special flags; archival happens in the
 
 Standard upload:
 
-    ```bash
-    akavecli file upload <bucket> <file> \
-      --account <wallet-name> \
-      --node-address connect.akave.ai:9500
-    ```
+```bash
+akavecli file upload <bucket> <file> \
+  --account <wallet-name> \
+  --node-address connect.akave.ai:9500
+```
 Once uploaded, the file is first available from the primary storage tier. Over time, it becomes available in archival PDP storage.
 
 ## 2. PDP Archival Cadence (1.6 GB Batches)
@@ -50,38 +50,38 @@ If your file is not yet PDP-available, you can still download it using standard 
 
 Use the `archival-metadata` command:
 
-    ```bash
-    akavecli archival-metadata <bucket> <file> \
-      --account <wallet-name> \
-      --node-address connect.akave.ai:5500
-    ```
+```bash
+akavecli archival-metadata <bucket> <file> \
+  --account <wallet-name> \
+  --node-address connect.akave.ai:9500
+```
 
 Example outputs:
 
 - Fully available:
 
-    ```
-      Bucket: test1, File: test100mb.txt
-      Status: Available for download from archival storage (all blocks have PDP data)
-    ```
+```bash
+  Bucket: test1, File: test100mb.txt
+  Status: Available for download from archival storage (all blocks have PDP data)
+```
 
 - Not fully available:
 
-    ```
-      Bucket: test1, File: test-5gb.txt
-      Status: Not fully available in archival storage (some blocks are missing PDP data)
-    ```
+```bash
+  Bucket: test1, File: test-5gb.txt
+  Status: Not fully available in archival storage (some blocks are missing PDP data)
+```
 
 ### Verbose Mode
 
 Add `-v` or `--verbose` to include detailed chunk and block information:
 
-    ```bash
-    akavecli archival-metadata <bucket> <file> \
-      --account <wallet-name> \
-      --node-address connect.akave.ai:5500 \
-      --verbose
-    ```
+```bash
+akavecli archival-metadata <bucket> <file> \
+  --account <wallet-name> \
+  --node-address connect.akave.ai:5500 \
+  --verbose
+```
 Verbose output includes:
 
 - Total chunks
@@ -96,11 +96,11 @@ This is useful for debugging archival gaps or looking up status of Dataset on [F
 
 To explicitly download from PDP archival storage:
 
-    ```bash
-    akavecli file download <bucket> <file> <output-dir> \
-      --archival \
-      --account <wallet-name> \
-      --node-address connect.akave.ai:5500
-    ```
+```bash
+akavecli file download <bucket> <file> <output-dir> \
+  --archival \
+  --account <wallet-name> \
+  --node-address connect.akave.ai:9500
+```
 
 

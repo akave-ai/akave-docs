@@ -17,38 +17,45 @@ If you are building the CLI from source, you need:
 
 For the latest installation instructions, see:
 
-    https://go.dev/doc/install
+`https://go.dev/doc/install`
 
 ### Example: macOS (Homebrew)
 
-    brew install go
-    brew upgrade go
-    go version
+```bash
+brew install go
+brew upgrade go
+go version
+```
 
 ### Example: Ubuntu
 
-    wget https://go.dev/dl/go1.23.5.linux-amd64.tar.gz
-    sudo rm -rf /usr/local/go && sudo tar -C /usr/local -xzf go1.23.5.linux-amd64.tar.gz
-
+```bash
+wget https://go.dev/dl/go1.23.5.linux-amd64.tar.gz
+sudo rm -rf /usr/local/go && sudo tar -C /usr/local -xzf go1.23.5.linux-amd64.tar.gz
+```
 Add Go to your PATH in `~/.bashrc`:
 
-    export PATH=$PATH:/usr/local/go/bin
+```bash
+export PATH=$PATH:/usr/local/go/bin
+```
 
 Reload your shell:
 
-    source ~/.bashrc
+```bash
+source ~/.bashrc
+```
 
 Verify:
 
-    go version
+```bash
+go version
+```
 
 ## Wallet
 
 Akave CLI includes an integrated **wallet system**, so you do not need to manage raw private keys manually.
 
-Wallets are stored locally at (by default):
-
-    ~/.akave_wallets
+Wallets are stored locally at (by default): `~/.akave_wallets`
 
 You can:
 
@@ -57,23 +64,17 @@ You can:
 - List wallets
 - Export stored private keys
 
-See: {{< relref "akavecli-wallet.md" >}}
+See: [Wallet Management]({{< relref "akave-sdk-cli/akavecli-wallet.md" >}})
 
 ## Node Address
 
 To interact with the Akave network you need an RPC address.
 
-- Public hosted network:
+- Public hosted network: `connect.akave.ai:5500`
 
-      connect.akave.ai:5500
+- Archival Storage: `connect.akave.ai:9500`
 
-- Archival Storage:
-
-      connect.akave.ai:9500
-
-All CLI commands accept:
-
-    --node-address=<host:port>
+All CLI commands accept: `--node-address=<host:port>`
 
 ## MetaMask and On-Chain Identity (Optional)
 
@@ -82,6 +83,4 @@ You can use MetaMask (or another EVM wallet) to manage your Akave address off-ch
 - Export the private key from MetaMask
 - Import it into `akavecli` using `wallet import`
 
-For MetaMask export instructions:
-
-    https://support.metamask.io/configure/accounts/how-to-export-an-accounts-private-key/
+For MetaMask export instructions: https://support.metamask.io/configure/accounts/how-to-export-an-accounts-private-key/

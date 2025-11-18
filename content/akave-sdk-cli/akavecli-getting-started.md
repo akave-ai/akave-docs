@@ -22,7 +22,7 @@ Akave operates a blockchain-integrated storage layer where all storage actions a
 
 ### Blockchain Explorer
 
-    http://explorer.akave.ai
+`httpa://explorer.akave.ai`
 
 Use this to inspect blocks, transactions, and storage-related activity on the Akave chain.
 
@@ -30,7 +30,7 @@ Use this to inspect blocks, transactions, and storage-related activity on the Ak
 
 To get started with a wallet and funds, visit:
 
-    https://faucet.akave.ai
+`https://faucet.akave.ai`
 
 From there you can:
 
@@ -43,14 +43,14 @@ From there you can:
 
 The public endpoint for the Akave network is:
 
-    --node-address=connect.akave.ai:5500
+`--node-address=connect.akave.ai:5500`
 
 
 ## Where to Go Next
 
-- Prerequisites: {{< relref "akavecli-prerequisites.md" >}}
-- Installation & Build: {{< relref "akavecli-installation-build.md" >}}
-- Wallet Management: {{< relref "akavecli-wallet.md" >}}
-- Bucket & File Commands: {{< relref "akavecli-bucket-file.md" >}}
-- PDP Archival Usage: {{< relref "akavecli-pdp-archival.md" >}}
-- Troubleshooting: {{< relref "akavecli-troubleshooting.md" >}}
+- Prerequisites: [Akave CLI Prerequisites]({{< relref "akave-sdk-cli/akavecli-prerequisites.md" >}})
+- Installation & Build: [Install and Build Akave CLI]({{< relref "akave-sdk-cli/akavecli-installation-build.md" >}})
+- Wallet Management: [Wallet Management with Akave CLI]({{< relref "akave-sdk-cli/akavecli-wallet.md" >}})
+- Bucket & File Commands: [Bucket and File Commands]({{< relref "akave-sdk-cli/akavecli-bucket-file.md" >}})
+- PDP Archival Usage: [PDP Archival Usage]({{< relref "akave-sdk-cli/akavecli-pdp-archival.md" >}})
+- Troubleshooting: [Akave CLI Troubleshooting]({{< relref "akave-sdk-cli/akavecli-troubleshooting.md" >}})
