@@ -15,6 +15,16 @@ This section explains:
 - How to check the archival status of a file
 - How to download a file from archival storage using PDP
 
+## About Filecoin's PDP Implementation
+
+Akave's archival storage tier is powered by **Filecoin's Proof-of-Data-Possession (PDP)** protocol. PDP is a cryptographic proof system that allows storage providers to demonstrate they are storing client data without requiring the client to download the entire dataset for verification. Filecoin's PDP implementation enables:
+
+- **Efficient verification**: Storage providers can prove data possession with minimal bandwidth
+- **Decentralized archival**: Data is stored across multiple independent storage providers
+- **Cost-effective long-term storage**: Leverages Filecoin's competitive storage marketplace
+
+For new users looking to learn more about Filecoin's PDP implementation, visit the [Filecoin PDP documentation](https://docs.filecoin.cloud/core-concepts/pdp-overview/) and explore datasets on the [Filecoin PDP Explorer](https://pdp.vxb.ai/mainnet/datasets).
+
 {{< callout type="info" >}}
 You must use the node-address: `connect.akave.ai:9500` to access archival tier of Akave Storage. 
 {{< /callout >}}
@@ -30,17 +40,17 @@ akavecli file upload <bucket> <file> \
   --account <wallet-name> \
   --node-address connect.akave.ai:9500
 ```
-Once uploaded, the file is first available from the primary storage tier. After the network has aggregated the data into a multiple of 1.6 GB and uploaded it to PDP-SPs, it becomes available in archival PDP storage.
+Once uploaded, the file is first available from the primary storage tier. After the network has aggregated the data into a multiple of 2 GB and uploaded it to PDP-SPs, it becomes available in archival PDP storage.
 
-## 2. PDP Archival Cadence (1.6 GB Batches)
+## 2. PDP Archival Cadence (2 GB Batches)
 
-Archival uploads to PDP-SPs occur in **batches/ pieces of approximately 1.6 GB** across the network.
+Archival uploads to PDP-SPs occur in **batches/ pieces of approximately 2 GB** across the network.
 
 This implies:
 
 - Data is **not** immediately PDP-available after upload.
-- The network aggregates data until it reaches a multiple of 1.6 GB:
-  - If the network has uploaded `1.6 * n GB`, your data becomes PDP-available when the network reaches `1.6 * (n+1) GB`.
+- The network aggregates data until it reaches a multiple of 2 GB:
+  - If the network has uploaded `2 * n GB`, your data becomes PDP-available when the network reaches `2 * (n+1) GB`.
 - PDP archival availability is therefore **eventually consistent**.
 - Data once it is uploaded to the PDP archival layer is then deleted from Akave Storage Nodes.
 
