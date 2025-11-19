@@ -9,6 +9,10 @@ cascade:
 
 [Rclone](https://rclone.org/) is a command-line program to manage files on cloud storage that enables seamless transitions from one storage platform to another. With Akave's fully S3 compatible API, Rclone can be used to migrate data to and from the Akave Network with ease.
 
+**Below is a short video demo for using Akave O3 with Rclone:**
+
+{{< youtube 4z9J0fo6pOs >}}
+
 ## Pre-requisites
 
 1. **Akave O3 Credentials**
