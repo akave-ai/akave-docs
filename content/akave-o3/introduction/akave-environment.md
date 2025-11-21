@@ -13,7 +13,8 @@ Below is a summary of currently supported Akave O3 regions and endpoints:
 
 | **Region**     | **Purpose**           | **API Type**     | **Endpoint URL**                |
 |----------------|------------------------|------------------|----------------------------------|
-| us-south-1     | Blockchain IPC API     | S3-Compatible    | https://o3-rc2.akave.xyz         |
+| us-south-1     | Community              | S3-Compatible    | https://o3-rc2.akave.xyz         |
+| akave-network  | Production             | S3-Compatible    | Provided by [sales team](https://akave.com/contact)           |
 
 **Optional:** You can use `akave-network` as the region value in AWS SDK/CLI configurations to refer to Akave's decentralized S3 interface:
 
