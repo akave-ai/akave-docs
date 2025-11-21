@@ -198,7 +198,7 @@ There are 7 tests in total:
 
 6. **Dataset Formats** - Demonstrates how to save a dataset in different formats.
 
-7. **Create & Save Dataset** - Demonstrates how to create and save a dataset to Akave O3.
+7. **Create & Save Dataset** - Demonstrates how to create and save a pre-existing dataset to Akave O3.
   
 To run the tests, use the following command:
 
