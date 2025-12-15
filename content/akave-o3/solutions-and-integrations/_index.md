@@ -28,3 +28,6 @@ Here you'll find solutions and integrations that can be utilized with the Akave 
 
 #### **[Hugging Face](/akave-o3/solutions-and-integrations/huggingface)** - Machine Learning Dataset Management
 - Store, version, and access ML datasets with Hugging Face and Akave storage
+
+#### **[Akash](/akave-o3/solutions-and-integrations/akash)** - Decentralized Compute Protocol
+- Connect to Akave storage while using Akash compute resources
