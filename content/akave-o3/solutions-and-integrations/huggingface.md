@@ -2,7 +2,7 @@
 date: '2025-04-23T22:48:28-05:00'
 draft: false
 title: 'Hugging Face'
-weight: 32
+weight: 30
 cascade:
   type: docs
 ---
