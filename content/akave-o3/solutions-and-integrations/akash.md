@@ -12,7 +12,7 @@ cascade:
 ## Prerequisites
 
 - **Akash account**
-  - If you do not already have an Akash account, please create one at [Akash](https://www.console.akash.network/)
+  - If you do not already have an Akash account, please create one at [Akash](https://console.akash.network/)
 - **Akave Cloud Credentials**
   - If you do not already have these, please create them on [Akave Cloud](https://console.akave.ai/)
 
