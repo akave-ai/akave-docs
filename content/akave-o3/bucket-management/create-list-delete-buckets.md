@@ -7,7 +7,7 @@ cascade:
   type: docs
 ---
 
-Akave O3 is fully compatible with AWS CLI tooling. You can use both `aws s3api` and higher-level `aws s3` commands to interact with decentralized buckets and objects - all through, for example, the IPC API `https://o3-rc2.akave.xyz` endpoint.
+Akave O3 is fully compatible with AWS CLI tooling. You can use both `aws s3api` and higher-level `aws s3` commands to interact with decentralized buckets and objects - all through, for example, the `https://o3-rc2.akave.xyz` endpoint.
 
 ### Create a Bucket
 
