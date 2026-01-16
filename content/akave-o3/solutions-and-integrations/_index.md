@@ -8,6 +8,9 @@ cascade:
 ---
 Here you'll find solutions and integrations that can be utilized with the Akave Network for common use cases.
 
+#### **[Acronis](/akave-o3/solutions-and-integrations/acronis)** - Backup and Recovery
+- Integrate Akave storage with Acronis backup solutions
+
 #### **[Akash](/akave-o3/solutions-and-integrations/akash)** - Decentralized Compute Protocol
 - Connect to Akave storage while using Akash compute resources
 
