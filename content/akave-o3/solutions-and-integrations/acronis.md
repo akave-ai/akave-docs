@@ -11,12 +11,12 @@ cascade:
 
 ## Prerequisites
 
-- **Acronis account**
+- **Acronis Account**
   - If you do not already have an Acronis account, please create one at [Acronis](https://www.acronis.com/)
 - **Akave Cloud Credentials**
   - If you do not already have these, please create them on [Akave Cloud](https://console.akave.ai/)
-- **AWS account**
-  - With access to the AWS Marketplace and EC2 (for Backup Gateway option), sign up at [aws.amazon.com](https://aws.amazon.com/)
+- **AWS Account (for Backup Gateway option)**
+  - User must have access to the AWS Marketplace and EC2, sign up at [aws.amazon.com](https://aws.amazon.com/)
 
 ## Acronis Setup
 
