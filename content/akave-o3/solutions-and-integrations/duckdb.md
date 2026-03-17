@@ -12,7 +12,7 @@ cascade:
 ## Pre-requisites
 
 1. **Akave O3 Credentials**
-These can be requested by contacting Akave at [Akave Cloud Contact](https://www.akave.cloud/contact).
+   - If you do not already have these, please create them on [Akave Cloud](https://console.akave.com/)
 
 2. **Install dependencies** (Requirements: DuckDB)
 

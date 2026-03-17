@@ -14,7 +14,7 @@ cascade:
 - **Akash account**
   - If you do not already have an Akash account, please create one at [Akash](https://console.akash.network/)
 - **Akave Cloud Credentials**
-  - If you do not already have these, please create them on [Akave Cloud](https://console.akave.ai/)
+  - If you do not already have these, please create them on [Akave Cloud](https://console.akave.com/)
 
 ## Setup Guide
 

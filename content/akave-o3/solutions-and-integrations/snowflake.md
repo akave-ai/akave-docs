@@ -19,7 +19,7 @@ cascade:
   - Snowflake has all *akave.xyz* endpoints enabled by default starting in the 9.10 release
   - For most of these queries `SYSADMIN` is the highest level of permissions required, however for Iceberg compatibility `ACCOUNTADMIN` is required
 - **Akave Cloud Credentials**
-  - If you do not already have these, please reach out to us for access to [Akave Cloud](https://www.akave.cloud/contact)
+  - If you do not already have these, please create them on [Akave Cloud](https://console.akave.com/)
 - **[AWS CLI](https://docs.aws.amazon.com/cli/latest/userguide/getting-started-install.html)**
   - Install the AWS CLI using the instructions for your operating system
   - Once successfully installed use the `aws configure` command to set your Akave credentials:

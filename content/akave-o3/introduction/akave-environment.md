@@ -14,7 +14,7 @@ Below is a summary of currently supported Akave O3 regions and endpoints:
 | **Region**     | **Purpose**           | **API Type**     | **Endpoint URL**                |
 |----------------|------------------------|------------------|----------------------------------|
 | us-south-1     | Community              | S3-Compatible    | https://o3-rc2.akave.xyz         |
-| akave-network  | Production             | S3-Compatible    | Provided by [sales team](https://akave.com/contact)           |
+| akave-network  | Production             | S3-Compatible    | Provided via [Akave Cloud](https://console.akave.com/)           |
 
 **Optional:** You can use `akave-network` as the region value in AWS SDK/CLI configurations to refer to Akave's decentralized S3 interface:
 
@@ -23,4 +23,4 @@ AWS_DEFAULT_REGION=akave-network
 ```
 These endpoints support both local testing and production deployment. You can plug them into your existing AWS-compatible tooling (CLI, SDKs, Terraform) with minimal changes.
 
-To authenticate, you’ll need an `AWS_ACCESS_KEY_ID` and `AWS_SECRET_ACCESS_KEY`, which can be obtained through our [Telegram Builders Channel](https://t.me/akavebuilders) for testing, or by contacting our sales team for production use at [akave.com/contact](https://akave.com/contact). These credentials allow secure interaction with Akave’s decentralized object storage, just like with traditional AWS services.
+To authenticate, you'll need an `AWS_ACCESS_KEY_ID` and `AWS_SECRET_ACCESS_KEY`. If you do not already have these, please create them on [Akave Cloud](https://console.akave.com/). These credentials allow secure interaction with Akave's decentralized object storage, just like with traditional AWS services.

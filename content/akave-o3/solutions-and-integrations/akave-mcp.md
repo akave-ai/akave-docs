@@ -37,7 +37,7 @@ The Model Context Protocol (MCP) is an open protocol that standardizes how appli
   - Secret Access Key
   - Endpoint URL
      - Select the endpoint associated with your credentials from the options provided here: [Akave Environment](/akave-o3/introduction/akave-environment)
-> **Note:** If you do not already have credentials, please reach out to us for access to [Akave Cloud](https://www.akave.cloud/contact)
+> **Note:** If you do not already have credentials, please create them on [Akave Cloud](https://console.akave.com/)
 ## Quick Start
 
 Create a configuration file (e.g., `mcp.json`) and copy/paste the below information, replacing the env variables with your credentials:

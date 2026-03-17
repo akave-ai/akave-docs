@@ -14,7 +14,7 @@ cascade:
 ## Prerequisites
 
 - **Akave Cloud Credentials**  
-These can be requested by contacting Akave at [Akave Cloud Contact](https://www.akave.cloud/contact).
+  - If you do not already have these, please create them on [Akave Cloud](https://console.akave.com/)
 
 - **Install dependencies** (Requirements: Python 3.9+, pip, s3fs, Hugging Face: datasets)
 
