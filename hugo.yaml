@@ -41,9 +41,14 @@ menu:
         type: search
     - name: GitHub
       weight: 2
-      url: "https://github.com/akave-ai"
+      url: "https://github.com/akave-ai/akave-docs"
       params:
         icon: github
+    - name: Context7
+      weight: 3
+      url: "https://context7.com/akave-ai/akave-docs"
+      params:
+        icon: context7
   sidebar:
     - name: "Blockchain Explorer ↗"
       url: "http://explorer.akave.ai/"
