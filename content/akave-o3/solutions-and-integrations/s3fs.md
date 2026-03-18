@@ -11,6 +11,10 @@ cascade:
 
 The [s3fs-fuse](https://github.com/s3fs-fuse/s3fs-fuse) driver is a user-space file system that provides a virtual file system interface to S3-compatible storage. It allows you to access your Akave storage as a local file system, making it easy to work with your data as if it were stored on your local machine.
 
+{{< callout type="info" >}}
+**Important:** Replace `<YOUR_ENDPOINT_URL>` in these examples with your specific endpoint URL. Find your endpoint in the [Akave Environment](/akave-o3/introduction/akave-environment) page.
+{{< /callout >}}
+
 ## Prerequisites
 
 - **Akave Cloud Credentials**  
@@ -81,7 +85,7 @@ Create or edit `~/.aws/credentials` and add your Akave credentials:
 [akave-o3]
 aws_access_key_id = your_access_key_id
 aws_secret_access_key = your_secret_access_key
-endpoint_url = https://o3-rc2.akave.xyz
+endpoint_url = <YOUR_ENDPOINT_URL>
 ```
 
 #### Option 2: AWS CLI
@@ -109,7 +113,7 @@ mkdir -p ~/akave-mount
 **Mount the bucket**
 ```bash
 s3fs your-bucket-name ~/akave-mount \
-  -o url=https://o3-rc2.akave.xyz \
+  -o url=<YOUR_ENDPOINT_URL> \
   -o profile=akave-o3
 ```
 
@@ -246,7 +250,7 @@ secret_key = os.environ.get("AKAVE_SECRET_KEY")
 fs = s3fs.S3FileSystem(
     key=access_key,
     secret=secret_key,
-    endpoint_url="https://o3-rc2.akave.xyz",
+    endpoint_url="<YOUR_ENDPOINT_URL>",
     client_kwargs={"region_name": "akave-network"}
 )
 ```
@@ -272,7 +276,7 @@ load_dotenv()
 fs = s3fs.S3FileSystem(
     key=os.environ.get("AKAVE_ACCESS_KEY"),
     secret=os.environ.get("AKAVE_SECRET_KEY"),
-    endpoint_url="https://o3-rc2.akave.xyz",
+    endpoint_url="<YOUR_ENDPOINT_URL>",
     client_kwargs={"region_name": "akave-network"}
 )
 ```
@@ -288,7 +292,7 @@ You may also use AWS CLI profiles, where credentials are stored in your system's
 ```python
 fs = s3fs.S3FileSystem(
     profile="akave-o3",
-    endpoint_url="https://o3-rc2.akave.xyz",
+    endpoint_url="<YOUR_ENDPOINT_URL>",
     client_kwargs={"region_name": "akave-network"}
 )
 ```
@@ -440,7 +444,7 @@ Use the same S3FileSystem instance for multiple operations to benefit from conne
 ```python
 fs = s3fs.S3FileSystem(
     profile="akave-o3",
-    endpoint_url="https://o3-rc2.akave.xyz",
+    endpoint_url="<YOUR_ENDPOINT_URL>",
     config_kwargs={"max_pool_connections": 20}
 )
 ```
@@ -452,7 +456,7 @@ Enable client-side caching to reduce the number of requests made to Akave storag
 ```python
 fs = s3fs.S3FileSystem(
     profile="akave-o3",
-    endpoint_url="https://o3-rc2.akave.xyz",
+    endpoint_url="<YOUR_ENDPOINT_URL>",
     use_listings_cache=True,
     listings_expiry_time=300  # Cache TTL in seconds
 )

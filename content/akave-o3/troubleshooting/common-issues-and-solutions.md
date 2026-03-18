@@ -9,6 +9,10 @@ cascade:
 
 This page lists known issues when using the AWS CLI (`s3api` and `s3`) with Akave O3 and provides tested workarounds or solutions.
 
+{{< callout type="info" >}}
+**Important:** Replace `<YOUR_ENDPOINT_URL>` in these examples with your specific endpoint URL. Find your endpoint in the [Akave Environment](/akave-o3/introduction/akave-environment) page.
+{{< /callout >}}
+
 ## Issue: Uploads fail due to checksum validation headers (AWS CLI v2.23.0+)
 
 ### Error:
@@ -45,7 +49,7 @@ Then use the profile in your commands:
 ```bash
 aws s3 cp ./file.txt s3://my-akave-bucket/ \
   --profile akave-o3 \
-  --endpoint-url https://o3-rc2.akave.xyz
+  --endpoint-url <YOUR_ENDPOINT_URL>
 ```
 ### Workaround 3: Explicitly specify a supported checksum (e.g., CRC32)
 ```bash
@@ -54,7 +58,7 @@ aws s3api put-object \
   --key example.txt \
   --body ./example.txt \
   --checksum-algorithm CRC32 \
-  --endpoint-url https://o3-rc2.akave.xyz
+  --endpoint-url <YOUR_ENDPOINT_URL>
 ```
 ### Why this matters:
 

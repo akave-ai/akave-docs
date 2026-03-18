@@ -11,6 +11,10 @@ cascade:
 
 To streamline your workflow, you can configure a dedicated AWS CLI profile for interacting with Akave O3. This allows you to avoid setting environment variables for each session and keeps your credentials organized under a named profile.
 
+{{< callout type="info" >}}
+**Important:** Replace `<YOUR_ENDPOINT_URL>` in the examples below with the endpoint URL provided in your [Akave Cloud Console](https://console.akave.com/). Each set of credentials has a specific endpoint URL.
+{{< /callout >}}
+
 ### Installation
 
 Before setting up the profile, make sure you have the AWS CLI installed for your operating system using the installation instructions [here](https://docs.aws.amazon.com/cli/latest/userguide/getting-started-install.html).
@@ -39,7 +43,7 @@ Then add the following to the file:
 [akave-o3]
 aws_access_key_id = <your_access_key>
 aws_secret_access_key = <your_secret_key>
-endpoint_url = https://o3-rc2.akave.xyz
+endpoint_url = <YOUR_ENDPOINT_URL>
 ```
 
 Make sure to save your changes and exit the editor.
@@ -49,7 +53,7 @@ Make sure to save your changes and exit the editor.
 ```bash
 aws s3api list-buckets \
   --profile akave-o3 \
-  --endpoint-url https://o3-rc2.akave.xyz
+  --endpoint-url <YOUR_ENDPOINT_URL>
 ```
 
 You can now run any `AWS CLI` or `s3api` command with `--profile akave-o3` instead of exporting your credentials each time.

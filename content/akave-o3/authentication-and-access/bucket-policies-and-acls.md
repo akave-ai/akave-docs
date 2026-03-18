@@ -11,6 +11,10 @@ Access Control List (ACL) policies in Akave O3 allow your bucket to be accessed 
 
 Akave O3 supports full S3-compatible ACL configuration via the `aws s3api`.
 
+{{< callout type="info" >}}
+**Important:** Replace `<YOUR_ENDPOINT_URL>` in these examples with your specific endpoint URL. Find your endpoint in the [Akave Environment](/akave-o3/introduction/akave-environment) page.
+{{< /callout >}}
+
 ## Put an ACL Policy
 
 Start by creating a JSON file with the ACL policy you want to apply. For example, to allow public read access to your bucket, you can create a file called `acl.json` with the following content:
@@ -33,7 +37,7 @@ You can then apply the ACL policy to your bucket using the `aws s3api put-bucket
 aws s3api put-bucket-policy \
   --bucket my-akave-bucket \
   --policy file://acl.json \
-  --endpoint-url https://o3-rc2.akave.xyz
+  --endpoint-url <YOUR_ENDPOINT_URL>
 ```
 
 ## Confirm the ACL Policy
@@ -42,7 +46,7 @@ You can confirm the ACL policy has been applied to your bucket using the `aws s3
 ```bash
 aws s3api get-bucket-policy \
   --bucket my-akave-bucket \
-  --endpoint-url https://o3-rc2.akave.xyz
+  --endpoint-url <YOUR_ENDPOINT_URL>
 ```
 
 Which will return the policy if it has been applied.
@@ -55,14 +59,16 @@ Which will return the policy if it has been applied.
 
 Verify the policy has been applied by loading the data in a browser or with a CURL command with the following URL structure:
 ```
-https://my-akave-bucket.o3-rc2.akave.xyz/your-object-name
+https://my-akave-bucket.<YOUR_ENDPOINT_DOMAIN>/your-object-name
 ```
+
+{{< callout type="info" >}}
+Replace `<YOUR_ENDPOINT_DOMAIN>` with your endpoint excluding `https://` (e.g., if your endpoint is `https://o3-rc2.akave.xyz`, use `o3-rc2.akave.xyz`).
+{{< /callout >}}
 
 If the policy has been applied, you should see the object data in the browser or in the response from the CURL command.
 
-{{< callout type="info" >}}
 **Note:** Most browsers will render the information in browser if it is an image file such as .png or .jpg, otherwise the browser will attempt to download the file.
-{{< /callout >}}
 
 ## Delete the ACL Policy
 
@@ -70,14 +76,14 @@ You can delete the ACL policy from your bucket using the `aws s3api delete-bucke
 ```bash
 aws s3api delete-bucket-policy \
   --bucket my-akave-bucket \
-  --endpoint-url https://o3-rc2.akave.xyz
+  --endpoint-url <YOUR_ENDPOINT_URL>
 ```
 
 To verify the policy has been deleted, you can use the `aws s3api get-bucket-policy` command:
 ```bash
 aws s3api get-bucket-policy \
   --bucket my-akave-bucket \
-  --endpoint-url https://o3-rc2.akave.xyz
+  --endpoint-url <YOUR_ENDPOINT_URL>
 ```
 
 Which will return an empty response if the policy has been deleted.

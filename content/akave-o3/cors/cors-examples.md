@@ -9,6 +9,10 @@ cascade:
 
 This page provides common CORS configuration examples for use with Akave O3. Save these as `cors.json` and use them with the `put-bucket-cors` command via `aws s3api`.
 
+{{< callout type="info" >}}
+**Important:** Replace `<YOUR_ENDPOINT_URL>` in these examples with your specific endpoint URL. Find your endpoint in the [Akave Environment](/akave-o3/introduction/akave-environment) page.
+{{< /callout >}}
+
 ## Allow All Origins (Public Read)
 ```json
 {
@@ -57,6 +61,6 @@ Save any of these examples to a file named `cors.json`, then run:
 aws s3api put-bucket-cors \
   --bucket my-akave-bucket \
   --cors-configuration file://cors.json \
-  --endpoint-url https://o3-rc2.akave.xyz
+  --endpoint-url <YOUR_ENDPOINT_URL>
 ```
 This will apply the configuration to your bucket.

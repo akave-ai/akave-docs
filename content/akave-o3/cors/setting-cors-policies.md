@@ -11,6 +11,10 @@ Cross-Origin Resource Sharing (CORS) policies in Akave O3 allow your bucket to b
 
 Akave O3 supports full S3-compatible CORS configuration via the `aws s3api`.
 
+{{< callout type="info" >}}
+**Important:** Replace `<YOUR_ENDPOINT_URL>` in these examples with your specific endpoint URL. Find your endpoint in the [Akave Environment](/akave-o3/introduction/akave-environment) page.
+{{< /callout >}}
+
 ## Put a CORS Policy
 
 **Using `aws s3api`:**
@@ -18,7 +22,7 @@ Akave O3 supports full S3-compatible CORS configuration via the `aws s3api`.
 aws s3api put-bucket-cors \
   --bucket my-akave-bucket \
   --cors-configuration file://cors.json \
-  --endpoint-url https://o3-rc2.akave.xyz
+  --endpoint-url <YOUR_ENDPOINT_URL>
 ```
 **Using `aws s3`:**
 
@@ -30,7 +34,7 @@ Not supported for CORS. Use `s3api` for CORS operations.
 ```bash
 aws s3api get-bucket-cors \
   --bucket my-akave-bucket \
-  --endpoint-url https://o3-rc2.akave.xyz
+  --endpoint-url <YOUR_ENDPOINT_URL>
 ```
 ## Delete Existing CORS Policy
 
@@ -38,7 +42,7 @@ aws s3api get-bucket-cors \
 ```bash
 aws s3api delete-bucket-cors \
   --bucket my-akave-bucket \
-  --endpoint-url https://o3-rc2.akave.xyz
+  --endpoint-url <YOUR_ENDPOINT_URL>
 ```
 {{< callout type="info" >}}
  - CORS applies at the **bucket level**.

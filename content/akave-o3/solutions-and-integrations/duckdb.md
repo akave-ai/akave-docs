@@ -77,21 +77,21 @@ CREATE OR REPLACE PERSISTENT SECRET akave_secret (
     KEY_ID '<your-access-key>',
     SECRET '<your-secret-key>',
     REGION 'akave-network',
-    ENDPOINT 'o3-rc2.akave.xyz'
+    ENDPOINT '<YOUR_ENDPOINT_URL>'
 );
 ```
 - Select the endpoint corresponding to your credentials from the options provided here: [Akave Environment](/akave-o3/introduction/akave-environment)
-  - **Note:** Make sure to exclude `https://` from the endpoint as DuckDB automatically adds it
+  - **Note:** Make sure to exclude `https://` from the endpoint as DuckDB automatically adds it (e.g., use `o3-rc2.akave.xyz` not `https://o3-rc2.akave.xyz`)
 - Secrets are not saved between sessions by default. The `PERSISTENT` flag will save the secret between sessions. For more information on managing secrets within DuckDB see [Secrets Manager](https://duckdb.org/docs/stable/configuration/secrets_manager.html)
 
 ### (Optional) Attach Akave as a database
 
 If you have an existing DuckDB database, you can attach Akave as a database.
 
-First, move the database file into an Akave bucket. In this example using the AWS CLI:
+First, move the database file into an Akave bucket. In this example using the AWS CLI (include `https://` when using the AWS CLI):
 ```bash
 aws s3 cp database.duckdb s3://bucket/database.duckdb \
-  --endpoint-url https://o3-rc2.akave.xyz
+  --endpoint-url <YOUR_ENDPOINT_URL>
 ```
 > For more information on object management using the AWS CLI with Akave see [Upload, Download, Delete Objects](/akave-o3/object-management/upload-download-delete-objects).
 

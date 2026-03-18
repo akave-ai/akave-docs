@@ -7,7 +7,11 @@ cascade:
   type: docs
 ---
 
-Akave O3 is fully compatible with AWS CLI tooling. You can use both `aws s3api` and higher-level `aws s3` commands to interact with decentralized buckets and objects - all through, for example, the `https://o3-rc2.akave.xyz` endpoint.
+Akave O3 is fully compatible with AWS CLI tooling. You can use both `aws s3api` and higher-level `aws s3` commands to interact with decentralized buckets and objects.
+
+{{< callout type="info" >}}
+**Important:** Replace `<YOUR_ENDPOINT_URL>` in these examples with your specific endpoint URL. Find your endpoint in the [Akave Environment](/akave-o3/introduction/akave-environment) page.
+{{< /callout >}}
 
 ### Create a Bucket
 
@@ -16,14 +20,14 @@ Akave O3 is fully compatible with AWS CLI tooling. You can use both `aws s3api` 
 ```bash
 aws s3api create-bucket \
   --bucket my-akave-bucket \
-  --endpoint-url https://o3-rc2.akave.xyz
+  --endpoint-url <YOUR_ENDPOINT_URL>
 ```
 
 **Using `aws s3`:**
 
 ```bash
 aws s3 mb s3://my-akave-bucket \
-  --endpoint-url https://o3-rc2.akave.xyz
+  --endpoint-url <YOUR_ENDPOINT_URL>
 ```
 
 ### List Buckets
@@ -32,14 +36,14 @@ aws s3 mb s3://my-akave-bucket \
 
 ```bash
 aws s3api list-buckets \
-  --endpoint-url https://o3-rc2.akave.xyz
+  --endpoint-url <YOUR_ENDPOINT_URL>
 ```
 
 **Using `aws s3`:**
 
 ```bash
 aws s3 ls \
-  --endpoint-url https://o3-rc2.akave.xyz
+  --endpoint-url <YOUR_ENDPOINT_URL>
 ```
 
 ### Delete a Bucket
@@ -49,14 +53,14 @@ aws s3 ls \
 ```bash
 aws s3api delete-bucket \
   --bucket my-akave-bucket \
-  --endpoint-url https://o3-rc2.akave.xyz
+  --endpoint-url <YOUR_ENDPOINT_URL>
 ```
 
 **Using `aws s3`:**
 
 ```bash
 aws s3 rb s3://my-akave-bucket \
-  --endpoint-url https://o3-rc2.akave.xyz
+  --endpoint-url <YOUR_ENDPOINT_URL>
 ```
 
 

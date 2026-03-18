@@ -11,6 +11,9 @@ cascade:
 
 Once you've created a bucket in Akave O3, you can use standard AWS CLI commands to manage your objects. Below are examples using both `aws s3api` and the simpler `aws s3` CLI syntax.
 
+{{< callout type="info" >}}
+**Important:** Replace `<YOUR_ENDPOINT_URL>` in these examples with your specific endpoint URL. Find your endpoint in the [Akave Environment](/akave-o3/introduction/akave-environment) page.
+{{< /callout >}}
 
 ### Upload an Object
 
@@ -21,14 +24,14 @@ aws s3api put-object \
   --bucket my-akave-bucket \
   --key myfile.txt \
   --body ./myfile.txt \
-  --endpoint-url https://o3-rc2.akave.xyz
+  --endpoint-url <YOUR_ENDPOINT_URL>
 ```
 
 **Using `aws s3`:**
 
 ```bash
 aws s3 cp ./myfile.txt s3://my-akave-bucket/myfile.txt \
-  --endpoint-url https://o3-rc2.akave.xyz
+  --endpoint-url <YOUR_ENDPOINT_URL>
 ```
 
 {{< callout type="info" >}}
@@ -44,14 +47,14 @@ aws s3api get-object \
   --bucket my-akave-bucket \
   --key myfile.txt \
   ./downloaded-myfile.txt \
-  --endpoint-url https://o3-rc2.akave.xyz
+  --endpoint-url <YOUR_ENDPOINT_URL>
 ```
 
 **Using `aws s3`:**
 
 ```bash
 aws s3 cp s3://my-akave-bucket/myfile.txt ./downloaded-myfile.txt \
-  --endpoint-url https://o3-rc2.akave.xyz
+  --endpoint-url <YOUR_ENDPOINT_URL>
 ```
 
 ### List Objects
@@ -61,14 +64,14 @@ aws s3 cp s3://my-akave-bucket/myfile.txt ./downloaded-myfile.txt \
 ```bash
 aws s3api list-objects \
   --bucket my-akave-bucket \
-  --endpoint-url https://o3-rc2.akave.xyz
+  --endpoint-url <YOUR_ENDPOINT_URL>
 ```
 
 **Using `aws s3`:**
 
 ```bash
 aws s3 ls s3://my-akave-bucket \
-  --endpoint-url https://o3-rc2.akave.xyz
+  --endpoint-url <YOUR_ENDPOINT_URL>
 ```
 
 ### Total Size for All Objects in a Bucket
@@ -78,7 +81,7 @@ aws s3 ls s3://my-akave-bucket \
 ```bash
 aws s3 ls s3://my-akave-bucket \
 --recursive --human-readable --summarize \
---endpoint-url https://o3-rc2.akave.xyz
+--endpoint-url <YOUR_ENDPOINT_URL>
 ```
 
 ### Delete an Object
@@ -89,14 +92,14 @@ aws s3 ls s3://my-akave-bucket \
 aws s3api delete-object \
   --bucket my-akave-bucket \
   --key myfile.txt \
-  --endpoint-url https://o3-rc2.akave.xyz
+  --endpoint-url <YOUR_ENDPOINT_URL>
 ```
 
 **Using `aws s3`:**
 
 ```bash
 aws s3 rm s3://my-akave-bucket/myfile.txt \
-  --endpoint-url https://o3-rc2.akave.xyz
+  --endpoint-url <YOUR_ENDPOINT_URL>
 ```
 
 ### View an Object's Root eCID
@@ -107,7 +110,7 @@ Objects uploaded using Akave O3 end up on the Akave network shortly after being 
 aws s3api head-object \
   --bucket my-akave-bucket \
   --key myfile.txt \
-  --endpoint-url=https://o3-rc2.akave.xyz
+  --endpoint-url=<YOUR_ENDPOINT_URL>
 ```
 
 The eCID is then returned in the `Metadata` section of the response as `Network-Root-Cid`:

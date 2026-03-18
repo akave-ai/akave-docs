@@ -9,6 +9,10 @@ cascade:
 
 When things go wrong with `aws s3` or `aws s3api` calls against Akave O3, the first step is to enable debug logging.
 
+{{< callout type="info" >}}
+**Important:** Replace `<YOUR_ENDPOINT_URL>` in these examples with your specific endpoint URL. Find your endpoint in the [Akave Environment](/akave-o3/introduction/akave-environment) page.
+{{< /callout >}}
+
 ## Enable Debug Output
 
 Add `--debug` to any AWS CLI command to see:
@@ -21,7 +25,7 @@ Add `--debug` to any AWS CLI command to see:
 Example:
 ```bash
 aws s3api list-buckets \
-  --endpoint-url https://o3-rc2.akave.xyz \
+  --endpoint-url <YOUR_ENDPOINT_URL> \
   --debug
 ```
 ## Review Signature and Region

@@ -10,6 +10,10 @@ cascade:
 Akave O3 has S3-compatible object versioning and copying enabled by default, allowing you to preserve file history, retrieve older versions, and copy data within or across buckets -- all using familiar AWS CLI tools.
 
 {{< callout type="info" >}}
+**Important:** Replace `<YOUR_ENDPOINT_URL>` in these examples with your specific endpoint URL. Find your endpoint in the [Akave Environment](/akave-o3/introduction/akave-environment) page.
+{{< /callout >}}
+
+{{< callout type="info" >}}
 Note that versioning **cannot be disabled** on Akave O3 as data is immutably stored on the blockchain.
 {{< /callout >}}
 
@@ -20,14 +24,14 @@ Note that versioning **cannot be disabled** on Akave O3 as data is immutably sto
 ```bash
 aws s3api list-object-versions \
   --bucket my-akave-bucket \
-  --endpoint-url https://o3-rc2.akave.xyz
+  --endpoint-url <YOUR_ENDPOINT_URL>
 ```
 
 **Using `aws s3`:**
 
 ```bash
 aws s3 ls s3://my-akave-bucket --recursive --human-readable \
-  --endpoint-url https://o3-rc2.akave.xyz
+  --endpoint-url <YOUR_ENDPOINT_URL>
 ```
 
 > Note: `aws s3` will show the latest versions only. Use `s3api` for full version metadata.
@@ -43,7 +47,7 @@ aws s3api get-object \
   --key myfile.txt \
   --version-id <version-id> \
   ./myfile.txt \
-  --endpoint-url https://o3-rc2.akave.xyz
+  --endpoint-url <YOUR_ENDPOINT_URL>
 ```
 
 **Using `aws s3`:**  
@@ -59,7 +63,7 @@ aws s3api delete-object \
   --bucket my-akave-bucket \
   --key myfile.txt \
   --version-id <version-id> \
-  --endpoint-url https://o3-rc2.akave.xyz
+  --endpoint-url <YOUR_ENDPOINT_URL>
 ```
 
 **Using `aws s3`:**  
@@ -75,21 +79,21 @@ aws s3api copy-object \
   --bucket my-akave-bucket \
   --copy-source my-akave-bucket/myfile.txt \
   --key myfile-copy.txt \
-  --endpoint-url https://o3-rc2.akave.xyz
+  --endpoint-url <YOUR_ENDPOINT_URL>
 ```
 
 **Using `aws s3`:**
 
 ```bash
 aws s3 cp s3://my-akave-bucket/myfile.txt s3://my-akave-bucket/myfile-copy.txt \
-  --endpoint-url https://o3-rc2.akave.xyz
+  --endpoint-url <YOUR_ENDPOINT_URL>
 ```
 
 **Across buckets:**
 
 ```bash
 aws s3 cp s3://source-bucket/myfile.txt s3://destination-bucket/myfile-copy.txt \
-  --endpoint-url https://o3-rc2.akave.xyz
+  --endpoint-url <YOUR_ENDPOINT_URL>
 ```
 
 > **Note:** While `aws s3api` offers full control over versioning and metadata, `aws s3` is easier for basic operations. Use them together for a flexible Akave O3 workflow.

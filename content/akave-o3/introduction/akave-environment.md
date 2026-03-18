@@ -9,6 +9,10 @@ cascade:
 
 **Akave O3** offers multiple hosted S3 compatible API endpoints to interact with different layers of the network. These environments are designed to mirror traditional cloud regions for familiar configuration, while operating on decentralized infrastructure.
 
+{{< callout type="info" >}}
+**Important:** Your endpoint URL is specific to your credentials. When you create credentials on [Akave Cloud](https://console.akave.com/), you'll receive a specific endpoint URL to use in all your API calls and configurations.
+{{< /callout >}}
+
 Below is a summary of currently supported Akave O3 regions and endpoints:
 
 | **Region**     | **Purpose**           | **API Type**     | **Endpoint URL**                |

@@ -189,7 +189,7 @@ Once the Backup Gateway is configured and connected to Akave storage, you can us
 
 ```bash
 aws s3 ls s3://your-bucket-name/ \
-  --endpoint-url https://o3-rc2.akave.xyz \
+  --endpoint-url <YOUR_ENDPOINT_URL> \
   --recursive
 ```
 

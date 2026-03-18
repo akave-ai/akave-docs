@@ -7,7 +7,11 @@ cascade:
   type: docs
 ---
 
-[Snowflake](https://www.snowflake.com/) is a enterprise grade data warehouse platform that provides a secure, scalable, and cost-effective way to store and analyze large volumes of data. It is fully compatible with the Akave O3 decentralized storage endpoint. 
+[Snowflake](https://www.snowflake.com/) is a enterprise grade data warehouse platform that provides a secure, scalable, and cost-effective way to store and analyze large volumes of data. It is fully compatible with the Akave O3 decentralized storage endpoint.
+
+{{< callout type="info" >}}
+**Important:** Replace `<YOUR_ENDPOINT_URL>` in these examples with your specific endpoint url (excluding `https://`, e.g. `o3-rc2.akave.xyz`). Find your endpoint in the [Akave Environment](/akave-o3/introduction/akave-environment) page.
+{{< /callout >}}
 
 **Below is a short video demo for using Akave O3 with Snowflake:**
 
@@ -40,7 +44,7 @@ Ensure your credentials are valid by listing buckets in your account:
 
 ```bash
 aws s3api list-buckets \
-  --endpoint-url https://o3-rc2.akave.xyz
+  --endpoint-url <YOUR_ENDPOINT_URL>
 ```
 
 **Expected output:**
@@ -61,7 +65,7 @@ Then, create a bucket using the AWS CLI and your Akave credentials:
 
 ```bash
 aws s3 mb s3://my-snowflake-bucket \
-  --endpoint-url https://o3-rc2.akave.xyz
+  --endpoint-url <YOUR_ENDPOINT_URL>
 ```
 
 **Expected output:**
@@ -73,7 +77,7 @@ make_bucket: my-snowflake-bucket
 Finally, test uploading an object to your bucket:
 ```bash
 aws s3 cp ./myfile.txt s3://my-snowflake-bucket/myfile.txt \
-  --endpoint-url https://o3-rc2.akave.xyz
+  --endpoint-url <YOUR_ENDPOINT_URL>
 ```
 
 **Expected output:**
@@ -89,7 +93,7 @@ Start by creating a stage in your account by running the below command for the b
 ```sql
 CREATE STAGE my_akave_stage
   URL = 's3compat://my-snowflake-bucket/'
-  ENDPOINT = 'o3-rc2.akave.xyz'
+  ENDPOINT = '<YOUR_ENDPOINT_URL>'
   CREDENTIALS = (AWS_KEY_ID = '1a2b3c...' AWS_SECRET_KEY = '4x5y6z...')
   DIRECTORY = ( ENABLE = true );
 ```
@@ -168,7 +172,7 @@ You can retrieve the data stored in Akave from Snowflake by synchronizing the ra
 
 ```bash
 aws s3 sync s3://my-snowflake-bucket/nation_data ./local-directory \
-  --endpoint-url https://o3-rc2.akave.xyz
+  --endpoint-url <YOUR_ENDPOINT_URL>
 ```
 
 **Expected output:**
@@ -195,7 +199,7 @@ CREDENTIALS = (
 AWS_KEY_ID = 'ABC'
 AWS_SECRET_KEY = 'xyz'
 )
-STORAGE_ENDPOINT = 'o3-rc2.akave.xyz'
+STORAGE_ENDPOINT = '<YOUR_ENDPOINT_URL>'
 )
 );
 ```
@@ -259,7 +263,7 @@ SELECT * FROM AKAVE_ICEBERG;
 
 ```bash
 aws s3 sync s3://my-snowflake-bucket/my_iceberg_table_data ./local-directory \
-  --endpoint-url https://o3-rc2.akave.xyz
+  --endpoint-url <YOUR_ENDPOINT_URL>
 ```
 
 **Expected output:**

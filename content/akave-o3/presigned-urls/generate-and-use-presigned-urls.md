@@ -7,7 +7,11 @@ cascade:
   type: docs
 ---
 
-Akave O3 supports presigned URLs, allowing you to securely share access to buckets and objects for a limited time — without exposing credentials. This feature is fully compatible with AWS Signature Version 4 and works with `aws s3` commands while `aws s3api` does not have a corresponding command for generating presigned URLs. 
+Akave O3 supports presigned URLs, allowing you to securely share access to buckets and objects for a limited time — without exposing credentials. This feature is fully compatible with AWS Signature Version 4 and works with `aws s3` commands while `aws s3api` does not have a corresponding command for generating presigned URLs.
+
+{{< callout type="info" >}}
+**Important:** Replace `<YOUR_ENDPOINT_URL>` in these examples with your specific endpoint URL. Find your endpoint in the [Akave Environment](/akave-o3/introduction/akave-environment) page.
+{{< /callout >}}
 
 ## What Is a Presigned URL?
 
@@ -21,7 +25,7 @@ A presigned URL is a time-limited, signed link that allows access to a specific 
 ```bash
 aws s3 presign s3://my-akave-bucket/myfile.txt \
   --expires-in 3600 \
-  --endpoint-url https://o3-rc2.akave.xyz
+  --endpoint-url <YOUR_ENDPOINT_URL>
 ```
 > This generates a URL valid for 1 hour (3600 seconds) to download the file.
 
@@ -29,7 +33,7 @@ aws s3 presign s3://my-akave-bucket/myfile.txt \
 
 Anyone with the URL can download the file:
 ```bash
-curl "https://o3-rc2.akave.xyz/my-akave-bucket/myfile.txt?...signature..."
+curl "<YOUR_ENDPOINT_URL>/my-akave-bucket/myfile.txt?...signature..."
 ```
 Or open it directly in a browser.
 
