@@ -2,7 +2,7 @@
 date: '2025-04-23T22:48:28-05:00'
 draft: false
 title: 'Akave MCP Server'
-weight: 27
+weight: 9
 cascade:
   type: docs
 ---

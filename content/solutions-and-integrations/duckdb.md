@@ -2,7 +2,7 @@
 date: '2025-06-24T22:07:18-07:00'
 draft: false
 title: 'DuckDB'
-weight: 29
+weight: 18
 cascade:
   type: docs
 ---

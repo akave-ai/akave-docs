@@ -2,11 +2,11 @@
 date: '2025-06-24T22:09:34-07:00'
 draft: false
 title: 'Solutions and Integrations'
-weight: 25
+weight: 7
 cascade:
   type: docs
 ---
-Here you'll find solutions and integrations that can be utilized with the Akave Network for common use cases.
+Here you'll find solutions and integrations that can be utilized with the Akave Network and Akave O3 API for common use cases.
 
 #### **[Acronis](/akave-o3/solutions-and-integrations/acronis)** - Backup and Recovery
 - Integrate Akave storage with Acronis backup solutions
@@ -19,6 +19,9 @@ Here you'll find solutions and integrations that can be utilized with the Akave 
 
 #### **[Cloud Mounter](/akave-o3/solutions-and-integrations/cloudmounter)** - Mount Akave Storage as a Local Drive
 - Access Akave storage through your file system as a virtual drive
+
+#### **[Databricks](/akave-o3/solutions-and-integrations/databricks)** - Unified Analytics Platform
+- Integrate Akave storage with Databricks for data lakehouse architecture
 
 #### **[DuckDB](/akave-o3/solutions-and-integrations/duckdb)** - Data Analytics Integration
 - Perform powerful analytics directly on data stored in Akave
