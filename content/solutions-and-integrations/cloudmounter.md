@@ -3,6 +3,9 @@ date: '2025-06-11T19:23:35-07:00'
 draft: false
 title: 'CloudMounter'
 weight: 12
+aliases:
+  - /akave-o3/solutions-and-integrations/cloudmounter
+  - /akave-o3/solutions-and-integrations/cloudmounter/
 cascade:
   type: docs
 ---

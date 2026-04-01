@@ -3,6 +3,9 @@ date: '2025-06-11T19:23:35-07:00'
 draft: false
 title: 'Akash'
 weight: 6
+aliases:
+  - /akave-o3/solutions-and-integrations/akash
+  - /akave-o3/solutions-and-integrations/akash/
 cascade:
   type: docs
 ---

@@ -3,6 +3,9 @@ date: '2025-06-24T22:07:18-07:00'
 draft: false
 title: 'DuckDB'
 weight: 18
+aliases:
+  - /akave-o3/solutions-and-integrations/duckdb
+  - /akave-o3/solutions-and-integrations/duckdb/
 cascade:
   type: docs
 ---

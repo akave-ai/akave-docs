@@ -3,6 +3,9 @@ date: '2025-04-23T22:48:28-05:00'
 draft: false
 title: 'Akave MCP Server'
 weight: 9
+aliases:
+  - /akave-o3/solutions-and-integrations/akave-mcp
+  - /akave-o3/solutions-and-integrations/akave-mcp/
 cascade:
   type: docs
 ---

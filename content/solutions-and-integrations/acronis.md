@@ -3,6 +3,9 @@ date: '2025-06-11T19:23:35-07:00'
 draft: false
 title: 'Acronis'
 weight: 3
+aliases:
+  - /akave-o3/solutions-and-integrations/acronis
+  - /akave-o3/solutions-and-integrations/acronis/
 cascade:
   type: docs
 ---
@@ -32,7 +35,7 @@ Akave O3 can be used with Acronis in two common ways:
 - **Acronis Cyber Protect Cloud**: Configure an S3-compatible backup location directly in the Acronis SaaS console.
 - **Acronis Cyber Infrastructure (Backup Gateway)**: Run an Acronis-managed gateway (for example via AWS Marketplace) that exposes S3-compatible storage configuration through a self-managed service.
 
-In both cases, you'll use your Akave S3-compatible credentials (access key, secret key, and endpoint) and an Akave bucket. If you need to validate your Akave bucket and credentials first, reference the other S3-compatible integrations in this folder (for example [Snowflake](/akave-o3/solutions-and-integrations/snowflake/) and [S3FS](/akave-o3/solutions-and-integrations/s3fs/)).
+In both cases, you'll use your Akave S3-compatible credentials (access key, secret key, and endpoint) and an Akave bucket. If you need to validate your Akave bucket and credentials first, reference the other S3-compatible integrations in this folder (for example [Snowflake](/solutions-and-integrations/snowflake/) and [S3FS](/solutions-and-integrations/s3fs/)).
 
 ### Acronis Cyber Protect Cloud
 

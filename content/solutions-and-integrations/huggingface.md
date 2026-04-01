@@ -3,6 +3,9 @@ date: '2025-04-23T22:48:28-05:00'
 draft: false
 title: 'Hugging Face'
 weight: 21
+aliases:
+  - /akave-o3/solutions-and-integrations/huggingface
+  - /akave-o3/solutions-and-integrations/huggingface/
 cascade:
   type: docs
 ---
@@ -68,7 +71,7 @@ The below usage example has simple examples for how to use Hugging Face datasets
 Helper scripts have also been created to make it easier to use Hugging Face datasets and S3FS with Akave O3 storage, as well to test the connection to your Akave O3 storage. Both of these scripts can be found in the [configuration](#configuration) section below.
 
 
-For more information on S3FS usage with Akave see the [S3FS](/akave-o3/solutions-and-integrations/s3fs) Akave O3 documentation.
+For more information on S3FS usage with Akave see the [S3FS](/solutions-and-integrations/s3fs) Akave O3 documentation.
 
 ### Configuration
 

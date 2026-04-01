@@ -3,6 +3,9 @@ date: '2025-06-24T22:08:00-07:00'
 draft: false
 title: 'Databricks'
 weight: 15
+aliases:
+  - /akave-o3/solutions-and-integrations/databricks
+  - /akave-o3/solutions-and-integrations/databricks/
 cascade:
   type: docs
 ---

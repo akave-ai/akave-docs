@@ -3,6 +3,9 @@ date: '2025-04-23T22:48:28-05:00'
 draft: false
 title: 'S3FS'
 weight: 27
+aliases:
+  - /akave-o3/solutions-and-integrations/s3fs
+  - /akave-o3/solutions-and-integrations/s3fs/
 cascade:
   type: docs
 ---

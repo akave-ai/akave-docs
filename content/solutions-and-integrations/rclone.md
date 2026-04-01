@@ -3,6 +3,9 @@ date: '2025-06-11T19:23:35-07:00'
 draft: false
 title: 'Rclone'
 weight: 24
+aliases:
+  - /akave-o3/solutions-and-integrations/rclone
+  - /akave-o3/solutions-and-integrations/rclone/
 cascade:
   type: docs
 ---

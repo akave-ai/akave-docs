@@ -3,6 +3,9 @@ date: '2025-06-11T19:23:35-07:00'
 draft: false
 title: 'Snowflake'
 weight: 30
+aliases:
+  - /akave-o3/solutions-and-integrations/snowflake
+  - /akave-o3/solutions-and-integrations/snowflake/
 cascade:
   type: docs
 ---
