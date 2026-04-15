@@ -13,6 +13,12 @@ markup:
     style: github
 
 enableGitInfo: true
+enableRobotsTXT: true
+
+sitemap:
+  changeFreq: weekly
+  priority: 0.5
+
 params:
   navbar:
     displayTitle: true
@@ -51,7 +57,7 @@ menu:
         icon: context7
   sidebar:
     - name: "Blockchain Explorer ↗"
-      url: "http://explorer.akave.ai/"
+      url: "https://explorer.akave.ai/"
       weight: 20
     - name: "Testnet Faucet ↗"
       url: "https://faucet.akave.ai/"
