@@ -1,7 +1,9 @@
 ---
 date: '2025-04-28T17:16:58-05:00'
 draft: false
-title: 'Akave O3'
+title: 'Akave O3 — S3-Compatible Sovereign Storage API'
+linkTitle: 'Akave O3'
+description: 'Akave O3: S3-compatible sovereign storage API. Drop-in AWS S3 replacement with zero egress fees, up to 80% cheaper, and full data ownership.'
 weight: 6
 cascade:
   type: docs

@@ -1,7 +1,9 @@
 ---
 date: '2025-04-23T22:48:00-05:00'
 draft: false
-title: 'Data Flow'
+title: 'Akave Data Flow — How Sovereign Storage Works'
+linkTitle: 'Data Flow'
+description: 'How data flows through Akave: encryption, erasure coding, distribution across nodes, and continuous integrity verification for 11x9s durability.'
 weight: 3
 cascade:
   type: docs

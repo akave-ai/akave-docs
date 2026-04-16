@@ -1,7 +1,9 @@
 ---
 date: '2025-06-10T22:51:37-05:00'
 draft: false
-title: 'Legal'
+title: 'Akave Legal — SLA, Terms of Service & Privacy Policy'
+linkTitle: 'Legal'
+description: 'Akave''s legal documents: Service Level Agreement, Terms of Service, Privacy Policy, and Data Storage Agreement for enterprises and developers.'
 weight: 22
 cascade:
   type: docs

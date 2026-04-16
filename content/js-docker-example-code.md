@@ -1,7 +1,9 @@
 ---
 date: '2025-04-23T22:48:28-05:00'
 draft: false
-title: 'Akavelink API'
+title: 'Akavelink REST API — Reference & Examples'
+linkTitle: 'Akavelink API'
+description: 'Akavelink REST API reference: endpoints, authentication, bucket and file operations, Docker setup, and JavaScript SDK examples for Akave integration.'
 weight: 11
 cascade:
   type: docs

@@ -1,7 +1,9 @@
 ---
 date: '2025-04-26T23:58:37-05:00'
 draft: false
-title: 'Akave CLI'
+title: 'Akave CLI — Manage Sovereign Cloud Storage'
+linkTitle: 'Akave CLI'
+description: 'Install and use the Akave CLI to create wallets, manage buckets, upload files, and interact with Akave sovereign cloud storage from the command line.'
 weight: 10
 cascade:
   type: docs

@@ -1,7 +1,9 @@
 ---
 date: '2025-04-26T23:58:37-05:00'
 draft: false
-title: 'Akave Oasis - Protocol'
+title: 'Akave Oasis Protocol — Data Integrity & Sovereignty'
+linkTitle: 'Akave Oasis - Protocol'
+description: 'How Akave ensures data integrity: immutable storage, erasure coding for 11x9s durability, and cryptographic fingerprinting for ransomware protection.'
 weight: 2
 cascade:
   type: docs
