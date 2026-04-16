@@ -7,6 +7,16 @@ description: 'Akavelink REST API reference: endpoints, authentication, bucket an
 weight: 11
 cascade:
   type: docs
+schema_json: |
+  {
+    "@context": "https://schema.org",
+    "@type": "HowTo",
+    "name": "Get Started with the Akavelink REST API",
+    "description": "Set up and call the Akavelink REST API to interact with Akave sovereign cloud storage from any language or environment.",
+    "step": [
+      { "@type": "HowToStep", "text": "Follow the instructions on this page." }
+    ]
+  }
 ---
 Welcome to the Akave Link API! This API wrapper enables seamless integration with Akave's decentralized storage network. Below, you’ll find quick setup steps, examples of how to use each API endpoint with JavaScript, and equivalent `curl` commands.
 

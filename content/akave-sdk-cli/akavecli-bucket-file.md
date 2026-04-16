@@ -5,6 +5,16 @@ title: 'Bucket and File Commands'
 weight: 50
 cascade:
   type: docs
+schema_json: |
+  {
+    "@context": "https://schema.org",
+    "@type": "HowTo",
+    "name": "Create Buckets and Upload Files with Akave",
+    "description": "Create, list, and delete storage buckets, and upload, download, and manage files in Akave sovereign cloud storage.",
+    "step": [
+      { "@type": "HowToStep", "text": "Follow the instructions on this page." }
+    ]
+  }
 ---
 
 This page documents the main **bucket** and **file** commands in `akavecli`.

@@ -5,6 +5,16 @@ title: 'Wallet Management'
 weight: 40
 cascade:
   type: docs
+schema_json: |
+  {
+    "@context": "https://schema.org",
+    "@type": "HowTo",
+    "name": "Create and Manage an Akave Wallet",
+    "description": "Create a wallet to authenticate with the Akave sovereign storage network and manage access credentials.",
+    "step": [
+      { "@type": "HowToStep", "text": "Follow the instructions on this page." }
+    ]
+  }
 ---
 
 The Akave CLI includes a built-in **wallet subsystem** to prevent needing to pass raw private keys with every command, minimizing the risk of exposure.

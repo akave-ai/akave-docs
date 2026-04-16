@@ -1,0 +1,3 @@
+{{ with .Params.schema_json }}
+{{ printf `<script type="application/ld+json">%s</script>` . | safeHTML }}
+{{ end }}

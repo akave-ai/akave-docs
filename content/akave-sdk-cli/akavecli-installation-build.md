@@ -5,6 +5,16 @@ title: 'Install and Build the Akave CLI'
 weight: 30
 cascade:
   type: docs
+schema_json: |
+  {
+    "@context": "https://schema.org",
+    "@type": "HowTo",
+    "name": "Install the Akave CLI",
+    "description": "Install the Akave command-line tool to manage sovereign cloud storage buckets and objects from your terminal.",
+    "step": [
+      { "@type": "HowToStep", "text": "Follow the instructions on this page." }
+    ]
+  }
 ---
 
 This page explains how to install and build the **Akave CLI (`akavecli`)** from source. Make sure you have completed the [prerequisites]({{< relref "akave-sdk-cli/akavecli-prerequisites.md" >}}) before proceeding.

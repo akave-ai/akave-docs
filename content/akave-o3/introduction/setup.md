@@ -5,6 +5,16 @@ title: 'Akave O3 setup'
 weight: 5
 cascade:
   type: docs
+schema_json: |
+  {
+    "@context": "https://schema.org",
+    "@type": "HowTo",
+    "name": "Get Started with Akave O3 Sovereign Storage",
+    "description": "Connect to Akave O3, your S3-compatible sovereign cloud storage endpoint, using any AWS S3 SDK or tool.",
+    "step": [
+      { "@type": "HowToStep", "text": "Follow the instructions on this page." }
+    ]
+  }
 ---
 
 ### Setting Up an AWS CLI Profile for Akave O3
