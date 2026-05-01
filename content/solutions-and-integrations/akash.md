@@ -32,19 +32,17 @@ As well as a bucket in Akave to store your data. More information on how to crea
 
 Start by opening the Akash Console at: [console.akash.network](https://console.akash.network/)
 
-Then, click on the "Deploy" button.
+Then, navigate to the [Templates](https://console.akash.network/templates?category=Decentralized+Storage) section and select the [Akave template](https://console.akash.network/templates/akash-network-awesome-akash-akave) under **Decentralized Storage**.
 
 ![Akash Deploy](/images/akash_deploy.png)
 
-Then from the available options you can select "Upload your SDL" and use the example SDL provided here: [akave.yaml](https://github.com/akave-ai/urandom/blob/main/akash/akave.yaml)
+Once you've selected the template, configure the following environment variables in the SDL:
 - Replace the `AKAVE_ENDPOINT` with the appropriate [Akave Endpoint URL](/akave-o3/introduction/akave-environment/)
 - Replace the `AKAVE_BUCKET` with your Akave Bucket Name
 - Replace the `AKAVE_ACCESS` with your Akave Access Key ID
 - Replace the `AKAVE_SECRET` with your Akave Secret Access Key
 
 **Note:** These are all values in the `env` section of the SDL, and so won't be exposed after deployment.
-
-![Akave SDL](/images/akash_sdl.png)
 
 Next, name your deployment, add funds to the Akash escrow account, then select a provider and deploy. 
 
@@ -63,7 +61,7 @@ Note that the deployment may take a few minutes to fully initialize and become a
 
 ## Usage
 
-For the example SDL provided above this creates a service that interacts with the Akave O3 endpoint at the URI shown. You can use this URI to see objects uploaded to your Akave bucket, as well as access those objects with pre-signed URLs. The SDL uploads an object to the bucket as part of the deployment process, demonstrating that the integration is working correctly. 
+The Akave template creates a service that interacts with the Akave O3 endpoint at the URI shown. You can use this URI to see objects uploaded to your Akave bucket, as well as access those objects with pre-signed URLs. The SDL uploads an object to the bucket as part of the deployment process, demonstrating that the integration is working correctly. 
 
 You can verify the object was uploaded by checking your Akave bucket using standard [object management commands](/akave-o3/object-management/upload-download-delete-objects/).
 
@@ -75,7 +73,7 @@ This basic deployment demonstrates how to launch an Akash instance which interac
 
 ![Deployed](/images/akash_akave.png)
 
-To add additional functionality modify the SDL using:
+To add additional functionality, modify the template SDL using:
 - [The O3 section of our docs](/akave-o3/)
 - [The AWS boto3 library](https://boto3.amazonaws.com/v1/documentation/api/latest/index.html)
 - [The AWS JavaScript library](https://docs.aws.amazon.com/sdk-for-javascript/v3/developer-guide/getting-started.html)
