@@ -37,6 +37,17 @@ aws s3 cp ./myfile.txt s3://my-akave-bucket/myfile.txt \
 {{< callout type="info" >}}
  Akave O3 supports safe characters for object naming only. If using characters that require special handling please be aware that these are not fully supported and may cause issues with the O3 API. See [Naming Amazon S3 objects](https://docs.aws.amazon.com/AmazonS3/latest/userguide/object-keys.html) for more information.
 {{< /callout >}}
+#### Multipart Upload Threshold
+
+The AWS CLI uses [multipart upload](https://docs.aws.amazon.com/AmazonS3/latest/userguide/mpuoverview.html) (MPU) to split large files into parts and upload them in parallel. The default threshold is **8MB**, meaning any file over 8MB is automatically split — even when it provides no benefit.
+
+For Akave O3, files **under ~100MB** see little to no difference between single stream and MPU uploads, while files **100MB and above** see significantly faster uploads with MPU enabled. We recommend setting the threshold to **100MB**:
+
+```bash
+aws configure set default.s3.multipart_threshold 100MB
+```
+
+This avoids unnecessary multipart overhead for smaller objects while ensuring large uploads benefit from parallel transfer.
 
 ### Download an Object
 
