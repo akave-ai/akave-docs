@@ -24,6 +24,14 @@ Buckets are the primary storage containers in Akave Cloud. Create a bucket befor
 Buckets are created under a selected Access Key. When you use that Access Key with S3-compatible tools, the buckets created with it are available through the same credentials.
 {{< /callout >}}
 
+## Loading State
+
+When you open **Buckets**, Akave Cloud loads the bucket list and related Access Key data before showing the table.
+
+During this step, the page displays a loading state. Wait for loading to finish before creating a bucket, searching buckets, or confirming whether a bucket already exists.
+
+![Buckets loading state](/images/gui/buckets/loading.png)
+
 ## Create a Bucket
 
 1. In Akave Cloud, open **Buckets** from the sidebar.
