@@ -83,7 +83,7 @@ After the bucket appears in the table, confirm these values:
 
 You can use the search field to find the bucket by name.
 
-![Search buckets](/images/gui/buckets/creation/search-buckets.png)
+![Search buckets](/images/gui/buckets/search-buckets.png)
 
 ## Next Steps
 
