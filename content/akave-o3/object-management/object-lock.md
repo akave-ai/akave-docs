@@ -1,6 +1,6 @@
 ---
 date: '2026-02-23T20:26:00-00:00'
-draft: true
+draft: false
 title: 'Object Lock'
 weight: 8
 cascade:
@@ -8,6 +8,10 @@ cascade:
 ---
 
 Akave O3 supports S3-compatible Object Lock, enabling you to prevent objects from being deleted or overwritten for a fixed amount of time or indefinitely. This feature is essential for compliance requirements and data protection scenarios where write-once-read-many (WORM) capabilities are needed.
+
+Object Lock can be enabled when creating the bucket or after one has been created, but the bucket **must be empty**. You cannot enable Object Lock on a non-empty bucket.
+
+For more details on S3 Object Lock concepts, see the [AWS S3 Object Lock documentation](https://docs.aws.amazon.com/AmazonS3/latest/userguide/object-lock.html).
 
 {{< callout type="info" >}}
 **Important:** Replace `<YOUR_ENDPOINT_URL>` in these examples with your specific endpoint URL. Find your endpoint in the [Akave Environment](/akave-o3/introduction/akave-environment) page.
@@ -18,7 +22,18 @@ Akave O3 supports S3-compatible Object Lock, enabling you to prevent objects fro
 Object Lock requires versioning to be enabled on the bucket. Once Object Lock is enabled, it **cannot be disabled**, and versioning **cannot be suspended**.
 {{< /callout >}} -->
 
-### Enable Object Lock on a Bucket
+### Create a Bucket with Object Lock
+
+**Using `aws s3api`:**
+
+```bash
+aws s3api create-bucket \
+  --bucket my-locked-bucket \
+  --object-lock-enabled-for-bucket \
+  --endpoint-url <YOUR_ENDPOINT_URL>
+```
+
+### Enable Object Lock on an Empty Bucket
 
 **Using `aws s3api`:**
 <!-- 
@@ -142,7 +157,3 @@ aws s3api delete-object \
   --version-id <version-id> \
   --endpoint-url <YOUR_ENDPOINT_URL>
 ```
-
-{{< callout type="info" >}}
-For more details on S3 Object Lock concepts, see the [AWS S3 Object Lock documentation](https://docs.aws.amazon.com/AmazonS3/latest/userguide/object-lock.html).
-{{< /callout >}}

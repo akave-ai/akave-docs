@@ -40,6 +40,14 @@ Akave O3 is compatible with the following tools and languages:
 - [DeleteObject](https://docs.aws.amazon.com/AmazonS3/latest/API/API_DeleteObject.html) – Delete a single object from a bucket.
 - [DeleteObjects](https://docs.aws.amazon.com/AmazonS3/latest/API/API_DeleteObjects.html) – Delete multiple objects in a single request.
 
+### Object Lock
+- [PutObjectLockConfiguration](https://docs.aws.amazon.com/AmazonS3/latest/API/API_PutObjectLockConfiguration.html) – Enable Object Lock and set default retention on an empty bucket.
+- [GetObjectLockConfiguration](https://docs.aws.amazon.com/AmazonS3/latest/API/API_GetObjectLockConfiguration.html) – Retrieve the Object Lock configuration for a bucket.
+- [PutObjectRetention](https://docs.aws.amazon.com/AmazonS3/latest/API/API_PutObjectRetention.html) – Set retention settings on an object.
+- [GetObjectRetention](https://docs.aws.amazon.com/AmazonS3/latest/API/API_GetObjectRetention.html) – Retrieve retention settings for an object.
+- [PutObjectLegalHold](https://docs.aws.amazon.com/AmazonS3/latest/API/API_PutObjectLegalHold.html) – Enable or disable Legal Hold on an object.
+- [GetObjectLegalHold](https://docs.aws.amazon.com/AmazonS3/latest/API/API_GetObjectLegalHold.html) – Check Legal Hold status for an object.
+
 ### Tagging Support
 - [GetObjectTagging](https://docs.aws.amazon.com/AmazonS3/latest/API/API_GetObjectTagging.html) – Retrieve all tags assigned to an object.
 - [PutObjectTagging](https://docs.aws.amazon.com/AmazonS3/latest/API/API_PutObjectTagging.html) – Add or update tags on an object.
