@@ -23,6 +23,10 @@ You can control this in `aws s3 cp` using:
 
 --part-size 64MB
 
+{{< callout type="info" >}}
+Note that part size is distinct from  multipart threshold. For recommendations on the best threshold to use see [MultiPart Upload Threshold Section](/akave-o3/object-management/upload-download-delete-objects/#multipart-upload-threshold) in our Object Management docs.
+{{< /callout >}}
+
 ## Upload Parts in Parallel
 
 Uploading parts in parallel improves speed significantly, especially over high-latency or geographically distributed connections.
