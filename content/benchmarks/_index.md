@@ -5,7 +5,7 @@ linkTitle: 'Benchmarks'
 description: 'How Akave performance is measured: throughput by workload, TTFB, latency percentiles (P50/P90/P99), and YCSB concurrent benchmarks — plus the latest O3 and network results.'
 weight: 7
 excludeSearch: true
-_build:
+build:
   render: always
   list: never
 cascade:

@@ -5,7 +5,7 @@ linkTitle: 'Akave O3 Results'
 description: 'Latest measured performance for Akave O3: throughput by workload, TTFB, P50/P90/P99 latency, and YCSB concurrent benchmark results.'
 weight: 1
 excludeSearch: true
-_build:
+build:
   render: always
   list: never
 cascade:

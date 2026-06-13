@@ -5,7 +5,7 @@ linkTitle: 'Akave Network Results'
 description: 'Latest measured performance for the Akave Network: throughput by workload, TTFB, P50/P90/P99 latency, and YCSB concurrent benchmark results.'
 weight: 2
 excludeSearch: true
-_build:
+build:
   render: always
   list: never
 cascade:
