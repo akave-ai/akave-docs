@@ -1,0 +1,27 @@
+# Akave Network (protocol layer) benchmark results.
+# This file mirrors the schema of o3.yaml so the same shortcode and updater work.
+# Set status to "live" and fill the rows once the first network run is published.
+meta:
+  label: "Akave Network"
+  connection: "~10 Gbps connection"
+  updated: ""
+  status: "pending"
+
+highlights: []
+
+throughput:
+  unit: "MB/s"
+  rows: []
+
+latency:
+  unit: "ms"
+  rows: []
+
+connection:
+  unit: "ms"
+  rows: []
+
+ycsb:
+  threads: 0
+  object_size: ""
+  rows: []

@@ -1,0 +1,80 @@
+# Akave o3 benchmark results.
+# Numeric fields are updated automatically by the external benchmark pipeline,
+# which only publishes a new run when metrics improve.
+meta:
+  label: "Akave O3"
+  connection: "~10 Gbps connection"
+  updated: "2025-06-12"
+  status: "live"
+
+# Headline numbers rendered as stat cards.
+# Read/Write throughput cards are computed automatically as the peak value
+# across the throughput rows below, so they are not listed here.
+highlights:
+  - label: "TTFB (avg)"
+    value: "5 ms"
+    note: "first byte"
+  - label: "Egress fees"
+    value: "$0"
+    note: "no transfer charges"
+  - label: "Redundancy"
+    value: "11 nines"
+    note: "durability"
+
+# Up / down speeds per workload (object size). Higher is better.
+throughput:
+  unit: "MB/s"
+  rows:
+    - workload: "512 KB"
+      read: 90.7
+      write: 12.1
+    - workload: "1 MB"
+      read: 143.3
+      write: 25.3
+    - workload: "4 MB"
+      read: 239.9
+      write: 74.2
+    - workload: "10 MB"
+      read: 238.1
+      write: 133.0
+    - workload: "256 MB"
+      read: 284.8
+      write: 254.1
+    - workload: "512 MB"
+      read: 282.7
+      write: 245.6
+
+# Latency percentiles in milliseconds. Lower is better.
+latency:
+  unit: "ms"
+  note: "1 MB objects, sequential"
+  rows:
+    - metric: "Read latency"
+      p50: 7.0
+      p90: 7.4
+      p99: 40.2
+    - metric: "Write latency"
+      p50: 39.8
+      p90: 46.1
+      p99: 213.4
+
+# YCSB concurrent benchmark. Throughput higher is better, percentiles lower is better.
+ycsb:
+  threads: 32
+  object_size: "1 KB"
+  rows:
+    - phase: "Bulk load"
+      throughput: 38
+      p50: 829.2
+      p90: 894.3
+      p99: 979.2
+    - phase: "Mixed read (80%)"
+      throughput: 150
+      p50: 5.6
+      p90: 799.7
+      p99: 902.8
+    - phase: "Mixed write (20%)"
+      throughput: 37
+      p50: 9.5
+      p90: 799.6
+      p99: 888.7

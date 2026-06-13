@@ -1,0 +1,116 @@
+{{- /* Render consolidated benchmark results from data/benchmarks/<name>.yaml */ -}}
+{{- $name := .Get "data" | default (.Get 0) -}}
+{{- $d := index site.Data.benchmarks $name -}}
+{{- if not $d -}}
+  {{- errorf "benchmarks shortcode: no data file found at data/benchmarks/%s.yaml" $name -}}
+{{- end -}}
+
+{{- $meta := $d.meta -}}
+
+{{- if eq (string $meta.status) "pending" -}}
+  <div style="margin-top:1.5rem;border:1px solid rgba(128,128,128,0.25);border-radius:.5rem;padding:1rem 1.25rem;background:rgba(128,128,128,0.06);">
+    <strong>Results pending.</strong> Numbers will appear here automatically after the next benchmark run is published.
+  </div>
+{{- else -}}
+
+  {{- with $meta }}
+  <p style="opacity:.7;font-size:.875rem;margin:.25rem 0 1rem;">
+    {{ .label }}{{ with .connection }} &middot; {{ . }}{{ end }}{{ with .updated }} &middot; updated {{ . }}{{ end }}
+  </p>
+  {{- end }}
+
+  {{- /* Best (peak) read/write speed and the workload that achieved it. */ -}}
+  {{- $unit := "MB/s" -}}
+  {{- $maxRead := 0.0 -}}{{- $maxReadWl := "" -}}
+  {{- $maxWrite := 0.0 -}}{{- $maxWriteWl := "" -}}
+  {{- with $d.throughput -}}
+    {{- $unit = .unit | default "MB/s" -}}
+    {{- range .rows -}}
+      {{- if in (slice "float64" "int") (printf "%T" .read) -}}
+        {{- if gt .read $maxRead -}}{{- $maxRead = .read -}}{{- $maxReadWl = .workload -}}{{- end -}}
+      {{- end -}}
+      {{- if in (slice "float64" "int") (printf "%T" .write) -}}
+        {{- if gt .write $maxWrite -}}{{- $maxWrite = .write -}}{{- $maxWriteWl = .workload -}}{{- end -}}
+      {{- end -}}
+    {{- end -}}
+  {{- end -}}
+
+  {{- if or (gt $maxRead 0.0) (gt $maxWrite 0.0) $d.highlights }}
+  <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(140px,1fr));gap:.75rem;margin:1rem 0 1.5rem;">
+    {{- if gt $maxRead 0.0 }}
+    <div style="border:1px solid rgba(128,128,128,0.25);border-radius:.6rem;padding:.85rem 1rem;">
+      <div style="font-size:.75rem;text-transform:uppercase;letter-spacing:.04em;opacity:.6;">Read throughput</div>
+      <div style="font-size:1.25rem;font-weight:700;line-height:1.2;margin-top:.15rem;">{{ $maxRead }} {{ $unit }}</div>
+      <div style="font-size:.75rem;opacity:.6;margin-top:.15rem;">peak sequential throughput </div>
+    </div>
+    {{- end }}
+    {{- if gt $maxWrite 0.0 }}
+    <div style="border:1px solid rgba(128,128,128,0.25);border-radius:.6rem;padding:.85rem 1rem;">
+      <div style="font-size:.75rem;text-transform:uppercase;letter-spacing:.04em;opacity:.6;">Write throughput</div>
+      <div style="font-size:1.25rem;font-weight:700;line-height:1.2;margin-top:.15rem;">{{ $maxWrite }} {{ $unit }}</div>
+      <div style="font-size:.75rem;opacity:.6;margin-top:.15rem;">peak sequential throughput</div>
+    </div>
+    {{- end }}
+    {{- range $d.highlights }}
+    <div style="border:1px solid rgba(128,128,128,0.25);border-radius:.6rem;padding:.85rem 1rem;">
+      <div style="font-size:.75rem;text-transform:uppercase;letter-spacing:.04em;opacity:.6;">{{ .label }}</div>
+      <div style="font-size:1.5rem;font-weight:700;line-height:1.2;margin-top:.15rem;">{{ .value }}</div>
+      {{- with .note }}<div style="font-size:.75rem;opacity:.6;margin-top:.15rem;">{{ . }}</div>{{ end }}
+    </div>
+    {{- end }}
+  </div>
+  {{- end }}
+
+  {{- with $d.throughput }}{{ if .rows }}
+  <h3>Throughput by workload</h3>
+  <table>
+    <thead><tr><th>Object size</th><th>Download ({{ .unit }})</th><th>Upload ({{ .unit }})</th></tr></thead>
+    <tbody>
+    {{- range .rows }}
+      <tr><td><strong>{{ .workload }}</strong></td><td>{{ .read }}</td><td>{{ .write }}</td></tr>
+    {{- end }}
+    </tbody>
+  </table>
+  {{ end }}{{ end }}
+
+  {{- with $d.latency }}{{ if .rows }}
+  <h3>Latency percentiles ({{ .unit }})</h3>
+  {{- with .note }}<p style="opacity:.7;font-size:.875rem;margin:.25rem 0 .75rem;">{{ . }}</p>{{ end }}
+  <table>
+    <thead><tr><th>Metric</th><th>P50</th><th>P90</th><th>P99</th></tr></thead>
+    <tbody>
+    {{- range .rows }}
+      <tr><td><strong>{{ .metric }}</strong></td><td>{{ .p50 }}</td><td>{{ .p90 }}</td><td>{{ .p99 }}</td></tr>
+    {{- end }}
+    </tbody>
+  </table>
+  {{ end }}{{ end }}
+
+  {{- with $d.connection }}{{ if .rows }}
+  <h3>Connection timing ({{ .unit }})</h3>
+  <table>
+    <thead><tr><th>Metric</th><th>P50</th><th>P90</th><th>P99</th></tr></thead>
+    <tbody>
+    {{- range .rows }}
+      <tr><td><strong>{{ .metric }}</strong></td><td>{{ .p50 }}</td><td>{{ .p90 }}</td><td>{{ .p99 }}</td></tr>
+    {{- end }}
+    </tbody>
+  </table>
+  {{ end }}{{ end }}
+
+  {{- with $d.ycsb }}{{ if .rows }}
+  <h3>YCSB concurrent benchmark</h3>
+  <p style="opacity:.7;font-size:.875rem;margin:.25rem 0 .75rem;">
+    {{ .threads }} threads{{ with .object_size }}, {{ . }} objects{{ end }}
+  </p>
+  <table>
+    <thead><tr><th>Phase</th><th>Throughput (ops/s)</th><th>P50 (ms)</th><th>P90 (ms)</th><th>P99 (ms)</th></tr></thead>
+    <tbody>
+    {{- range .rows }}
+      <tr><td><strong>{{ .phase }}</strong></td><td>{{ .throughput }}</td><td>{{ .p50 }}</td><td>{{ .p90 }}</td><td>{{ .p99 }}</td></tr>
+    {{- end }}
+    </tbody>
+  </table>
+  {{ end }}{{ end }}
+
+{{- end -}}
