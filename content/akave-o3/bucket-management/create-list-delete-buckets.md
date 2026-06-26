@@ -54,9 +54,8 @@ Because Akave O3 has versioning always enabled, you must delete **every** object
 aws s3api list-object-versions \
   --bucket my-akave-bucket \
   --endpoint-url <YOUR_ENDPOINT_URL> \
-  --query '{Objects: Versions[].{Key: Key, VersionId: VersionId}}' \
   --output json | \
-jq -c '.Objects[]' | while read -r obj; do
+jq -c '(.Versions // []) + (.DeleteMarkers // []) | .[] | {Key, VersionId}' | while read -r obj; do
   KEY=$(echo "$obj" | jq -r '.Key')
   VERSION_ID=$(echo "$obj" | jq -r '.VersionId')
   aws s3api delete-object \
