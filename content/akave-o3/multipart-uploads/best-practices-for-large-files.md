@@ -9,9 +9,9 @@ cascade:
 
 When working with large files on Akave O3 using multipart uploads, following best practices ensures optimal performance, data integrity, and efficient resource usage.
 
-## Use Multipart Upload for Files > 1000 MB
+## Use Multipart Upload for Files > 100 MB
 
-While multipart upload technically kicks in around 8 MB (default in AWS CLI), Akave recommends explicitly using multipart upload for any file **over 1000 MB**, especially in decentralized environments where transfer stability and recovery are critical.
+While multipart upload technically kicks in around 8 MB (default in AWS CLI), Akave recommends explicitly using multipart upload for any file **over 100 MB**, especially in decentralized environments where transfer stability and recovery are critical.
 
 ## Choose Optimal Part Size
 
