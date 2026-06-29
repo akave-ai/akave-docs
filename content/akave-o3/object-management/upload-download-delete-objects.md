@@ -11,6 +11,10 @@ cascade:
 
 Once you've created a bucket in Akave O3, you can use standard AWS CLI commands to manage your objects. Below are examples using both `aws s3api` and the simpler `aws s3` CLI syntax.
 
+Note that the AWS CLI is not necessarily the optimal tool for bulk transfer operations. For large-scale uploads or downloads, consider using a dedicated tool like [Rclone](https://rclone.org/). 
+
+Recommendations for optimizing transfers using Rclone for Akave O3 can be found [here](/solutions-and-integrations/rclone/#transfer-flags).
+
 {{< callout type="info" >}}
 **Important:** Replace `<YOUR_ENDPOINT_URL>` in these examples with your specific endpoint URL. Find your endpoint in the [Akave Environment](/akave-o3/introduction/akave-environment) page.
 {{< /callout >}}
@@ -48,6 +52,8 @@ aws configure set default.s3.multipart_threshold 100MB
 ```
 
 This avoids unnecessary multipart overhead for smaller objects while ensuring large uploads benefit from parallel transfer.
+
+For more information on multipart uploads and best practices, see [Best Practices for Large Files](/akave-o3/multipart-uploads/best-practices-for-large-files).
 
 ### Download an Object
 

@@ -187,3 +187,52 @@ NOTICE: S3 bucket rclone-test: 0 differences found
 NOTICE: S3 bucket rclone-test: N matching files
 ```
 >If you see a message saying N hashes could not be checked, this is normal and expected as Akave does not currently support the same hash check mechanism as AWS S3.
+
+## Transfer Flags
+
+The flags below are recommended for improving general transfer performance with Akave O3. Actual results depend on your network throughput, latency, and the number and size of files being transferred.
+
+### Upload Flags
+
+- **`--s3-upload-concurrency`**
+  - **Default:** `4`
+  - **Recommended:** `64`
+  - Increasing the upload concurrency fills more of the available bandwidth, which helps when the round-trip time is high.
+
+- **`--s3-chunk-size`**
+  - **Default:** `200MiB`
+  - **Recommended:** `8MiB`
+  - Reducing the chunk size allows for greater parallelization, which reduces the dependency on a single stream and makes the transfer more consistent over high-latency links.
+
+- **`--s3-disable-checksum`**
+  - **Default:** `false`
+  - **Recommended:** `true`
+  - Skips the full-file MD5 checksum calculation while still relying on multipart integrity checks. The AWS CLI does not compute and store a full-object MD5 for multipart uploads by default, so `aws s3 sync` does not incur this overhead. Running `rclone copy` without this flag caused a 38-second delay for a single 10GiB test file, while enabling it reduced the start time to under three seconds.
+
+### Download Flags
+
+- **`--multi-thread-streams`**
+  - **Default:** `4`
+  - **Recommended:** `8`
+  - Controls parallel streams within large downloads. Increasing the number of streams lets a single large file use more of the available bandwidth, which helps on high-latency or high-bandwidth links.
+
+### Combined Upload and Download Flags
+
+- **`--transfers`**
+  - **Default:** `4`
+  - **Recommended:** `8`
+  - Transfers up to eight files concurrently, which keeps the pipeline full when moving many files. It has no benefit for a single-file test.
+
+### Combined Example
+
+When running operations that include both uploads and downloads, you can combine all of the flags above. Rclone applies each flag only where it is relevant.
+
+```bash
+rclone sync <local-path> Akave:<bucket-name> \
+  --transfers 8 \
+  --multi-thread-streams 8 \
+  --s3-upload-concurrency 64 \
+  --s3-chunk-size 8Mi \
+  --s3-disable-checksum \
+  --progress
+```
