@@ -197,7 +197,7 @@ The flags below are recommended for improving general transfer performance with 
 - **`--s3-upload-concurrency`**
   - **Default:** `4`
   - **Recommended:** `64`
-  - Increasing the upload concurrency fills more of the available bandwidth, which helps when the round-trip time is high.
+  - Increasing the upload concurrency fills more of the available bandwidth, which especially helps when the round-trip time (RTT) is high.
 
 - **`--s3-chunk-size`**
   - **Default:** `200MiB`
