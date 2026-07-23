@@ -36,7 +36,7 @@ Wallets are stored in: `~/.akave_wallets`
 ### Create a New Wallet
 
 ```bash
-akavecli wallet create
+akavecli wallet create <wallet-name>
 ```
 This will:
 
