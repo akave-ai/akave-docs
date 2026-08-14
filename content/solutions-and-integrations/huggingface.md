@@ -134,9 +134,12 @@ print(buckets)
 The `transfer_dataset()` method downloads a dataset from the [Hugging Face Hub](https://huggingface.co/datasets) and transfers it directly to your Akave O3 bucket. This is useful when you want to store public datasets in your own storage for faster access or offline use.
 
 **Parameters:**
-- `dataset_name` (required): The name of the dataset on [Hugging Face Hub](https://huggingface.co/datasets) (e.g., "mnist", "imdb")
-- `output_path` (optional): Custom path within your bucket. Defaults to the dataset name
-- `file_format` (optional): Storage format for the dataset. Defaults to "parquet"
+
+| Parameter | Required | Description |
+| --- | --- | --- |
+| `dataset_name` | Required | The name of the dataset on [Hugging Face Hub](https://huggingface.co/datasets) (e.g., "mnist", "imdb") |
+| `output_path` | Optional | Custom path within your bucket. Defaults to the dataset name |
+| `file_format` | Optional | Storage format for the dataset. Defaults to "parquet" |
 
 **Basic usage:**
 
@@ -156,8 +159,11 @@ output_dir = hf_s3.transfer_dataset("squad", file_format="arrow")
 The `save_dataset()` method saves any Hugging Face dataset object to your Akave O3 bucket. This is particularly useful after you've processed or transformed a dataset and want to persist the changes.
 
 **Parameters:**
-- `dataset` (required): The Hugging Face dataset object to save
-- `output_path` (optional): Path within your bucket where the dataset will be stored
+
+| Parameter | Required | Description |
+| --- | --- | --- |
+| `dataset` | Required | The Hugging Face dataset object to save |
+| `output_path` | Optional | Path within your bucket where the dataset will be stored |
 
 **Example workflow:**
 
@@ -173,7 +179,10 @@ save_path = hf_s3.save_dataset(dataset, output_path="processed/imdb_train")
 The `load_dataset()` method retrieves a previously saved dataset from your Akave O3 bucket. It returns a standard Hugging Face dataset object that you can use for training, analysis, or further processing.
 
 **Parameters:**
-- `path` (required): Path within your bucket where the dataset is stored
+
+| Parameter | Required | Description |
+| --- | --- | --- |
+| `path` | Required | Path within your bucket where the dataset is stored |
 
 **Usage:**
 

@@ -129,18 +129,20 @@ You can use any Ollama model, for example:
 
 The server provides the following MCP tools:
 
-1. `list_buckets`: List all buckets in your Akave storage
-2. `list_objects`: List objects in a bucket with optional prefix filtering
-3. `get_object`: Read object contents from a bucket
-4. `put_object`: Write a new object to a bucket
-5. `get_signed_url`: Generate a signed URL for secure access to an object
-6. `update_object`: Update an existing object
-7. `delete_object`: Delete an object from a bucket
-8. `copy_object`: Copy an object to another location
-9. `create_bucket`: Create a new bucket
-10. `delete_bucket`: Delete a bucket
-11. `get_bucket_location`: Get the region/location of a bucket
-12. `list_object_versions`: List all versions of objects (if versioning enabled)
+| Tool | Description |
+| --- | --- |
+| `list_buckets` | List all buckets in your Akave storage |
+| `list_objects` | List objects in a bucket with optional prefix filtering |
+| `get_object` | Read object contents from a bucket |
+| `put_object` | Write a new object to a bucket |
+| `get_signed_url` | Generate a signed URL for secure access to an object |
+| `update_object` | Update an existing object |
+| `delete_object` | Delete an object from a bucket |
+| `copy_object` | Copy an object to another location |
+| `create_bucket` | Create a new bucket |
+| `delete_bucket` | Delete a bucket |
+| `get_bucket_location` | Get the region/location of a bucket |
+| `list_object_versions` | List all versions of objects (if versioning enabled) |
 
 ## Example Usage
 

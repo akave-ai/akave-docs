@@ -21,11 +21,13 @@ The Akave CLI includes a built-in **wallet subsystem** to prevent needing to pas
 
 Run `akavecli wallet --help` to see available wallet commands:
 
-- `balance`     Shows the AKVT token balance for a wallet
-- `create`      Creates a new wallet
-- `export-key`  Exports private key for a wallet
-- `import`      Import a wallet using a private key
-- `list`        Lists all wallets
+| Command | Description |
+| --- | --- |
+| `balance` | Shows the AKVT token balance for a wallet |
+| `create` | Creates a new wallet |
+| `export-key` | Exports private key for a wallet |
+| `import` | Import a wallet using a private key |
+| `list` | Lists all wallets |
 
 ## Wallet Storage
 
